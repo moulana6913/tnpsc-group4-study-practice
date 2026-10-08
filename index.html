@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TNPSC Group 4 - Study & Practice</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,"Noto Sans Tamil",sans-serif;background:#f1f5f9;color:#172033}
+header{background:linear-gradient(135deg,#172554,#1e40af);color:#fff;text-align:center;padding:25px 15px}
+header h1{margin:0;font-size:27px} header p{margin:8px 0 0}
+.container{max-width:950px;margin:auto;padding:15px}
+.section,.lesson-box,.quiz-box{background:#fff;margin:18px 0;padding:18px;border-radius:18px;box-shadow:0 4px 15px #0001}
+.tamil{border-top:6px solid #16a34a}.gs{border-top:6px solid #2563eb}.aptitude{border-top:6px solid #f97316}
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.topic-btn{width:100%;border:1px solid #dbeafe;background:#f8fafc;padding:15px;border-radius:12px;font-size:15px;font-weight:bold;text-align:left;cursor:pointer}
+.topic-btn:hover{background:#dbeafe}
+#lessonPage,#quizPage{display:none}
+.lesson-box,.quiz-box{max-width:800px;margin:20px auto}
+.lesson-title{color:#172554;border-bottom:2px solid #e5e7eb;padding-bottom:12px}
+.lesson-content{font-size:17px;line-height:1.8}
+.lesson-content h3{color:#1d4ed8;margin-bottom:5px}
+.lesson-content h4 {
+    color: #008000;
+    margin-bottom: 5px;
+}
+.lesson-content h4 + p {
+    margin-top: 0;
+    padding-left: 25px;
+}
+.lesson-content h4 + p +p {
+    margin-top: 0;
+    padding-left: 50px;
+}
+.lesson-content h4 + p +p +p {
+    margin-top: 0;
+    padding-left: 50px;
+}
+.lesson-content h4 + p +p +p +p  {
+    margin-top: 0;
+    padding-left: 50px;
+}
+.lesson-content h4 + p +p +p+ p  {
+    margin-top: 0;
+    padding-left: 50px;
+}
+.lesson-content h4 + p +p +p + p +p {
+    margin-top: 0;
+    padding-left: 50px;
+}
+.lesson-content ul{padding-left:25px}
+.example{background:#f0fdf4;border-left:5px solid #16a34a;padding:10px 15px;margin:10px 0;border-radius:8px}
+.important{background:#fff7ed;border-left:5px solid #f97316;padding:12px 15px;margin:15px 0;border-radius:8px}
+.start-btn,.home-btn,.next-btn{border:0;padding:14px 20px;border-radius:12px;font-weight:bold;font-size:16px;cursor:pointer}
+.start-btn{background:#16a34a;color:#fff}.home-btn{background:#172554;color:#fff}.next-btn{background:#2563eb;color:#fff}
+.button-row{display:flex;gap:10px;margin-top:20px}
+.question{font-size:20px;font-weight:bold;line-height:1.6;margin:20px 0}
+.option{width:100%;display:block;text-align:left;background:#fff;border:2px solid #e5e7eb;padding:14px;margin:10px 0;border-radius:12px;font-size:16px;cursor:pointer}
+.option.correct{background:#dcfce7;border-color:#16a34a}.option.wrong{background:#fee2e2;border-color:#dc2626}
+.explanation{display:none;background:#fef9c3;padding:12px;border-radius:10px;margin-top:15px}
+.progress{height:10px;background:#e5e7eb;border-radius:10px;overflow:hidden}.progress-bar{height:100%;background:#2563eb;width:0%}
+.result{text-align:center}.score{font-size:45px;font-weight:bold;color:#16a34a}
+@media(max-width:600px){.topic-grid{grid-template-columns:1fr}header h1{font-size:23px}.lesson-content{font-size:16px}.question{font-size:18px}}
+.b{
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+.b th {
+        background:  #1565C0;
+        color: white;
+        padding: 12px;
+        font-size: 12px;
+    }
+
+  .b td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+        font-size: 11px;
+    }
+
+  .b  tr:nth-child(even) {
+        background: #E3F2FD;
+    }
+
+    .total {
+        background:  !important;
+        font-weight: bold;
+        color:#1565C0 ;
+    }
+.a {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.a th,
+.a td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.a th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.a td:first-child {
+  color: red;
+  background-color: #ffe5e5;
+  font-weight: bold;
+}
+
+.a td:last-child {
+  color: green;
+  background-color: #e5ffe5;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📚 TNPSC GROUP 4</h1>
+<p>Study • Lesson • Practice • Score</p>
+</header>
+
+<div id="homePage"><div class="container">
+
+<div class="section tamil">
+<h2>🟢 தமிழ் – 100 கேள்விகள்</h2><p>SSLC தரம் • 150 மதிப்பெண்கள்</p>
+<div class="topic-grid">
+<button class="topic-btn" onclick="openLesson('தமிழ் இலக்கணம் – அடிப்படை','tamilGrammar')">📖 தமிழ் இலக்கணம்</button>
+<button class="topic-btn" onclick="openLesson('சொல்லகராதி','vocabulary')">📚 சொல்லகராதி</button>
+<button class="topic-btn" onclick="openLesson('பிரித்தெழுதுதல் / சேர்த்தெழுதுதல்','splitJoin')">✍️ பிரித்தெழுதுதல் / சேர்த்தெழுதுதல்</button>
+<button class="topic-btn" onclick="openLesson('எதிர்ச்சொல்','opposite')">🔄 எதிர்ச்சொல்</button>
+<button class="topic-btn" onclick="openLesson('பொருத்தமான சொல்','appropriate')">📝 பொருத்தமான சொல்</button>
+<button class="topic-btn" onclick="openLesson('பிழை திருத்தம்','correction')">✅ பிழை திருத்தம்</button>
+<button class="topic-btn" onclick="openLesson('கலைச்சொற்கள்','technical')">🔤 கலைச்சொற்கள்</button>
+<button class="topic-btn" onclick="openLesson('வாசித்தல் – புரிந்து கொள்ளுதல்','reading')">📖 வாசித்தல் – புரிந்து கொள்ளுதல்</button>
+<button class="topic-btn" onclick="openLesson('இலக்கியம்','literature')">📜 இலக்கியம்</button>
+<button class="topic-btn" onclick="openLesson('தமிழ் அறிஞர்கள் மற்றும் தமிழ்த்தொண்டு','scholars')">👨‍🏫 தமிழ் அறிஞர்கள் மற்றும் தமிழ்த்தொண்டு</button>
+<button class="topic-btn" onclick="openLesson('திருக்குறள்','thirukkural')">📗 திருக்குறள்</button>
+</div></div>
+
+<div class="section gs">
+<h2>🔵 General Studies – 75 கேள்விகள்</h2>
+<div class="topic-grid">
+<button class="topic-btn" onclick="openLesson('General Science','science')">🔬 General Science</button>
+<button class="topic-btn" onclick="openLesson('Current Events','current')">📰 Current Events</button>
+<button class="topic-btn" onclick="openLesson('Geography','geography')">🌍 Geography</button>
+<button class="topic-btn" onclick="openLesson('History & Culture of India','history')">🏺 History & Culture of India</button>
+<button class="topic-btn" onclick="openLesson('Indian Polity','polity')">🏛️ Indian Polity</button>
+<button class="topic-btn" onclick="openLesson('Indian Economy','economy')">💰 Indian Economy</button>
+<button class="topic-btn" onclick="openLesson('Tamil Nadu History & Culture','tamilnadu')">🏺 Tamil Nadu History & Culture</button>
+</div></div>
+
+<div class="section aptitude">
+<h2>🟠 Aptitude & Mental Ability – 25 கேள்விகள்</h2>
+<div class="topic-grid">
+<button class="topic-btn" onclick="openLesson('Simplification','simplification')">➗ Simplification</button>
+<button class="topic-btn" onclick="openLesson('Percentage','percentage')">📊 Percentage</button>
+<button class="topic-btn" onclick="openLesson('Ratio & Proportion','ratio')">⚖️ Ratio & Proportion</button>
+<button class="topic-btn" onclick="openLesson('HCF / LCM','hcf')">🔢 HCF / LCM</button>
+<button class="topic-btn" onclick="openLesson('Simple Interest','simpleInterest')">💰 Simple Interest</button>
+<button class="topic-btn" onclick="openLesson('Compound Interest','compoundInterest')">💵 Compound Interest</button>
+<button class="topic-btn" onclick="openLesson('Area','area')">📐 Area</button>
+<button class="topic-btn" onclick="openLesson('Volume','volume')">📦 Volume</button>
+<button class="topic-btn" onclick="openLesson('Time & Work','timeWork')">⏱️ Time & Work</button>
+<button class="topic-btn" onclick="openLesson('Time & Distance','timeDistance')">🚗 Time & Distance</button>
+<button class="topic-btn" onclick="openLesson('Average','average')">📊 Average</button>
+<button class="topic-btn" onclick="openLesson('Profit & Loss','profitLoss')">💰 Profit & Loss</button>
+<button class="topic-btn" onclick="openLesson('Logical Reasoning','reasoning')">🧠 Logical Reasoning</button>
+<button class="topic-btn" onclick="openLesson('Number Series','series')">🔢 Number Series</button>
+<button class="topic-btn" onclick="openLesson('Analogy','analogy')">🔗 Analogy</button>
+<button class="topic-btn" onclick="openLesson('Coding-Decoding','coding')">🔐 Coding-Decoding</button>
+<button class="topic-btn" onclick="openLesson('Classification','classification')">🗂️ Classification</button>
+<button class="topic-btn" onclick="openLesson('Blood Relations','blood')">👨‍👩‍👧 Blood Relations</button>
+<button class="topic-btn" onclick="openLesson('Direction Questions','direction')">🧭 Direction Questions</button>
+</div></div>
+
+</div></div>
+
+<div id="lessonPage">
+<div class="lesson-box">
+<h2 class="lesson-title" id="lessonTitle"></h2>
+<div class="lesson-content" id="lessonContent"></div>
+<div class="important"><b>🎯 TNPSC முக்கியம்:</b><br>இந்த Lesson-ஐ நன்றாகப் படித்த பிறகு Practice Questions-ஐ முயற்சி செய்யுங்கள்.</div>
+<div class="button-row">
+<button class="home-btn" onclick="goHome()">🏠 Topics</button>
+<button class="start-btn" onclick="startQuizFromLesson()">✍️ Practice Questions</button>
+</div>
+</div></div>
+
+<div id="quizPage">
+<div class="quiz-box">
+<h2 id="quizTitle"></h2>
+<div>கேள்வி: <b id="questionNumber"></b></div><br>
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+<div class="question" id="questionText"></div>
+<div id="options"></div>
+<div class="explanation" id="explanation"></div>
+<div class="button-row">
+<button class="home-btn" onclick="goHome()">🏠 Topics</button>
+<button class="next-btn" onclick="nextQuestion()" id="nextButton">அடுத்த கேள்வி →</button>
+</div>
+</div></div>
+
+<script>
+const lessons={
+tamilGrammar:`<h3>1. எழுத்து</h3><p>தமிழில் <b>12 உயிரெழுத்துகள் + 18 மெய்யெழுத்துகள் = 30.</b></p><p>உயிர் + மெய் சேர்ந்து <b>216 உயிர்மெய் எழுத்துகள்</b> உருவாகின்றன.</p><div class="example">30 + 216 + 1 ஆய்த எழுத்து = <b>247</b></div><h3>2. சொல் வகைகள்</h3><p><b>பெயர்ச்சொல்</b> – மனிதர், பொருள், இடம் போன்றவற்றின் பெயர்.</p><div class="example">எ.கா.: ரவி, மரம், சென்னை</div><p><b>வினைச்சொல்</b> – செயலைக் குறிக்கும்.</p><div class="example">எ.கா.: ஓடினான், படிக்கிறான்</div><p><b>உரிச்சொல்</b> – பெயர்ச்சொல்லின் தன்மையை விளக்கும்.</p><div class="example">எ.கா.: அழகான மலர்</div><p><b>இடைச்சொல்</b> – சொற்களுக்கு இடையே தொடர்பை ஏற்படுத்தும்.</p><div class="example">எ.கா.: மற்றும், ஆனால்</div><h3>3. காலங்கள்</h3><ul><li><b>இறந்தகாலம்:</b> சென்றான்</li><li><b>நிகழ்காலம்:</b> செல்கிறான்</li><li><b>எதிர்காலம்:</b> செல்வான்</li></ul><h3>4. திணை</h3><ul><li><b>உயர்திணை</b> – மனிதர்களைக் குறிக்கும்.</li><li><b>அஃறிணை</b> – மனிதர் அல்லாதவற்றைக் குறிக்கும்.</li></ul><h3>5. பால்</h3><ul><li>ஆண்பால்</li><li>பெண்பால்</li><li>பலர்பால்</li><li>ஒன்றன்பால்</li><li>பலவின்பால்</li></ul><h3>6. இடம்</h3><ul><li><b>தன்மை:</b> நான், நாம்</li><li><b>முன்னிலை:</b> நீ, நீங்கள்</li><li><b>படர்க்கை:</b> அவன், அவள், அவர்கள்</li></ul><h3>7. எச்சம்</h3><p><b>வினையெச்சம்:</b> ஓடி வந்தான், பாடி மகிழ்ந்தான்</p><p><b>பெயரெச்சம்:</b> வந்த மாணவன், பாடிய பறவை</p>`,
+vocabulary:`
+<h3>📘 சொல்லகராதி </h3>
+
+<p>
+  சொல்லகராதி என்பது ஒரு சொல்லின் பொருள், இணைச்சொல், எதிர்ச்சொல்,
+  சரியான பயன்பாடு போன்றவற்றை அறிந்து கொள்வதாகும்.
+  TNPSC Group 4 தமிழ் பகுதியில் இது முக்கியமானது.
+</p>
+
+<h4>1. பொருள் அறிதல்</h4>
+
+<p>ஒரு சொல்லுக்கு சரியான பொருளை கண்டுபிடித்தல்.</p>
+
+<table class="b">
+  <tr>
+    <th>சொல்</th>
+    <th>பொருள்</th>
+  </tr>
+  <tr>
+    <td>அகம்</td>
+    <td>உள்ளம் / வீடு</td>
+  </tr>
+  <tr>
+    <td>புறம்</td>
+    <td>வெளியிடம்</td>
+  </tr>
+  <tr>
+    <td>ஈகம்</td>
+    <td>கொடை</td>
+  </tr>
+  <tr>
+    <td>அன்பு</td>
+    <td>நேசம்</td>
+  </tr>
+  <tr>
+    <td>வனம்</td>
+    <td>காடு</td>
+  </tr>
+  <tr>
+    <td>சோலை</td>
+    <td>தோட்டம்</td>
+  </tr>
+</table>
+
+
+<h4>2. இணைச்சொல்</h4>
+
+<p>ஒரே அல்லது நெருங்கிய பொருள் தரும் சொற்கள்.</p>
+
+<div class="example">கடல் — சமுத்திரம்</div>
+<div class="example">மலை — குன்று</div>
+<div class="example">வீடு — இல்லம்</div>
+<div class="example">அரசன் — மன்னன்</div>
+<div class="example">சூரியன் — கதிரவன்</div>
+<div class="example">பூ — மலர்</div>
+
+
+<h4>3. எதிர்ச்சொல்</h4>
+
+<p>மாறுபட்ட பொருள் தரும் சொற்கள்.</p>
+
+<div class="example">நன்மை × தீமை</div>
+<div class="example">இன்பம் × துன்பம்</div>
+<div class="example">உயர்வு × தாழ்வு</div>
+<div class="example">பகல் × இரவு</div>
+<div class="example">பிறப்பு × இறப்பு</div>
+<div class="example">உண்மை × பொய்</div>
+
+
+<h4>4. ஒரு சொல் – பல பொருள்</h4>
+
+<p>
+  ஒரே சொல் வெவ்வேறு சூழலில் வெவ்வேறு பொருள் தரலாம்.
+</p>
+
+<div class="example"><b>கால்</b></div>
+<div class="example">மனிதனின் கால்</div>
+<div class="example">நாற்காலியின் கால்</div>
+<div class="example">கால்பங்கு</div>
+
+
+<h4>5. சொல் பயன்பாடு</h4>
+
+<p>சொல்லை சரியான இடத்தில் பயன்படுத்த வேண்டும்.</p>
+
+<div class="example">“வளம்” → செல்வம் / செழிப்பு</div>
+<div class="example">“வலம்” → சுற்றி வருதல்</div>
+
+<div class="example">👉 வளம் மிகுந்த நாடு.</div>
+<div class="example">👉 கோவிலை வலம் வந்தார்.</div>
+<h4>6. ஒரே ஒலி – வேறு பொருள்</h4>
+
+<p>
+  ஒலியில் ஒரே மாதிரியாக அல்லது நெருக்கமாக இருக்கும்;
+  ஆனால் பொருள் வேறுபடும்.
+</p>
+
+<p><b>எடுத்துக்காட்டு:</b></p>
+
+<div class="example">அலை → கடல் அலை</div>
+<div class="example">அளை → சிறு அறை / குகை</div>
+
+
+<h4>7. சரியான சொல்லைத் தேர்ந்தெடுத்தல்</h4>
+
+<p>
+  கொடுக்கப்பட்ட சொற்களில் சரியான சொல்லைத் தேர்வு செய்தல்.
+</p>
+
+<p><b>எடுத்துக்காட்டு:</b></p>
+
+<div class="example">❌ தமிழ்நாடு நாடு</div>
+<div class="example">✅ தமிழ்நாடு</div>
+
+
+<h4>8. சொல் பயன்பாடு</h4>
+
+<p>
+  ஒரு சொல்லை சரியான பொருளிலும், சரியான வாக்கியத்திலும் பயன்படுத்துதல்.
+</p>
+
+<p><b>எடுத்துக்காட்டு:</b></p>
+
+<div class="example">
+  “விரைவு” → பேருந்தின் விரைவு பயணிகளுக்கு உதவியது.
+</div>
+
+
+<h4>9. பழமொழி மற்றும் சொற்றொடர் பொருள்</h4>
+
+<p><b>பழமொழி:</b></p>
+
+<div class="example">
+  “கற்றது கைமண் அளவு, கல்லாதது உலகளவு.”
+</div>
+
+<div class="example">
+  ➡️ நாம் கற்றது சிறிது; கற்க வேண்டியது மிக அதிகம்.
+</div>
+
+<p><b>சொற்றொடர்:</b></p>
+
+<div class="example">
+  “கண்ணில் மண் தூவுதல்”
+</div>
+
+<div class="example">
+  ➡️ ஏமாற்றுதல்.
+</div>
+
+`,
+splitJoin:`<h3>✍️1. பிரித்தெழுதுதல் என்றால் என்ன?</h3><p>இரண்டு அல்லது அதற்கு மேற்பட்ட சொற்கள் சேர்ந்து ஒரு சொல்லாக இருக்கும்போது, அவற்றை தனித்தனியாகப் பிரித்து எழுதுவது பிரித்தெழுதுதல்.</p>
+<h4>உதாரணம்:</h4>
+<div class="example">தாய்மொழி = தாய் + மொழி</div>
+<div class="example">தமிழ்நாடு = தமிழ் + நாடு</div>
+<div class="example">மலைநாடு = மலை + நாடு</div>
+<div class="example">நல்வாழ்வு = நல் + வாழ்வு</div>
+<div class="example">பெருங்கடல் = பெரும் + கடல்</div>
+<h3>2. சேர்த்தெழுதுதல் என்றால் என்ன?</h3>
+<p>தனித்தனியாக உள்ள இரண்டு சொற்களை சரியான முறையில் ஒன்றாகச் சேர்த்து எழுதுவது சேர்த்தெழுதுதல்.</p>
+<div class="example">தாய் + மொழி = தாய்மொழி</div>
+<div class="example">தமிழ் + நாடு = தமிழ்நாடு</div>
+<div class="example">மலை + நாடு = மலைநாடு</div>
+<div class="example">நல் + வாழ்வு = நல்வாழ்வு</div>
+<div class="example">பெரும் + கடல் = பெருங்கடல்</div>
+<h3>3. முக்கியமான உதாரணங்கள்</h3>
+<div class="example">தாய் + மொழி = தாய்மொழி</div>
+<div class="example">தமிழ் + நாடு = தமிழ்நாடு</div>
+<div class="example">மலை + நாடு = மலைநாடு</div>
+<div class="example">நல் + வாழ்வு = நல்வாழ்வு</div>
+<div class="example">பெரும் + கடல் = பெருங்கடல்</div>
+<div class="example">பொன் + சிலை = பொற்சிலை</div>
+<div class="example">மண் + குடம் = மண்குடம்</div>
+<div class="example">புது + ஆண்டு = புத்தாண்டு</div>
+<h3>⭐ கவனிக்க வேண்டியது</h3>
+<p>சில சொற்களை சேர்க்கும்போது எழுத்து மாற்றம் ஏற்படும்.</p>
+<div class="example">பொன் + சிலை → பொற்சிலை</div><p>இங்கு ன் + ச → ற்ச ஆக மாறுகிறது.</p><div class="example">புது + ஆண்டு → புத்தாண்டு</div><p>இங்கு சேரும்போது எழுத்து மாற்றம் ஏற்படுகிறது.</p>
+`,
+opposite:`<h3>🔄 எதிர்ச்சொல்</h3><p>ஒரு சொல்லுக்கு எதிரான பொருளைக் கொண்ட சொல் எதிர்ச்சொல் எனப்படும்.</p><ul><li>நன்மை × தீமை</li><li>வெற்றி × தோல்வி</li><li>உயரம் × தாழ்வு</li><li>பகல் × இரவு</li><li>இன்பம் × துன்பம்</li></ul>
+<h3>🔹 முக்கியமான எதிர்ச்சொற்கள்</h3>
+<table class=" a">
+  <tr>
+    <th>சொல்</th>
+    <th>எதிர்ச்சொல்</th>
+  </tr>
+
+  <tr><td>நன்மை</td><td>தீமை</td></tr>
+  <tr><td>இன்பம்</td><td>துன்பம்</td></tr>
+  <tr><td>உண்மை</td><td>பொய்</td></tr>
+  <tr><td>உயர்வு</td><td>தாழ்வு</td></tr>
+  <tr><td>பெரிய</td><td>சிறிய</td></tr>
+  <tr><td>புதிய</td><td>பழைய</td></tr>
+  <tr><td>பகல்</td><td>இரவு</td></tr>
+  <tr><td>பிறப்பு</td><td>இறப்பு</td></tr>
+  <tr><td>வாழ்வு</td><td>சாவு</td></tr>
+  <tr><td>வெற்றி</td><td>தோல்வி</td></tr>
+  <tr><td>ஆரம்பம்</td><td>முடிவு</td></tr>
+  <tr><td>உள்ளே</td><td>வெளியே</td></tr>
+  <tr><td>அருகில்</td><td>தொலைவில்</td></tr>
+  <tr><td>முன்னால்</td><td>பின்னால்</td></tr>
+  <tr><td>மேல்</td><td>கீழ்</td></tr>
+  <tr><td>அதிகம்</td><td>குறைவு</td></tr>
+  <tr><td>வேகம்</td><td>மெதுவு</td></tr>
+  <tr><td>அன்பு</td><td>வெறுப்பு</td></tr>
+  <tr><td>நட்பு</td><td>பகை</td></tr>
+  <tr><td>செல்வம்</td><td>வறுமை</td></tr>
+  <tr><td>ஒற்றுமை</td><td>வேற்றுமை</td></tr>
+  <tr><td>சுத்தம்</td><td>அசுத்தம்</td></tr>
+  <tr><td>அறிவு</td><td>அறியாமை</td></tr>
+  <tr><td>துணிவு</td><td>பயம்</td></tr>
+  <tr><td>இனிமை</td><td>கசப்பு</td></tr>
+</table>
+<h3>⭐ TNPSC-க்கு முக்கியமானவை</h3>
+<table class="a">
+  <tr>
+    <th>சொல்</th>
+    <th>எதிர்ச்சொல்</th>
+  </tr>
+
+  <tr><td>அகம்</td><td>புறம்</td></tr>
+  <tr><td>ஆக்கம்</td><td>அழிவு</td></tr>
+  <tr><td>இன்பம்</td><td>துன்பம்</td></tr>
+  <tr><td>புகழ்</td><td>இகழ்ச்சி</td></tr>
+  <tr><td>நன்மை</td><td>தீமை</td></tr>
+  <tr><td>உண்மை</td><td>பொய்</td></tr>
+  <tr><td>வெற்றி</td><td>தோல்வி</td></tr>
+  <tr><td>உயர்வு</td><td>தாழ்வு</td></tr>
+  <tr><td>ஒற்றுமை</td><td>வேற்றுமை</td></tr>
+  <tr><td>அறிவு</td><td>அறியாமை</td></tr>
+</table>`,
+appropriate:`<h3>📝 பொருத்தமான சொல்</h3><p>பொருத்தமான சொல் என்பது கொடுக்கப்பட்ட வாக்கியம் அல்லது கருத்துக்கு சரியான பொருள் தரும் சொல்லைத் தேர்ந்தெடுப்பது.</p><h4>உதாரணம்:</h4><div class="example">பறவைகள் ______. <b>→ பறக்கும்</b></div><div class="example">மீன் ______ வாழும்.<b> → நீரில்</b></div>
+<h3>1. பொருளுக்கு ஏற்ற சொல்</h3>
+
+
+<h3>2. கொடுக்கப்பட்ட இடத்திற்கு ஏற்ற சொல்</h3>
+<h4>உதாரணம்:</h4>
+<p>மாணவர்கள் பள்ளியில் ________. </p>
+<p>A) படிக்கிறார்கள் ✅</p>
+<p>B) தூங்குகிறார்கள்</p>
+<p>C) விளையாடுகிறார்கள்</p>
+<p>D) பறக்கிறார்கள்</p>
+<h3>1. பொருளுக்கு ஏற்ற சொல்</h3>
+<table class="b">
+  <tr>
+    <th>விளக்கம்</th>
+    <th>பொருத்தமான சொல்</th>
+  </tr>
+
+  <tr>
+    <td>பயம் இல்லாதவர்</td>
+    <td>அஞ்சாநெஞ்சர்</td>
+  </tr>
+
+  <tr>
+    <td>பிறருக்கு உதவி செய்பவர்</td>
+    <td>உதவியாளர்</td>
+  </tr>
+
+  <tr>
+    <td>நாட்டைக் காப்பவர்</td>
+    <td>வீரர்</td>
+  </tr>
+
+  <tr>
+    <td>கல்வி கற்றவர்</td>
+    <td>கற்றவர்</td>
+  </tr>
+
+  <tr>
+    <td>அறிவுடையவர்</td>
+    <td>அறிஞர்</td>
+  </tr>
+
+  <tr>
+    <td>அதிகமாக பேசுபவர்</td>
+    <td>வாயாடி</td>
+  </tr>
+
+  <tr>
+    <td>பொய் பேசாதவர்</td>
+    <td>வாய்மையாளர்</td>
+  </tr>
+
+  <tr>
+    <td>பிறரிடம் அன்பாக இருப்பவர்</td>
+    <td>அன்பாளர்</td>
+  </tr>
+
+  <tr>
+    <td>உழைப்பவர்</td>
+    <td>உழைப்பாளர்</td>
+  </tr>
+
+  <tr>
+    <td>நன்றி மறக்காதவர்</td>
+    <td>நன்றியாளர்</td>
+  </tr>
+</table>
+
+<h3>3. ஒரே பொருளுக்கு ஏற்ற சரியான சொல்</h3>
+<h4>உதாரணம்:</h4>
+<p>“காடு” என்பதற்கு பொருத்தமான சொல் எது? </p>
+<p>A) வனம்✅</p>
+<p>B) கடல்</p>
+<p>C) வயல்</p>
+<p>D) மலை</p>
+<h3>4. TNPSC கேள்வி மாதிரி</h3>
+<h4>கேள்வி:</h4>
+<p>“மிகுந்த மகிழ்ச்சி” என்பதற்கு பொருத்தமான சொல் எது? </p>
+<p>A) துயரம்</p>
+<p>B) களிப்பு ✅</p>
+<p>C) கோபம்</p>
+<p>D) மலை</p>
+`,
+correction:`<h3>✅ பிழை திருத்தம்</h3><p>பிழை திருத்தம் என்பது ஒரு சொல்லில் அல்லது வாக்கியத்தில் இருக்கும் எழுத்து, சொல், இலக்கணப் பிழையை கண்டுபிடித்து சரியாக மாற்றுவது.</p>
+<h3>1. எழுத்துப் பிழை</h3><div class="example">❌தவறு: தமிழ் நாடு<br>✅சரி:தமிழ்நாடு</div>
+<p>இங்கு “தமிழ்” + “நாடு” என்று இரண்டு தனிச்சொற்களாகப் பிரிக்கப்பட்டுள்ளது.</p>
+<p>இது சேர்த்தெழுதுதல் (சொற்களை இணைத்து எழுதுதல்) வகையில் வரும்.</p>
+<h4>உதாரணங்கள்:</h4>
+<table class ="a">
+  <tr>
+    <th>தவறானது ❌</th>
+    <th>சரியானது ✅</th>
+  </tr>
+  <tr>
+    <td>அரிவியல்</td>
+    <td>அறிவியல்</td>
+  </tr>
+  <tr>
+    <td>வால்க்கை</td>
+    <td>வாழ்க்கை</td>
+  </tr>
+  <tr>
+    <td>முயர்ச்சி</td>
+    <td>முயற்சி</td>
+  </tr>
+  <tr>
+    <td>சிரப்பு</td>
+    <td>சிறப்பு</td>
+  </tr>
+  <tr>
+    <td>உறிமை</td>
+    <td>உரிமை </td>
+  </tr>
+</table>
+<h3>2. சொல் பிழை</h3><div class="example">❌தவறு: அவன் சென்றாள்.<br>✅சரி: அவன் சென்றான்.</div><div class="example">❌தவறு: அவள் சென்றான்.<br>✅சரி: அவள் சென்றாள்.</div>
+<p>இங்கு எழுவாய்க்கு ஏற்ப வினைச்சொல் சரியாக இருக்க வேண்டும்.</p>
+<h3>3. வாக்கியப் பிழை</h3>
+<div class="example">❌தவறு: மாணவர்கள் பள்ளிக்குச் சென்றான்.<br>✅சரி: மாணவர்கள் பள்ளிக்குச் சென்றார்கள்.</div><div class="example">❌தவறு: ரவி புத்தகத்தை படித்தார்கள்.<br>✅சரி: ரவி புத்தகத்தை படித்தான்.</div>
+<h3>4. மரபுப் பிழை</h3>
+<p>சொற்கள் வழக்கமாக எந்தச் சொல்லுடன் பயன்படுத்தப்படுகின்றன என்பதையும் கவனிக்க வேண்டும்.</p>
+<div class="example">❌ தவறு:யானை குரைத்தது.<br>✅சரி:யானை பிளிறியது.</div><div class="example">❌தவறு: நாய் பிளிறியது.<br>✅சரி: நாய் குரைத்தது.</div>`,
+technical:`<h3>📘 கலைச்சொற்கள்</h3><p>கலைச்சொல் என்பது அறிவியல், தொழில்நுட்பம் மற்றும் பல்வேறு துறைகளில் பயன்படுத்தப்படும் சிறப்புச் சொற்கள்.</p>
+<h3>🔹 முக்கியமான கலைச்சொற்கள்</h3>
+<div class="example">Computer → கணினி</div>
+<div class="example">Internet → இணையம்</div>
+<div class="example">Website → வலைத்தளம்</div>
+<div class="example">Software → மென்பொருள்</div>
+<div class="example">Hardware → வன்பொருள்</div>
+<div class="example">Keyboard → விசைப்பலகை</div>
+<div class="example">Mouse → சுட்டி</div>
+<div class="example">Printer → அச்சுப்பொறி</div>
+<div class="example">Email → மின்னஞ்சல்</div>
+<div class="example">Password → கடவுச்சொல்</div>
+<div class="example">Mobile → கைப்பேசி</div>
+<div class="example">Telephone → தொலைபேசி</div>
+<div class="example">Television → தொலைக்காட்சி</div>
+<div class="example">Electricity → மின்சாரம்</div>
+<div class="example">Science → அறிவியல்</div>
+<div class="example">Biology → உயிரியல்</div>
+<div class="example">Chemistry → வேதியியல்</div>
+<div class="example">Physics → இயற்பியல்</div>
+<div class="example">Geography → புவியியல்</div>
+<div class="example">History → வரலாறு</div>
+<h3>🔹 கல்வி தொடர்பானவை</h3>
+<div class="example">Education → கல்வி</div>
+<div class="example">University → பல்கலைக்கழகம்</div>
+<div class="example">College → கல்லூரி</div>
+<div class="example">Examination → தேர்வு</div>
+<div class="example">Certificate → சான்றிதழ்</div>
+<div class="example">Library → நூலகம்</div>
+<div class="example">Laboratory → ஆய்வகம்</div>
+<h3>🔹 அறிவியல் தொடர்பானவை </h3>
+<div class="example">Environment → சுற்றுச்சூழல்</div>
+<div class="example">Pollution → மாசுபாடு</div>
+<div class="example">Energy → ஆற்றல்</div>
+<div class="example">Gravity → ஈர்ப்பு விசை</div>
+<div class="example">Atom → அணு</div>
+<div class="example">Cell → செல்</div>
+<div class="example">Vaccine → தடுப்பூசி</div>`,
+reading:`<h3>📖 வாசித்தல் – புரிந்து கொள்ளுதல்</h3><p>வாசித்தல் – புரிந்து கொள்ளுதல் என்பது கொடுக்கப்பட்ட ஒரு பத்தியை கவனமாக வாசித்து, அதில் உள்ள கருத்தை புரிந்துகொண்டு கேட்கப்படும் கேள்விகளுக்கு சரியான விடை அளிப்பது. </p>
+<h3>📘இதில் என்ன கேட்பார்கள்?</h3><p>ஒரு சிறிய பத்தி கொடுத்து அதிலிருந்து:</p><ul><li>1. முக்கியக் கருத்து என்ன?</li><li>2. யார் / எது பற்றி கூறப்பட்டுள்ளது?</li><li>3. எப்போது / எங்கு / எப்படி நடந்தது?</li><li>4. ஒரு சொல்லின் பொருள் என்ன?</li><li>5. ஒரு சொல்லின் எதிர்ச்சொல் என்ன?</li><li>6. பத்தியின் அடிப்படையில் சரியான கூற்று எது?</li><li>7. பத்திக்கு ஏற்ற தலைப்பு எது?</li></ul>
+<h3>📘எப்படி அணுக வேண்டும்?</h3><ul><li>படி 1: பத்தியை முழுமையாக வாசிக்கவும்.</li><li>படி 2: முக்கியமான பெயர்கள், இடங்கள், நிகழ்வுகளை கவனிக்கவும்.</li><li>படி 3: கேள்வியை முதலில் புரிந்துகொள்ளவும்.</li><li>படி 4: பதிலை பத்தியிலேயே தேடவும்.</li><li>படி 5: உங்கள் ஊகத்தின் அடிப்படையில் அல்லாமல், பத்தியில் கொடுக்கப்பட்ட தகவலின் அடிப்படையில் விடையளிக்கவும்.</li></ul>
+<h3>📝 சிறிய உதாரணம்</h3> <h4>பத்தி:</h4><p>மரங்கள் மனிதர்களுக்கு மிகவும் பயனுள்ளவை. அவை நமக்கு நிழலையும் பழங்களையும் தருகின்றன. மேலும், காற்றை தூய்மைப்படுத்த உதவுகின்றன. எனவே, நாம் மரங்களை பாதுகாக்க வேண்டும்.</p>
+<h4>கேள்வி 1:</h4><p>மரங்கள் மனிதர்களுக்கு எவ்வாறு பயனுள்ளதாக உள்ளன?</p>
+<p>A) நிழல் மற்றும் பழங்களைத் தருகின்றன ✅</p>
+<p>B) மழையை நிறுத்துகின்றன</p>
+<p>C) வெப்பத்தை அதிகரிக்கின்றன</p>
+<p>D) நீரை அழிக்கின்றன</p>
+<h4>கேள்வி 2:</h4><p>நாம் எதைப் பாதுகாக்க வேண்டும்?</p>
+<p>A) காற்றை மட்டும்</p>
+<p>B) மரங்களை ✅</p>
+<p>C) பழங்களை மட்டும்</p>
+<p>D) நிழலை மட்டும்</p>
+<h4>கேள்வி 3:</h4> <p> பத்தியின் முக்கியக் கருத்து என்ன? </p> 
+<p> 👉 மரங்களின் பயனையும் அவற்றைப் பாதுகாக்க வேண்டிய அவசியத்தையும் கூறுகிறது. </p> `,
+literature:`<h3>📜 இலக்கியம் </h3><p>இலக்கியம் என்பது மனிதர்களின் எண்ணங்கள், உணர்வுகள், அனுபவங்கள், வாழ்க்கை முறைகள் போன்றவற்றை அழகான மொழியில் வெளிப்படுத்தும் படைப்புகள்.</p>
+<h3>📜சங்க இலக்கியம்</h3><p>சங்க காலத்தில் தோன்றிய பழமையான தமிழ் இலக்கியங்கள்.</p>
+<h3>1. எட்டுத்தொகை</h3><p>எட்டுத்தொகை என்பது சங்க இலக்கியத்தில் இடம்பெறும் 8 தொகை நூல்களின் தொகுப்பு ஆகும்.</p><h4>8 நூல்கள்:</h4><ol><li>
+    நற்றிணை</li>
+<li>குறுந்தொகை</li>
+<li>ஐங்குறுநூறு</li>
+<li>பதிற்றுப்பத்து</li>
+<li>பரிபாடல்</li>
+<li>கலித்தொகை</li>
+<li>அகநானூறு</li>
+<li>புறநானூறு</li>
+</ol>
+<h3>2. பத்துப்பாட்டு</h3><p>பத்துப்பாட்டு என்பது சங்ககாலத்தைச் சேர்ந்த 10 நீண்ட பாடல்களின் தொகுப்பு.</p><h4>10 நூல்கள்:</h4><ol>
+  <li>  திருமுருகாற்றுப்படை</li>
+<li>பொருநராற்றுப்படை</li>
+<li>சிறுபாணாற்றுப்படை</li>
+<li>பெரும்பாணாற்றுப்படை</li>
+<li>முல்லைப்பாட்டு</li>
+<li>மதுரைக்காஞ்சி</li>
+<li>நெடுநல்வாடை</li>
+<li>குறிஞ்சிப்பாட்டு</li>
+<li>பட்டினப்பாலை</li>
+<li>மலைபடுகடாம் </li>
+</ol>
+<h3>3. பதினெண்கீழ்க்கணக்கு</h3><p>பதினெண்கீழ்க்கணக்கு என்பது சங்கம் மருவிய காலத்தைச் சேர்ந்த 18 சிற்றிலக்கிய நூல்களின் தொகுப்பு ஆகும். இவற்றில் பெரும்பாலானவை அறம், ஒழுக்கம், வாழ்க்கை நெறி ஆகியவற்றை எடுத்துரைக்கின்றன.</p><h4>18 நூல்கள்:</h4><ol>
+    <li>நாலடியார்</li>
+<li>நான்மணிக்கடிகை</li>
+<li> இன்னா நாற்பது.</li>
+<li> இனியவை நாற்பது </li>
+<li> கார் நாற்பது</li>
+<li> களவழி நாற்பது</li>
+<li> ஐந்திணை ஐம்பது</li>
+<li>  ஐந்திணை எழுபது</li>
+<li>  திணைமொழி ஐம்பது</li>
+<li> திணைமாலை நூற்றைம்பது</li>
+<li> திருக்குறள்</li>
+<li> திரிகடுகம்</li>
+<li> ஆசாரக்கோவை</li>
+<li> பழமொழி நானூறு</li>
+<li> சிறுபஞ்சமூலம்</li>
+<li> முதுமொழிக்காஞ்சி</li>
+<li> ஏலாதி</li>
+<li> கைந்நிலை</li>
+</ol>
+<h3>4. ஐம்பெருங்காப்பியங்கள்</h3><p>ஐம்பெருங்காப்பியங்கள் என்பது தமிழின் சிறப்புமிக்க 5 பெருங்காப்பியங்கள் ஆகும்.</p><h4>5 நூல்கள்</h4><ol>
+    <li>சிலப்பதிகாரம்</li>
+    <li>மணிமேகலை</li>
+    <li>சீவக சிந்தாமணி</li>
+    <li>வளையாபதி</li>
+    <li>குண்டலகேசி</li>
+</ol>
+<h3>5. முக்கிய ஆசிரியர்கள்</h3>
+    <table class ="b">
+        <tr>
+            <th>ஆசிரியர்</th>
+            <th>தொடர்புடைய நூல் </th>
+        </tr>
+        <tr>
+            <td>திருவள்ளுவர்</td>
+            <td>திருக்குறள்</td>
+            
+        </tr>
+
+        <tr>
+            <td>இளங்கோ அடிகள்</td>
+            <td>சிலப்பதிகாரம்</td>
+        </tr>
+        <tr>
+            <td>சீத்தலைச் சாத்தனார்</td>
+            <td>மணிமேகலை</td>
+        </tr>
+        <tr >
+            <td>கம்பர்</td>
+            <td>கம்பராமாயணம்</td>
+        </tr>
+        <tr>
+            <td>சேக்கிழார்</td>
+            <td>பெரியபுராணம்</td>
+        </tr>
+        <tr>
+            <td>மாணிக்கவாசகர்</td>
+            <td>திருவாசகம்</td>
+        </tr>
+          <tr >
+            <td>அவ்வையார்</td>
+            <td>ஆத்திசூடி</td>
+        </tr>
+    </table>`,
+scholars:`<h3>👨‍🏫 தமிழ் அறிஞர்கள் மற்றும் தமிழ்த்தொண்டு</h3><ul><li>தமிழ் அறிஞர்கள் என்பது தமிழ்மொழியின் வளர்ச்சிக்காக பாடுபட்ட முக்கியமான அறிஞர்கள்.
+அவர்கள் செய்த <b>தமிழ் வளர்ச்சிப் பணிகள்</b> “தமிழ்த்தொண்டு” எனப்படும்.</li></ul>
+<h3>முக்கிய தமிழ் அறிஞர்கள் </h3><div class="container">
+
+    
+
+    <table class="b">
+        <tr>
+            <th>தமிழ் அறிஞர்</th>
+            <th>முக்கிய தமிழ்த்தொண்டு  சிறப்பு</th>
+            
+        </tr>
+
+        <tr>
+            <td>உ.வே.சாமிநாதையர்</td>
+            <td>பழைய தமிழ் நூல்களைத் தேடி சேகரித்து பதிப்பித்தார்</td>
+            
+        </tr>
+
+        <tr>
+            <td>சுப்பிரமணிய பாரதியார்</td>
+            <td>கவிதைகள் மூலம் விடுதலை, சமத்துவம், பெண்கள் முன்னேற்றத்தைப் பாடினார்</td>
+            
+        </tr>
+
+        <tr>
+            <td>பாரதிதாசன்</td>
+            <td>சமூக சீர்திருத்தம், தமிழ் உணர்வு குறித்து பாடினார்</td>
+            
+        </tr>
+
+        <tr >
+            <td>மறைமலை அடிகள்</td>
+            <td>தனித்தமிழ் இயக்கத்தை வளர்த்தார்</td>
+            
+        </tr>
+        <tr>
+            <td>தேவநேயப் பாவாணர்</td>
+            <td>தமிழ்மொழி ஆய்வில் சிறப்புப் பங்களிப்பு செய்தார்</td>
+        </tr>
+        <tr>
+            <td>பெருஞ்சித்திரனார்</td>
+            <td>தனித்தமிழ் மற்றும் தமிழ் உணர்வை வளர்த்தார்</td>
+        </tr>
+          <tr >
+            <td>திரு.வி.கல்யாணசுந்தரனார் (திரு.வி.க.)</td>
+            <td>தமிழ் உரைநடை மற்றும் சமூகப் பணியில் பங்களித்தார்</td>
+            
+        </tr>
+        <tr>
+            <td>மு.வரதராசனார் (மு.வ.)</td>
+            <td>தமிழ் இலக்கியம் மற்றும் உரைநடை வளர்ச்சிக்கு பங்களித்தார்</td>
+        </tr>
+        <tr>
+            <td>சி.வை.தாமோதரம் பிள்ளை</td>
+            <td>பழந்தமிழ் நூல்களைத் தேடி பதிப்பித்தார்</td>
+        </tr>
+    </table>
+
+</div>
+<h3>1.உ.வே.சாமிநாதையர்</h3><ul><li> இவர் “தமிழ்த்தாத்தா” என்று போற்றப்படுகிறார்.</li><li>ஓலைச்சுவடிகளில் இருந்த பல பழந்தமிழ் நூல்களைத் தேடி கண்டுபிடித்து, அவற்றை அச்சிட்டு வெளியிட்டார்.</li></ul>
+<h3>2.மறைமலை அடிகள்</h3><ul><li>தனித்தமிழ் இயக்கத்தின் தந்தை என்று போற்றப்படுகிறார்.</li><li>தமிழில் பிறமொழிச் சொற்களின் கலப்பைக் குறைத்து, தனித்தமிழைப் பயன்படுத்த வலியுறுத்தினார்.</li></ul>
+<h3>3.பாரதியார்</h3><ul><li> “ மகாகவி பாரதியார்” என்று அழைக்கப்படுகிறார்.</li><li>அவரது பாடல்களில்:
+விடுதலை
+பெண்கள் முன்னேற்றம்
+சமத்துவம்
+தேசப்பற்று
+சாதி எதிர்ப்பு
+போன்ற கருத்துகள் இடம்பெற்றன.</li></ul>
+<h3>4.பாரதிதாசன்</h3><ul><li>“புரட்சிக் கவிஞர்” என்று அழைக்கப்படுகிறார்.</li><li>தமிழ் உணர்வு மற்றும் சமூக சீர்திருத்தக் கருத்துகளை தனது படைப்புகளில் வலியுறுத்தினார்.</li></ul>
+`,
+thirukkural:
+`<h3>📗 திருக்குறள்</h3><ul><li>ஆசிரியர்: திருவள்ளுவர்</li><li>நூல்: திருக்குறள்</li><li>மொத்த குறள்கள் - 1330</li><li>மொத்த அதிகாரங்கள் - 133</li><li>ஒவ்வொரு அதிகாரத்திலும் - 10 குறள்கள்</li><li>பகுதிகள் 3 - அறத்துப்பால், பொருட்பால், காமத்துப்பால்</li></ul>
+<h3>📗 திருக்குறளின் அமைப்பு</h3><div class="container">
+
+    
+
+    <table class="b">
+        <tr>
+            <th>பகுதி</th>
+            <th>அதிகாரங்கள்</th>
+            <th>குறள்கள்</th>
+        </tr>
+
+        <tr>
+            <td>அறத்துப்பால்</td>
+            <td>38</td>
+            <td>380</td>
+        </tr>
+
+        <tr>
+            <td>பொருட்பால்</td>
+            <td>70</td>
+            <td>700</td>
+        </tr>
+
+        <tr>
+            <td>காமத்துப்பால்</td>
+            <td>25</td>
+            <td>250</td>
+        </tr>
+
+        <tr class="total">
+            <td>மொத்தம்</td>
+            <td>133</td>
+            <td>1330</td>
+        </tr>
+    </table>
+
+</div>
+<h3>📗 திருக்குறளின் மற்ற பெயர்கள்</h3><ul><li>முப்பால்</li><li>பொதுமறை</li><li>தமிழ்மறை</li><li>உலகப்பொதுமறை</li><li>பொய்யாமொழி</li></ul>
+ <h3>📗திருக்குறளின் சிறப்புகள்</h3><ul><li>மொத்தம் 1330 குறள்கள்</li><li>மொத்தம் 133 அதிகாரங்கள்</li><li>ஒவ்வொரு அதிகாரத்திலும் 10 குறள்கள்</li><li>ஒவ்வொரு குறளும் 2 அடிகள் கொண்டது.</li><li>முதல் அடி 4 சீர்கள்</li><li>இரண்டாம் அடி 3 சீர்கள்</li><li>மொத்தம் 7 சீர்கள்</li></ul>`,
+science:`<h3>🔬 General Science</h3><p>இயற்பியல், வேதியியல், உயிரியல் மற்றும் சுற்றுச்சூழல் அறிவியல் முக்கிய பகுதிகள்.</p><ul><li>விசை</li><li>ஆற்றல்</li><li>மின்சாரம்</li><li>காந்தம்</li><li>ஒளி</li><li>ஒலி</li><li>வெப்பம்</li><li>தனிமங்கள், அமிலங்கள், காரங்கள்</li><li>மனித உடல், உடல்நலம், நோய்கள், மரபியல்</li></ul>`,
+current:`<h3>📰 Current Events</h3><ul><li>தேசிய செய்திகள்</li><li>தமிழ்நாடு செய்திகள்</li><li>அரசு திட்டங்கள்</li><li>விளையாட்டு</li><li>விருதுகள்</li><li>புத்தகங்கள் & ஆசிரியர்கள்</li><li>அறிவியல் / தொழில்நுட்பம்</li><li>பொருளாதாரம்</li><li>முக்கிய நபர்கள்</li></ul>`,
+geography:`<h3>🌍 Geography</h3><ul><li>இந்திய புவியியல்</li><li>தமிழ்நாடு புவியியல்</li><li>ஆறுகள்</li><li>மலைகள்</li><li>காலநிலை</li><li>இயற்கை வளங்கள்</li><li>வேளாண்மை</li></ul>`,
+history:`<h3>🏺 History & Culture of India</h3><ul><li>பண்டைய இந்தியா</li><li>இடைக்கால இந்தியா</li><li>நவீன இந்தியா</li><li>சுதந்திரப் போராட்டம்</li><li>இந்திய கலாசாரம்</li><li>முக்கிய வரலாற்று நிகழ்வுகள்</li></ul>`,
+polity:`<h3>🏛️ Indian Polity</h3><ul><li>இந்திய அரசியலமைப்பு</li><li>அடிப்படை உரிமைகள்</li><li>அடிப்படைக் கடமைகள்</li><li>அரசின் வழிகாட்டும் நெறிமுறைகள்</li><li>குடியரசுத் தலைவர்</li><li>பிரதமர்</li><li>பாராளுமன்றம்</li><li>உச்சநீதிமன்றம்</li><li>மாநில அரசு</li><li>உள்ளாட்சி</li><li>திருத்தங்கள், Articles & Schedules</li></ul>`,
+economy:`<h3>💰 Indian Economy</h3><ul><li>இந்திய பொருளாதாரம்</li><li>திட்டமிடல்</li><li>வறுமை</li><li>வேலைவாய்ப்பு</li><li>வரி</li><li>வங்கி</li><li>நிதி</li><li>பொருளாதார வளர்ச்சி</li></ul>`,
+tamilnadu:`<h3>🏺 Tamil Nadu History & Culture</h3><ul><li>சங்க காலம்</li><li>சேரர்</li><li>சோழர்</li><li>பாண்டியர்</li><li>பக்தி இயக்கம்</li><li>சமூக சீர்திருத்த இயக்கங்கள்</li><li>பெரியார்</li><li>சுயமரியாதை இயக்கம்</li><li>திராவிட இயக்கம்</li><li>தமிழ்நாட்டின் கலாசாரம்</li></ul>`,
+simplification:`<h3>➗ Simplification</h3><p>கணிதக் கணக்குகளை சரியான வரிசையில் எளிமைப்படுத்துவது Simplification.</p><div class="example">BODMAS: அடைப்புக்குறி → பெருக்கல் / வகுத்தல் → கூட்டல் / கழித்தல்.</div>`,
+percentage:`<h3>📊 Percentage</h3><p>Percentage என்பது நூற்றில் ஒரு பகுதியைக் குறிக்கும்.</p><div class="example">10% = 10/100</div><div class="example">200-ன் 10% = 20</div>`,
+ratio:`<h3>⚖️ Ratio & Proportion</h3><p>இரண்டு அளவுகளுக்கிடையேயான ஒப்பீடு Ratio எனப்படும்.</p><div class="example">2 : 3</div>`,
+hcf:`<h3>🔢 HCF / LCM</h3><p><b>HCF</b> – மிகப்பெரிய பொது காரணி.</p><p><b>LCM</b> – மீச்சிறு பொது மடங்கு.</p>`,
+simpleInterest:`<h3>💰 Simple Interest</h3><div class="example">SI = P × R × T / 100</div>`,
+compoundInterest:`<h3>💵 Compound Interest</h3><p>முந்தைய காலத்தின் வட்டி அசலுடன் சேர்க்கப்பட்டு அடுத்த காலத்திற்கு வட்டி கணக்கிடப்படும்.</p>`,
+area:`<h3>📐 Area</h3><ul><li>செவ்வகம் = நீளம் × அகலம்</li><li>சதுரம் = பக்கம் × பக்கம்</li><li>முக்கோணம் = 1/2 × அடிப்பக்கம் × உயரம்</li><li>வட்டம் = πr²</li></ul>`,
+volume:`<h3>📦 Volume</h3><ul><li>கனசதுரம் = a³</li><li>கனசெவ்வகம் = நீளம் × அகலம் × உயரம்</li><li>உருளை = πr²h</li></ul>`,
+timeWork:`<h3>⏱️ Time & Work</h3><div class="example">ஒருவர் ஒரு வேலையை n நாட்களில் முடித்தால், ஒரு நாளின் வேலை = 1/n</div>`,
+timeDistance:`<h3>🚗 Time & Distance</h3><div class="example">வேகம் = தூரம் ÷ நேரம்</div><div class="example">தூரம் = வேகம் × நேரம்</div><div class="example">நேரம் = தூரம் ÷ வேகம்</div>`,
+average:`<h3>📊 Average</h3><div class="example">சராசரி = மொத்த மதிப்பு ÷ எண்ணிக்கை</div>`,
+profitLoss:`<h3>💰 Profit & Loss</h3><p>விற்பனை விலை > அடக்க விலை என்றால் லாபம்.</p><p>விற்பனை விலை < அடக்க விலை என்றால் நஷ்டம்.</p>`,
+reasoning:`<h3>🧠 Logical Reasoning</h3><p>கொடுக்கப்பட்ட தகவல்களின் அடிப்படையில் சரியான முடிவைக் கண்டறிவது Logical Reasoning.</p>`,
+series:`<h3>🔢 Number Series</h3><div class="example">2, 4, 6, 8, ? → 10</div><div class="example">2, 4, 8, 16, ? → 32</div>`,
+analogy:`<h3>🔗 Analogy</h3><div class="example">கண் : பார்வை :: காது : கேள்வி</div>`,
+coding:`<h3>🔐 Coding-Decoding</h3><p>ஒரு சொல் அல்லது எழுத்து ஒரு குறிப்பிட்ட விதிப்படி மாற்றப்பட்டு code உருவாக்கப்படும்.</p><div class="example">CAT → DBU</div>`,
+classification:`<h3>🗂️ Classification</h3><p>கொடுக்கப்பட்ட பொருட்களில் மற்றவற்றிலிருந்து வேறுபட்ட ஒன்றைக் கண்டறிதல்.</p><div class="example">மாம்பழம், ஆப்பிள், வாழைப்பழம், கேரட் → கேரட்</div>`,
+blood:`<h3>👨‍👩‍👧 Blood Relations</h3><div class="example">தந்தையின் சகோதரர் → சித்தப்பா / பெரியப்பா</div>`,
+direction:`<h3>🧭 Direction Questions</h3><div class="example">வடக்கு நோக்கி நிற்கும்போது வலப்புறம் → கிழக்கு</div>`
+};
+
+const questions={
+tamilGrammar:[
+    { q: "தமிழில் உயிரெழுத்துகள் எத்தனை?", a: ["10", "12", "18", "30"], c: 1, e: "தமிழில் 12 உயிரெழுத்துகள் உள்ளன." },
+    { q: "தமிழில் மெய்யெழுத்துகள் எத்தனை?", a: ["12", "18", "216", "247"], c: 1, e: "தமிழில் 18 மெய்யெழுத்துகள் உள்ளன." },
+    { q: "உயிர் + மெய் சேர்ந்து உருவாகும் உயிர்மெய் எழுத்துகள் எத்தனை?", a: ["18", "30", "216", "247"], c: 2, e: "12 உயிர் × 18 மெய் = 216 உயிர்மெய் எழுத்துகள்." },
+    { q: "தமிழில் ஆய்த எழுத்து எது?", a: ["அ", "க்", "ஃ", "ம்"], c: 2, e: "ஃ என்பது ஆய்த எழுத்து." },
+    { q: "தமிழில் மொத்த எழுத்துகள் எத்தனை?", a: ["216", "247", "250", "300"], c: 1, e: "30 + 216 + 1 = 247 எழுத்துகள்." },
+    { q: "மனிதர், பொருள், இடம் போன்றவற்றின் பெயரைக் குறிக்கும் சொல் எது?", a: ["வினைச்சொல்", "பெயர்ச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 1, e: "பெயர்ச்சொல் என்பது பெயரைக் குறிக்கும் சொல்." },
+    { q: "'ரவி' என்பது எந்த வகைச் சொல்?", a: ["வினைச்சொல்", "பெயர்ச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 1, e: "ரவி என்பது ஒரு மனிதரின் பெயர்; எனவே பெயர்ச்சொல்." },
+    { q: "'மரம்' என்பது எந்த வகைச் சொல்?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 0, e: "மரம் என்பது ஒரு பொருளின் பெயர்." },
+    { q: "செயலைக் குறிக்கும் சொல் எது?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 1, e: "வினைச்சொல் செயலைக் குறிக்கும்." },
+    { q: "'ஓடினான்' என்பது எந்த வகைச் சொல்?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 1, e: "ஓடினான் என்பது ஒரு செயலைக் குறிக்கிறது." },
+    { q: "'படிக்கிறான்' என்பது எந்த வகைச் சொல்?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 1, e: "படிக்கிறான் என்பது ஒரு செயலைக் குறிக்கும் வினைச்சொல்." },
+    { q: "பெயர்ச்சொல்லின் தன்மையை விளக்கும் சொல் எது?", a: ["வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்", "பெயர்ச்சொல்"], c: 1, e: "உரிச்சொல் பெயர்ச்சொல்லின் தன்மையை விளக்கும்." },
+    { q: "'அழகான மலர்' என்பதில் 'அழகான' என்பது?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 2, e: "அழகான என்பது மலரின் தன்மையை விளக்குகிறது." },
+    { q: "சொற்களுக்கு இடையே தொடர்பை ஏற்படுத்துவது எது?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 3, e: "இடைச்சொல் சொற்களுக்கு இடையே தொடர்பை ஏற்படுத்தும்." },
+    { q: "'மற்றும்' என்பது எந்த வகைச் சொல்?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 3, e: "மற்றும் என்பது இடைச்சொல்." },
+    { q: "'ஆனால்' என்பது எந்த வகைச் சொல்?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 3, e: "ஆனால் என்பது இடைச்சொல்." },
+    { q: "'சென்றான்' எந்தக் காலத்தைக் குறிக்கிறது?", a: ["இறந்தகாலம்", "நிகழ்காலம்", "எதிர்காலம்", "எக்காலமும் இல்லை"], c: 0, e: "சென்றான் என்பது ஏற்கனவே நடந்த செயலைக் குறிக்கும் இறந்தகாலம்." },
+    { q: "'செல்கிறான்' எந்தக் காலம்?", a: ["இறந்தகாலம்", "நிகழ்காலம்", "எதிர்காலம்", "காலமில்லை"], c: 1, e: "செல்கிறான் என்பது தற்போது நடைபெறும் செயலைக் குறிக்கும்." },
+    { q: "'செல்வான்' எந்தக் காலம்?", a: ["இறந்தகாலம்", "நிகழ்காலம்", "எதிர்காலம்", "கடந்தகாலம்"], c: 2, e: "செல்வான் என்பது எதிர்காலச் செயலைக் குறிக்கும்." },
+    { q: "'படித்தான்' என்பது எந்தக் காலம்?", a: ["இறந்தகாலம்", "நிகழ்காலம்", "எதிர்காலம்", "நிகழ்காலமும் எதிர்காலமும்"], c: 0, e: "படித்தான் என்பது முடிந்த செயலைக் குறிக்கும் இறந்தகாலம்." },
+    { q: "'படிக்கிறான்' என்பது எந்தக் காலம்?", a: ["இறந்தகாலம்", "நிகழ்காலம்", "எதிர்காலம்", "காலமில்லை"], c: 1, e: "படிக்கிறான் என்பது நிகழ்காலம்." },
+    { q: "'படிப்பான்' என்பது எந்தக் காலம்?", a: ["இறந்தகாலம்", "நிகழ்காலம்", "எதிர்காலம்", "கடந்தகாலம்"], c: 2, e: "படிப்பான் என்பது எதிர்காலம்." },
+    { q: "மனிதர்களைக் குறிக்கும் திணை எது?", a: ["அஃறிணை", "உயர்திணை", "ஒன்றன்பால்", "பலவின்பால்"], c: 1, e: "மனிதர்களைக் குறிக்கும் திணை உயர்திணை." },
+    { q: "மனிதர் அல்லாதவற்றைக் குறிக்கும் திணை எது?", a: ["உயர்திணை", "அஃறிணை", "ஆண்பால்", "பெண்பால்"], c: 1, e: "மனிதர் அல்லாதவற்றைக் குறிக்கும் திணை அஃறிணை." },
+    { q: "'அவன்' என்பது எந்தத் திணையைச் சேர்ந்தது?", a: ["உயர்திணை", "அஃறிணை", "ஒன்றன்பால்", "பலவின்பால்"], c: 0, e: "அவன் மனிதரைக் குறிக்கும்; எனவே உயர்திணை." },
+    { q: "தமிழில் உயர்திணைப் பால்களில் ஒன்று எது?", a: ["ஆண்பால்", "ஒன்றன்பால்", "பலவின்பால்", "அஃறிணை"], c: 0, e: "ஆண்பால் உயர்திணைப் பால்களில் ஒன்று." },
+    { q: "பெண்ணைக் குறிக்கும் பால் எது?", a: ["ஆண்பால்", "பெண்பால்", "ஒன்றன்பால்", "பலவின்பால்"], c: 1, e: "பெண்ணைக் குறிக்கும் பால் பெண்பால்." },
+    { q: "பல மனிதர்களைக் குறிக்கும் பால் எது?", a: ["ஆண்பால்", "பெண்பால்", "பலர்பால்", "ஒன்றன்பால்"], c: 2, e: "பல மனிதர்களைக் குறிக்கும் பால் பலர்பால்." },
+    { q: "ஒரு அஃறிணைப் பொருளைக் குறிக்கும் பால் எது?", a: ["ஆண்பால்", "பெண்பால்", "ஒன்றன்பால்", "பலர்பால்"], c: 2, e: "ஒரு அஃறிணைப் பொருளைக் குறிக்கும் பால் ஒன்றன்பால்." },
+    { q: "பல அஃறிணைப் பொருட்களைக் குறிக்கும் பால் எது?", a: ["பெண்பால்", "பலர்பால்", "ஒன்றன்பால்", "பலவின்பால்"], c: 3, e: "பல அஃறிணைப் பொருட்களைக் குறிக்கும் பால் பலவின்பால்." },
+    { q: "'நான்' என்பது எந்த இடத்தைக் குறிக்கிறது?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "அஃறிணை"], c: 0, e: "நான் என்பது பேசுபவரைக் குறிக்கும் தன்மை." },
+    { q: "'நாம்' என்பது எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "உயர்திணை"], c: 0, e: "நாம் என்பது தன்மையைக் குறிக்கும்." },
+    { q: "'நீ' என்பது எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "ஒன்றன்பால்"], c: 1, e: "நீ என்பது முன்னிலையைக் குறிக்கும்." },
+    { q: "'நீங்கள்' என்பது எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "பலவின்பால்"], c: 1, e: "நீங்கள் என்பது முன்னிலை." },
+    { q: "'அவன்' என்பது எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "ஒன்றன்பால்"], c: 2, e: "அவன் என்பது படர்க்கையைக் குறிக்கும்." },
+    { q: "'அவள்' என்பது எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "பலர்பால்"], c: 2, e: "அவள் என்பது படர்க்கை." },
+    { q: "'அவர்கள்' என்பது எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "ஒன்றன்பால்"], c: 2, e: "அவர்கள் என்பது படர்க்கையைக் குறிக்கும்." },
+    { q: "'ஓடி வந்தான்' என்பதில் 'ஓடி' என்பது?", a: ["பெயரெச்சம்", "வினையெச்சம்", "பெயர்ச்சொல்", "உரிச்சொல்"], c: 1, e: "ஓடி என்பது வினையெச்சம்." },
+    { q: "'பாடி மகிழ்ந்தான்' என்பதில் 'பாடி' என்பது?", a: ["வினையெச்சம்", "பெயரெச்சம்", "பெயர்ச்சொல்", "இடைச்சொல்"], c: 0, e: "பாடி என்பது வினையெச்சம்." },
+    { q: "'வந்த மாணவன்' என்பதில் 'வந்த' என்பது?", a: ["வினையெச்சம்", "பெயரெச்சம்", "வினைச்சொல்", "இடைச்சொல்"], c: 1, e: "வந்த என்பது பெயரெச்சம்." },
+    { q: "'பாடிய பறவை' என்பதில் 'பாடிய' என்பது?", a: ["வினையெச்சம்", "பெயரெச்சம்", "பெயர்ச்சொல்", "இடைச்சொல்"], c: 1, e: "பாடிய என்பது பெயரெச்சம்." },
+    { q: "'ஓடி வந்தான்' என்பது எந்த எச்சத்திற்கு எடுத்துக்காட்டு?", a: ["பெயரெச்சம்", "வினையெச்சம்", "உரிச்சொல்", "இடைச்சொல்"], c: 1, e: "ஓடி என்பது வினையெச்சம்." },
+    { q: "'வந்த மாணவன்' என்பது எந்த எச்சத்திற்கு எடுத்துக்காட்டு?", a: ["வினையெச்சம்", "பெயரெச்சம்", "இடைச்சொல்", "பெயர்ச்சொல்"], c: 1, e: "வந்த என்பது பெயரெச்சம்." },
+    { q: "'மரம்' என்பது எந்த வகைச் சொல்?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 0, e: "மரம் என்பது ஒரு பொருளின் பெயர்." },
+    { q: "'அழகான' என்பது எந்த வகைச் சொல்?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 2, e: "அழகான என்பது பெயர்ச்சொல்லின் தன்மையை விளக்கும் உரிச்சொல்." },
+    { q: "'சென்னை' என்பது எந்த வகைச் சொல்?", a: ["வினைச்சொல்", "பெயர்ச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 1, e: "சென்னை என்பது ஓர் இடத்தின் பெயர்." },
+    { q: "'மற்றும்' என்ற சொல் எதைக் குறிக்கிறது?", a: ["பெயர்ச்சொல்", "வினைச்சொல்", "உரிச்சொல்", "இடைச்சொல்"], c: 3, e: "மற்றும் என்பது இடைச்சொல்." },
+    { q: "'நான் படித்தேன்' என்பதில் 'நான்' எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "அஃறிணை"], c: 0, e: "நான் என்பது தன்மையைக் குறிக்கும்." },
+    { q: "'நீ படித்தாய்' என்பதில் 'நீ' எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "உயர்திணை"], c: 1, e: "நீ என்பது முன்னிலையைக் குறிக்கும்." },
+    { q: "'அவன் சென்றான்' என்பதில் 'அவன்' எந்த இடம்?", a: ["தன்மை", "முன்னிலை", "படர்க்கை", "ஒன்றன்பால்"], c: 2, e: "அவன் என்பது படர்க்கையைக் குறிக்கும்." },
+],
+
+vocabulary:[
+
+{q:"'விரைவு' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["விரைவு மெதுவாக நடந்தது.","பேருந்தின் விரைவு பயணிகளுக்கு உதவியது.","விரைவு ஒரு மரம்.","விரைவு நேற்று வந்தான்."],c:1,e:"'விரைவு' என்பது வேகத்தைக் குறிக்கும்."},
+{q:"'அன்பு' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["அன்பு ஒரு கல்.","அவன் பெற்றோரிடம் அன்பாக இருந்தான்.","அன்பு ஓடினான்.","அன்பு நீல நிறம்."],c:1,e:"அன்பு என்பது பாசத்தைக் குறிக்கும்."},
+{q:"'முயற்சி' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["அவன் வெற்றி பெற முயற்சி செய்தான்.","முயற்சி ஒரு பழம்.","முயற்சி நீந்தியது.","முயற்சி பச்சை நிறம்."],c:0,e:"முயற்சி என்பது ஒரு செயலைச் செய்யும் முனைப்பைக் குறிக்கும்."},
+{q:"'வெற்றி' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["அவன் போட்டியில் வெற்றி பெற்றான்.","வெற்றி ஒரு மரம்.","வெற்றி குடித்தான்.","வெற்றி ஓடியது."],c:0,e:"வெற்றி என்பது சாதனையைக் குறிக்கும்."},
+{q:"'துணிவு' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["அவன் துணிவுடன் செயல்பட்டான்.","துணிவு ஒரு வீடு.","துணிவு சாப்பிட்டான்.","துணிவு நீலமானது."],c:0,e:"துணிவு என்பது தைரியத்தைக் குறிக்கும்."},
+
+{q:"'பொறுமை' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["பொறுமை ஒரு புத்தகம்.","அவன் பொறுமையுடன் காத்திருந்தான்.","பொறுமை ஓடுகிறது.","பொறுமை இனிப்பாக உள்ளது."],c:1,e:"பொறுமை என்பது அவசரப்படாமல் காத்திருக்கும் தன்மை."},
+{q:"'உதவி' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["அவன் ஏழைக்கு உதவி செய்தான்.","உதவி ஒரு மலை.","உதவி சிவப்பு நிறம்.","உதவி தூங்கியது."],c:0,e:"உதவி என்பது ஒருவருக்கு துணையாக இருப்பதைக் குறிக்கும்."},
+{q:"'சுத்தம்' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["வீட்டை சுத்தமாக வைத்திருக்க வேண்டும்.","சுத்தம் ஓடினான்.","சுத்தம் ஒரு மனிதன்.","சுத்தம் பாடியது."],c:0,e:"சுத்தம் என்பது தூய்மையைக் குறிக்கும்."},
+{q:"'அறிவு' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["அறிவு ஒரு நாற்காலி.","அறிவு வாழ்க்கையில் மிகவும் முக்கியமானது.","அறிவு ஓடியது.","அறிவு சாப்பிட்டது."],c:1,e:"அறிவு என்பது தெரிந்து கொள்ளும் திறனைக் குறிக்கும்."},
+{q:"'ஒழுக்கம்' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["மாணவர்கள் ஒழுக்கத்துடன் நடக்க வேண்டும்.","ஒழுக்கம் ஒரு பழம்.","ஒழுக்கம் ஓடியது.","ஒழுக்கம் குடித்தது."],c:0,e:"ஒழுக்கம் என்பது நல்ல நடத்தையைக் குறிக்கும்."},
+
+{q:"'பாதுகாப்பு' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["சாலை பாதுகாப்பு அனைவருக்கும் அவசியம்.","பாதுகாப்பு ஒரு பறவை.","பாதுகாப்பு சாப்பிட்டது.","பாதுகாப்பு ஓடியது."],c:0,e:"பாதுகாப்பு என்பது ஆபத்திலிருந்து காப்பதைக் குறிக்கும்."},
+{q:"'நேர்மை' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["அவன் நேர்மையுடன் பேசினான்.","நேர்மை ஒரு வீடு.","நேர்மை ஓடியது.","நேர்மை இனிப்பாக இருந்தது."],c:0,e:"நேர்மை என்பது உண்மையாகவும் நியாயமாகவும் நடப்பதைக் குறிக்கும்."},
+{q:"'கல்வி' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["கல்வி வாழ்க்கையை உயர்த்துகிறது.","கல்வி ஓடுகிறது.","கல்வி சாப்பிட்டது.","கல்வி ஒரு மரம்."],c:0,e:"கல்வி மனிதனின் அறிவை வளர்க்கிறது."},
+{q:"'நட்பு' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["நல்ல நட்பு வாழ்க்கைக்கு துணையாகும்.","நட்பு ஒரு கல்.","நட்பு சாப்பிட்டது.","நட்பு ஓடியது."],c:0,e:"நட்பு என்பது நண்பர்களுக்கிடையிலான அன்பான உறவு."},
+{q:"'பொறுப்பு' என்ற சொல்லின் சரியான பயன்பாடு எது?",a:["அவன் தனது பொறுப்பை சரியாக நிறைவேற்றினான்.","பொறுப்பு ஒரு பழம்.","பொறுப்பு ஓடியது.","பொறுப்பு நீலமானது."],c:0,e:"பொறுப்பு என்பது செய்ய வேண்டிய கடமையைக் குறிக்கும்."},
+
+{q:"'கற்றது கைமண் அளவு, கல்லாதது உலகளவு' என்ற பழமொழியின் பொருள் என்ன?",a:["கற்றது மட்டுமே போதும்","கற்றது சிறிது; கற்க வேண்டியது மிக அதிகம்","உலகம் சிறியது","மண் மிகவும் பெரியது"],c:1,e:"நாம் கற்றது சிறிது; கற்க வேண்டியது மிக அதிகம்."},
+{q:"'காக்கைக்கும் தன் குஞ்சு பொன் குஞ்சு' என்பதன் பொருள் என்ன?",a:["காக்கை பொன்னால் ஆனது","ஒவ்வொருவருக்கும் தங்கள் பிள்ளைகள் சிறந்தவர்கள்","குஞ்சுகள் பொன்னாக இருக்கும்","காக்கை நல்ல பறவை"],c:1,e:"ஒவ்வொருவருக்கும் தங்கள் பிள்ளைகள் சிறந்தவர்களாகத் தோன்றுவர்."},
+{q:"'அளவுக்கு மிஞ்சினால் அமிர்தமும் நஞ்சு' என்பதன் பொருள் என்ன?",a:["அமிர்தம் நஞ்சாகும்","எதையும் அளவோடு பயன்படுத்த வேண்டும்","நஞ்சு இனிப்பானது","அளவு தேவையில்லை"],c:1,e:"அளவுக்கு மீறிய எதுவும் தீங்கு தரும்."},
+{q:"'ஒன்றுபட்டால் உண்டு வாழ்வு' என்பதன் பொருள் என்ன?",a:["தனியாக வாழ வேண்டும்","ஒற்றுமையுடன் இருந்தால் நன்மை உண்டு","வாழ்வு இல்லை","ஒன்றாக உணவு உண்ண வேண்டும்"],c:1,e:"ஒற்றுமையாக இருந்தால் பல நன்மைகள் கிடைக்கும்."},
+{q:"'சிறு துளி பெரு வெள்ளம்' என்பதன் பொருள் என்ன?",a:["சிறிய முயற்சிகள் சேர்ந்து பெரிய பலனைத் தரும்","மழை மட்டும் பெய்யும்","வெள்ளம் சிறியது","துளி பயனற்றது"],c:0,e:"சிறிய அளவுகள் சேர்ந்து பெரிய அளவாகும்."},
+
+{q:"'விதைத்தவன் அறுப்பான்' என்பதன் பொருள் என்ன?",a:["விதை மட்டும் வளராது","செயலுக்கு ஏற்ற பலன் கிடைக்கும்","விவசாயம் தேவையில்லை","அறுவடை செய்யக்கூடாது"],c:1,e:"ஒருவர் செய்யும் செயலுக்கேற்ப அதன் பலனைப் பெறுவார்."},
+{q:"'நன்றி மறப்பது நன்றன்று' என்பதன் பொருள் என்ன?",a:["நன்றியை மறக்கக் கூடாது","நன்றி தேவையில்லை","மறப்பது நல்லது","நன்றி சொல்லக்கூடாது"],c:0,e:"செய்த உதவியை மறக்காமல் நன்றியுடன் இருக்க வேண்டும்."},
+{q:"'குற்றம் பார்க்கின் சுற்றம் இல்லை' என்பதன் பொருள் என்ன?",a:["குற்றம் செய்வது நல்லது","எல்லோரிடமும் குறை பார்த்தால் உறவு நிலைக்காது","சுற்றம் தேவையில்லை","குற்றம் பார்க்க வேண்டும்"],c:1,e:"எப்போதும் குறைகளைப் பார்த்துக் கொண்டிருந்தால் உறவுகள் பாதிக்கப்படும்."},
+{q:"'முயற்சி திருவினையாக்கும்' என்பதன் பொருள் என்ன?",a:["முயற்சி வெற்றியைத் தரும்","முயற்சி தோல்வியைத் தரும்","முயற்சி தேவையில்லை","திருவினை என்பது விளையாட்டு"],c:0,e:"தொடர்ந்து செய்யும் முயற்சி வெற்றியைத் தரும்."},
+{q:"'காலம் பொன்னானது' என்பதன் பொருள் என்ன?",a:["காலம் பொன்னால் ஆனது","நேரம் மிகவும் மதிப்புமிக்கது","பொன் தேவையில்லை","காலம் மெதுவாக செல்லும்"],c:1,e:"நேரம் மிகவும் மதிப்புமிக்கது; அதை வீணாக்கக் கூடாது."},
+
+{q:"'கண்ணில் மண் தூவுதல்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["மண் போடுதல்","ஏமாற்றுதல்","கண்ணை மூடுதல்","விளையாடுதல்"],c:1,e:"கண்ணில் மண் தூவுதல் = ஏமாற்றுதல்."},
+{q:"'கையை விரித்தல்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["உதவி கேட்பது","கையை மூடுவது","ஓடுவது","தூங்குவது"],c:0,e:"கையை விரித்தல் என்பது உதவி அல்லது பொருள் கேட்பதைக் குறிக்கும்."},
+{q:"'கண் திறத்தல்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["தூங்குதல்","உண்மையை உணர்தல்","கண் மூடுதல்","அழுதல்"],c:1,e:"கண் திறத்தல் என்பது உண்மையை உணர்தல்."},
+{q:"'காது கொடுத்துக் கேட்பது' என்பதன் பொருள் என்ன?",a:["கவனமாகக் கேட்பது","காதை மூடுவது","ஓடுவது","பேசாமல் இருப்பது"],c:0,e:"காது கொடுத்துக் கேட்பது = கவனமாகக் கேட்பது."},
+{q:"'மூக்கில் வியர்வை' என்ற சொற்றொடர் குறிக்கும் பொருள் என்ன?",a:["மிகவும் பாடுபடுதல்","தூங்குதல்","சிரித்தல்","விளையாடுதல்"],c:0,e:"மூக்கில் வியர்வை என்பது மிகவும் பாடுபடுவதைக் குறிக்கும்."},
+
+{q:"'தலையில் தூக்கி வைத்துக் கொண்டாடுதல்' என்பதன் பொருள் என்ன?",a:["மிகவும் மதித்துப் போற்றுதல்","தலையில் பொருள் வைப்பது","தூங்குதல்","கோபப்படுதல்"],c:0,e:"ஒருவரை மிகவும் மதித்துப் போற்றுதல்."},
+{q:"'கை கொடுத்தல்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["உதவி செய்தல்","கையை மறைத்தல்","ஓடுதல்","தூங்குதல்"],c:0,e:"கை கொடுத்தல் = உதவி செய்தல்."},
+{q:"'வாயில் மண் போடுதல்' என்பதன் பொருள் என்ன?",a:["பேசுதல்","பேச முடியாத நிலையை ஏற்படுத்துதல்","உணவு உண்ணுதல்","சிரித்தல்"],c:1,e:"வாயில் மண் போடுதல் என்பது பேச முடியாத நிலையை ஏற்படுத்துவதைக் குறிக்கும்."},
+{q:"'கை மேல் பலன்' என்பதன் பொருள் என்ன?",a:["உடனடியாகப் பலன் கிடைத்தல்","கை வலித்தல்","பலன் கிடைக்காமல் போதல்","கையை உயர்த்துதல்"],c:0,e:"கை மேல் பலன் என்பது உடனடியாகப் பலன் கிடைப்பதைக் குறிக்கும்."},
+{q:"'மனம் திறந்து பேசுதல்' என்பதன் பொருள் என்ன?",a:["உள்ளதை வெளிப்படையாகப் பேசுதல்","மௌனமாக இருத்தல்","கோபப்படுதல்","தூங்குதல்"],c:0,e:"மனம் திறந்து பேசுதல் = உள்ளதை வெளிப்படையாகப் பேசுதல்."},
+
+{q:"'முதுகு காட்டுதல்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["எதிர்த்து நிற்றல்","பின்வாங்குதல்","ஓடாமல் நிற்றல்","உதவி செய்தல்"],c:1,e:"முதுகு காட்டுதல் = போராட்டம் அல்லது முயற்சியில் இருந்து பின்வாங்குதல்."},
+{q:"'தண்ணீர் காட்டுதல்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["தண்ணீர் கொடுத்தல்","திணறச் செய்தல்","குளித்தல்","தாகம் தீர்த்தல்"],c:1,e:"தண்ணீர் காட்டுதல் என்பது ஒருவரைத் திணறச் செய்வதைக் குறிக்கும்."},
+{q:"'கண்ணில் எண்ணெய் ஊற்றிக் காத்தல்' என்பதன் பொருள் என்ன?",a:["மிகுந்த கவனத்துடன் காத்திருத்தல்","தூங்குதல்","கண் மூடுதல்","அழுதல்"],c:0,e:"மிகுந்த கவனத்துடன் காத்திருத்தல்."},
+{q:"'வானத்தைத் தொடுதல்' என்பதன் பொருள் என்ன?",a:["மிக உயர்ந்த நிலையை அடைதல்","வானில் பறத்தல்","மழை பெய்தல்","கீழே விழுதல்"],c:0,e:"வானத்தைத் தொடுதல் = மிக உயர்ந்த நிலையை அடைதல்."},
+{q:"'கல்லில் நார் உரித்தல்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["எளிதான செயல்","மிகவும் கடினமான செயல்","கல் உடைத்தல்","நார் தயாரித்தல்"],c:1,e:"கல்லில் நார் உரித்தல் என்பது மிகவும் கடினமான செயலைக் குறிக்கும்."},
+
+{q:"'பல்லைக் காட்டுதல்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["சிரித்தல் மட்டும்","எதிர்த்து நிற்றல்","உணவு உண்ணுதல்","தூங்குதல்"],c:1,e:"பல்லைக் காட்டுதல் என்பது எதிர்த்து நிற்பதைக் குறிக்கும்."},
+{q:"'தலைக்கனம்' என்ற சொற்றொடரின் பொருள் என்ன?",a:["அடக்கம்","அகந்தை","பொறுமை","அன்பு"],c:1,e:"தலைக்கனம் = அகந்தை."},
+{q:"'கையைச் சுட்டுக் கொண்டான்' என்பதன் பொருள் என்ன?",a:["அனுபவத்தால் பாடம் கற்றுக்கொண்டான்","கையை கழுவினான்","கையை மறைத்தான்","விளையாடினான்"],c:0,e:"தன் செயலால் ஏற்பட்ட அனுபவத்தின் மூலம் பாடம் கற்றுக்கொண்டான்."},
+{q:"'வாய் மூடி இருத்தல்' என்பதன் பொருள் என்ன?",a:["அமைதியாக இருத்தல்","அதிகமாகப் பேசுதல்","சிரித்தல்","பாடுதல்"],c:0,e:"வாய் மூடி இருத்தல் = அமைதியாக இருத்தல்."},
+{q:"'மனம் உடைதல்' என்பதன் பொருள் என்ன?",a:["மகிழ்ச்சி அடைதல்","வருத்தமடைதல்","கோபப்படுதல்","வெற்றி பெறுதல்"],c:1,e:"மனம் உடைதல் = மிகவும் வருத்தமடைதல்."},
+
+{q:"'கற்றது கைமண் அளவு' என்ற பழமொழி எதை உணர்த்துகிறது?",a:["அறிவு அளவற்றது","மண் அதிகம்","கற்றல் தேவையில்லை","உலகம் சிறியது"],c:0,e:"மனிதன் கற்ற அறிவு சிறிது; கற்க வேண்டியது அளவற்றது."},
+{q:"'சிறு துளி பெரு வெள்ளம்' எதை உணர்த்துகிறது?",a:["சிறிய சேமிப்பும் பெரிய பயன் தரும்","தண்ணீர் வீணாக்க வேண்டும்","வெள்ளம் வராது","சிறியது பயனற்றது"],c:0,e:"சிறிய அளவுகள் சேர்ந்து பெரிய பலனைத் தரும்."},
+{q:"'ஒன்றுபட்டால் உண்டு வாழ்வு' எதை வலியுறுத்துகிறது?",a:["பிரிவு","ஒற்றுமை","கோபம்","தனிமை"],c:1,e:"இந்தப் பழமொழி ஒற்றுமையின் முக்கியத்துவத்தை வலியுறுத்துகிறது."},
+{q:"'அளவுக்கு மிஞ்சினால் அமிர்தமும் நஞ்சு' எதை வலியுறுத்துகிறது?",a:["அளவோடு செயல்படுதல்","அதிகமாகச் செய்தல்","எதையும் செய்யாமல் இருப்பது","நஞ்சை அருந்துதல்"],c:0,e:"எதையும் அளவோடு செய்வதே நல்லது."},
+{q:"'முயற்சி திருவினையாக்கும்' என்பதன் முக்கிய கருத்து என்ன?",a:["முயற்சி வெற்றிக்கு வழிவகுக்கும்","முயற்சி தோல்வியைத் தரும்","முயற்சி தேவையில்லை","வெற்றி எளிதில் கிடைக்கும்"],c:0,e:"தொடர்ச்சியான முயற்சி வெற்றியைத் தரும்."}
+],
+splitJoin: [
+    { q: "பிரித்தெழுதுதல் என்றால் என்ன?", a: ["சொற்களை சேர்த்து எழுதுதல்", "ஒரு சொல்லை தனித்தனி சொற்களாகப் பிரித்து எழுதுதல்", "தவறாக எழுதுதல்", "சொல்லை நீக்குதல்"], c: 1, e: "ஒரு சொல்லில் சேர்ந்துள்ள சொற்களை தனித்தனியாகப் பிரித்து எழுதுவது பிரித்தெழுதுதல்." },
+    
+    { q: "சேர்த்தெழுதுதல் என்றால் என்ன?", a: ["சொற்களைப் பிரித்தல்", "தனித்தனி சொற்களை ஒன்றாகச் சேர்த்து எழுதுதல்", "சொல்லை நீக்குதல்", "சொல்லை மாற்றுதல்"], c: 1, e: "தனித்தனியாக உள்ள சொற்களை ஒன்றாகச் சேர்த்து எழுதுவது சேர்த்தெழுதுதல்." },
+    
+    { q: "'தாய்மொழி' என்பதன் பிரித்தெழுத்து எது?", a: ["தாய் + மொழி", "தாய + மொழி", "தாய் + மொழி + இ", "தம் + மொழி"], c: 0, e: "தாய்மொழி = தாய் + மொழி." },
+    
+    { q: "'தமிழ்நாடு' என்பதன் பிரித்தெழுத்து எது?", a: ["தமிழ் + நாடு", "தமிழ் + நாட", "தமிழ + நாடு", "தமிழ்ந + ஆடு"], c: 0, e: "தமிழ்நாடு = தமிழ் + நாடு." },
+    
+    { q: "'மலைநாடு' என்பதன் பிரித்தெழுத்து எது?", a: ["மலை + நாடு", "மலை + நாட", "மல + நாடு", "மலைந + ஆடு"], c: 0, e: "மலைநாடு = மலை + நாடு." },
+    
+    { q: "'நல்வாழ்வு' என்பதன் பிரித்தெழுத்து எது?", a: ["நல் + வாழ்வு", "நல்ல + வாழ்வு", "ந +ல்வாழ்வு", "நல் + வாழ்"], c: 0, e: "நல்வாழ்வு = நல் + வாழ்வு." },
+    
+    { q: "'பெருங்கடல்' என்பதன் பிரித்தெழுத்து எது?", a: ["பெரு + கடல்", "பெரும் + கடல்", "பெரும் + அடல்", "பெரு + ங்கடல்"], c: 1, e: "பெருங்கடல் = பெரும் + கடல்." },
+    
+    { q: "'பொற்சிலை' என்பதன் பிரித்தெழுத்து எது?", a: ["பொன் + சிலை", "பொற் + சிலை", "பொ +ற்சிலை", "பொன் + இலை"], c: 0, e: "பொற்சிலை = பொன் + சிலை." },
+    
+    { q: "'மண்குடம்' என்பதன் பிரித்தெழுத்து எது?", a: ["மண் + குடம்", "மண + குடம்", "மண் + உடம்", "மண்க் + குடம்"], c: 0, e: "மண்குடம் = மண் + குடம்." },
+    
+    { q: "'புத்தாண்டு' என்பதன் பிரித்தெழுத்து எது?", a: ["புது + ஆண்டு", "புத் + ஆண்டு", "புத + தாண்டு", "புது + தாண்டு"], c: 0, e: "புத்தாண்டு = புது + ஆண்டு." },
+    
+    { q: "'தாய் + மொழி' என்பதன் சேர்த்தெழுத்து எது?", a: ["தாய்மொழி", "தாய்மொழி", "தாய்மொழி", "தாய்மொழி"], c: 0, e: "தாய் + மொழி = தாய்மொழி." },
+    
+    { q: "'தமிழ் + நாடு' என்பதன் சேர்த்தெழுத்து எது?", a: ["தமிழ்நாடு", "தமிழ்நாடு", "தமிழ்நாடு", "தமிழ்நாடு"], c: 0, e: "தமிழ் + நாடு = தமிழ்நாடு." },
+    
+    { q: "'மலை + நாடு' என்பதன் சேர்த்தெழுத்து எது?", a: ["மலைநாடு", "மலை நாடு", "மலைநாடு", "மலநாடு"], c: 0, e: "மலை + நாடு = மலைநாடு." },
+    
+    { q: "'நல் + வாழ்வு' என்பதன் சேர்த்தெழுத்து எது?", a: ["நல்வாழ்வு", "நல்வாழ்வு", "நல்வாழ்வு", "நல்ல்வாழ்வு"], c: 0, e: "நல் + வாழ்வு = நல்வாழ்வு." },
+    
+    { q: "'பெரும் + கடல்' என்பதன் சேர்த்தெழுத்து எது?", a: ["பெருங்கடல்", "பெரும்கடல்", "பெரும்கடல்", "பெருகடல்"], c: 0, e: "பெரும் + கடல் = பெருங்கடல்." },
+    
+    { q: "'பொன் + சிலை' என்பதன் சேர்த்தெழுத்து எது?", a: ["பொன்சிலை", "பொற்சிலை", "பொற்சிலை", "பொன்சிலை"], c: 1, e: "பொன் + சிலை = பொற்சிலை." },
+    
+    { q: "'மண் + குடம்' என்பதன் சேர்த்தெழுத்து எது?", a: ["மண்குடம்", "மண்குடம்", "மட்குடம்", "மண்க் குடம்"], c: 0, e: "மண் + குடம் = மண்குடம்." },
+    
+    { q: "'புது + ஆண்டு' என்பதன் சேர்த்தெழுத்து எது?", a: ["புதுஆண்டு", "புத்தாண்டு", "புதாண்டு", "புதுஆண்டம்"], c: 1, e: "புது + ஆண்டு = புத்தாண்டு." },
+    
+    { q: "'தாய்மொழி' என்பதில் உள்ள சொற்கள் எவை?", a: ["தாய் + மொழி", "தாய + மொழி", "தம் + மொழி", "தாய் + ஒழி"], c: 0, e: "தாய்மொழி = தாய் + மொழி." },
+    
+    { q: "'தமிழ்நாடு' என்பதில் உள்ள சொற்கள் எவை?", a: ["தமிழ் + நாடு", "தமிழ + நாடு", "தமிழ் + ஆடு", "தமிழ்ந + நாடு"], c: 0, e: "தமிழ்நாடு = தமிழ் + நாடு." },
+    
+    { q: "'மலைநாடு' என்பதில் உள்ள சொற்கள் எவை?", a: ["மலை + நாடு", "மலை + ஆடு", "மல + நாடு", "மலைந + ஆடு"], c: 0, e: "மலைநாடு = மலை + நாடு." },
+    
+    { q: "'நல்வாழ்வு' என்பதில் உள்ள சொற்கள் எவை?", a: ["நல் + வாழ்வு", "நல்ல + வாழ்வு", "நல் + ஆழ்வு", "ந +ல்வாழ்வு"], c: 0, e: "நல்வாழ்வு = நல் + வாழ்வு." },
+    
+    { q: "'பெருங்கடல்' என்பதில் உள்ள சொற்கள் எவை?", a: ["பெரு + கடல்", "பெரும் + கடல்", "பெரும் + அடல்", "பெருங் + கடல்"], c: 1, e: "பெருங்கடல் = பெரும் + கடல்." },
+    
+    { q: "'பொற்சிலை' என்பதில் எழுத்து மாற்றம் ஏற்படும் பகுதி எது?", a: ["பொன் + சிலை", "பொன் + இலை", "பொற் + சிலை", "பொ +ற்சிலை"], c: 0, e: "பொன் + சிலை சேரும்போது எழுத்து மாற்றம் ஏற்பட்டு பொற்சிலை ஆகிறது." },
+    
+    { q: "'பொன் + சிலை' சேரும்போது எவ்வாறு மாறுகிறது?", a: ["பொன் + சிலை", "பொற்சிலை", "பொன்சிலை", "பொட்சிலை"], c: 1, e: "பொன் + சிலை → பொற்சிலை." },
+    
+    { q: "'புது + ஆண்டு' சேரும்போது உருவாகும் சொல் எது?", a: ["புதுஆண்டு", "புத்தாண்டு", "புதாண்டு", "புதுஆண்டம்"], c: 1, e: "புது + ஆண்டு → புத்தாண்டு." },
+    
+    { q: "'புத்தாண்டு' என்பதன் சரியான பிரித்தெழுத்து எது?", a: ["புது + ஆண்டு", "புத் + ஆண்டு", "புத + தாண்டு", "புது + தாண்டு"], c: 0, e: "புத்தாண்டு = புது + ஆண்டு." },
+    
+    { q: "'பொற்சிலை' என்பதன் சரியான பொருத்தம் எது?", a: ["பொன் + சிலை", "பொன் + நிலை", "பொற் + சிலை", "பொது + சிலை"], c: 0, e: "பொற்சிலை = பொன் + சிலை." },
+    
+    { q: "'மண்குடம்' என்பதன் சரியான பிரித்தெழுத்து எது?", a: ["மண் + குடம்", "மண + குடம்", "மண் + உடம்", "மண்க் + குடம்"], c: 0, e: "மண்குடம் = மண் + குடம்." },
+    
+    { q: "'சேர்த்தெழுதுதல்' என்பதன் நோக்கம் என்ன?", a: ["சொற்களைப் பிரித்தல்", "தனித்தனி சொற்களை ஒன்றாக எழுதுதல்", "எழுத்துகளை நீக்குதல்", "சொல்லை மொழிபெயர்த்தல்"], c: 1, e: "இரண்டு அல்லது அதற்கு மேற்பட்ட சொற்களை சரியான முறையில் ஒன்றாக எழுதுவது சேர்த்தெழுதுதல்." },
+    
+    { q: "'பிரித்தெழுதுதல்' என்பதன் நோக்கம் என்ன?", a: ["சொற்களை ஒன்றாக எழுதுதல்", "சேர்ந்த சொற்களை தனித்தனியாக எழுதுதல்", "சொல்லை அழித்தல்", "எழுத்துகளை மாற்றுதல்"], c: 1, e: "சேர்ந்துள்ள சொற்களை தனித்தனியாகப் பிரித்து எழுதுவது பிரித்தெழுதுதல்." },
+    
+    { q: "'தாய்மொழி' எந்த முறைக்கு எடுத்துக்காட்டு?", a: ["பிரித்தெழுதுதல்", "சேர்த்தெழுதுதல்", "எதிர்ச்சொல்", "இணைச்சொல்"], c: 1, e: "தாய் + மொழி சேர்ந்து தாய்மொழி ஆகிறது." },
+    
+    { q: "'தாய் + மொழி' எந்த முறைக்கு எடுத்துக்காட்டு?", a: ["பிரித்தெழுதுதல்", "சேர்த்தெழுதுதல்", "பொருள் கூறுதல்", "எதிர்ச்சொல்"], c: 1, e: "இரண்டு சொற்களை ஒன்றாகச் சேர்ப்பதால் இது சேர்த்தெழுதுதல்." },
+    
+    { q: "'தமிழ்நாடு' → 'தமிழ் + நாடு' என்பது எது?", a: ["சேர்த்தெழுதுதல்", "பிரித்தெழுதுதல்", "சொல் பயன்பாடு", "பழமொழி"], c: 1, e: "ஒரு சொல்லை தனித்தனி சொற்களாகப் பிரிப்பதால் இது பிரித்தெழுதுதல்." },
+    
+    { q: "'தமிழ் + நாடு → தமிழ்நாடு' என்பது எது?", a: ["பிரித்தெழுதுதல்", "சேர்த்தெழுதுதல்", "எதிர்ச்சொல்", "சொற்றொடர்"], c: 1, e: "தனித்தனி சொற்களை ஒன்றாகச் சேர்ப்பதால் இது சேர்த்தெழுதுதல்." },
+    
+    { q: "'மலை + நாடு' என்பதன் சரியான சேர்த்தெழுத்து எது?", a: ["மலைநாடு", "மலநாடு", "மலை நாடு", "மலைநாட"], c: 0, e: "மலை + நாடு = மலைநாடு." },
+    
+    { q: "'நல் + வாழ்வு' என்பதன் சரியான சேர்த்தெழுத்து எது?", a: ["நல்வாழ்வு", "நல்வாழ்வு", "நல்லவாழ்வு", "நல்வாழ்வ"], c: 0, e: "நல் + வாழ்வு = நல்வாழ்வு." },
+    
+    { q: "'பெரும் + கடல்' என்பதன் சரியான சேர்த்தெழுத்து எது?", a: ["பெருங்கடல்", "பெரும்கடல்", "பெருங்கடல்", "பெருகடல்"], c: 0, e: "பெரும் + கடல் = பெருங்கடல்." },
+    
+    { q: "'பொன் + சிலை' என்பதில் எந்த எழுத்து மாற்றம் ஏற்படுகிறது?", a: ["ன் + ச → ற்ச", "ன் + ச → ந்ச", "ன் + ச → ஞ்ச", "ன் + ச → ட்ச"], c: 0, e: "பொன் + சிலை → பொற்சிலை; ன் + ச → ற்ச என மாற்றம் ஏற்படுகிறது." },
+    
+    { q: "'புது + ஆண்டு' சேரும்போது எதில் மாற்றம் ஏற்படுகிறது?", a: ["எழுத்து மாற்றம் ஏற்படுகிறது", "எந்த மாற்றமும் இல்லை", "சொல் நீக்கப்படுகிறது", "மொழி மாறுகிறது"], c: 0, e: "புது + ஆண்டு → புத்தாண்டு என சேரும்போது எழுத்து மாற்றம் ஏற்படுகிறது." },
+    
+    { q: "கீழ்கண்டவற்றில் சரியான பிரித்தெழுத்து எது?", a: ["தாய்மொழி = தாய் + மொழி", "தாய்மொழி = தாய + மொழி", "தாய்மொழி = தமிழ் + மொழி", "தாய்மொழி = தாய் + ஒழி"], c: 0, e: "தாய்மொழி = தாய் + மொழி." },
+    
+    { q: "கீழ்கண்டவற்றில் சரியான சேர்த்தெழுத்து எது?", a: ["தாய் + மொழி = தாய்மொழி", "தாய் + மொழி = தாய்மொழ", "தாய் + மொழி = தாய்மொழி", "தாய் + மொழி = தாய்மொழி"], c: 0, e: "தாய் + மொழி = தாய்மொழி." },
+    
+    { q: "கீழ்கண்டவற்றில் பிரித்தெழுதுதலுக்கான சரியான எடுத்துக்காட்டு எது?", a: ["மலை + நாடு → மலைநாடு", "மலைநாடு → மலை + நாடு", "தாய் + மொழி → தாய்மொழி", "நல் + வாழ்வு → நல்வாழ்வு"], c: 1, e: "மலைநாடு → மலை + நாடு என்பது பிரித்தெழுதுதல்." },
+    
+    { q: "கீழ்கண்டவற்றில் சேர்த்தெழுதுதலுக்கான சரியான எடுத்துக்காட்டு எது?", a: ["தாய்மொழி → தாய் + மொழி", "தமிழ்நாடு → தமிழ் + நாடு", "தாய் + மொழி → தாய்மொழி", "புத்தாண்டு → புது + ஆண்டு"], c: 2, e: "தாய் + மொழி → தாய்மொழி என்பது சேர்த்தெழுதுதல்." },
+    
+    { q: "'பெருங்கடல்' என்பதன் சரியான பிரித்தெழுத்து எது?", a: ["பெரு + கடல்", "பெரும் + கடல்", "பெருங் + கடல்", "பெரும் + அடல்"], c: 1, e: "பெருங்கடல் = பெரும் + கடல்." },
+    
+    { q: "'புத்தாண்டு' என்பதன் சரியான பிரித்தெழுத்து எது?", a: ["புது + ஆண்டு", "புத்த + ஆண்டு", "புத + தாண்டு", "புது + தாண்டு"], c: 0, e: "புத்தாண்டு = புது + ஆண்டு." },
+    
+    { q: "கீழ்கண்டவற்றில் எழுத்து மாற்றம் ஏற்படும் சேர்க்கை எது?", a: ["மலை + நாடு", "தாய் + மொழி", "பொன் + சிலை", "நல் + வாழ்வு"], c: 2, e: "பொன் + சிலை → பொற்சிலை என எழுத்து மாற்றம் ஏற்படுகிறது." },
+    
+    { q: "'பொற்சிலை' உருவாகும் சரியான முறை எது?", a: ["பொன் + சிலை", "பொன் + நிலை", "பொற் + சிலை", "புது + சிலை"], c: 0, e: "பொன் + சிலை → பொற்சிலை." },
+    
+    { q: "'புத்தாண்டு' உருவாகும் சரியான முறை எது?", a: ["புது + ஆண்டு", "புது + தாண்டு", "புத்த + ஆண்டு", "புத + ஆண்டு"], c: 0, e: "புது + ஆண்டு → புத்தாண்டு." },
+    
+    { q: "பிரித்தெழுதுதல் மற்றும் சேர்த்தெழுதுதல் எதனுடன் தொடர்புடையது?", a: ["சொற்களைப் பிரித்தல் மற்றும் சேர்த்தல்", "எண்களை எழுதுதல்", "படம் வரைதல்", "கவிதை எழுதுதல்"], c: 0, e: "பிரித்தெழுதுதல் என்பது சொற்களைப் பிரித்தல்; சேர்த்தெழுதுதல் என்பது சொற்களைச் சேர்த்தல்." }
+],
+opposite: [
+    { q: "'எதிர்ச்சொல்' என்றால் என்ன?", a: ["ஒரே பொருளைக் கொண்ட சொல்", "எதிரான பொருளைக் கொண்ட சொல்", "பல பொருளைக் கொண்ட சொல்", "ஒலி ஒத்த சொல்"], c: 1, e: "ஒரு சொல்லுக்கு எதிரான பொருளைக் கொண்ட சொல் எதிர்ச்சொல் எனப்படும்." },
+    
+    { q: "'நன்மை' என்பதன் எதிர்ச்சொல் எது?", a: ["இன்பம்", "தீமை", "வெற்றி", "அன்பு"], c: 1, e: "நன்மை × தீமை." },
+    { q: "'தீமை' என்பதன் எதிர்ச்சொல் எது?", a: ["நன்மை", "துன்பம்", "பொய்", "வறுமை"], c: 0, e: "தீமை × நன்மை." },
+    { q: "'இன்பம்' என்பதன் எதிர்ச்சொல் எது?", a: ["மகிழ்ச்சி", "துன்பம்", "அன்பு", "நன்மை"], c: 1, e: "இன்பம் × துன்பம்." },
+    { q: "'துன்பம்' என்பதன் எதிர்ச்சொல் எது?", a: ["இன்பம்", "தீமை", "பகை", "பயம்"], c: 0, e: "துன்பம் × இன்பம்." },
+    
+    { q: "'உண்மை' என்பதன் எதிர்ச்சொல் எது?", a: ["அறிவு", "பொய்", "நன்மை", "தீமை"], c: 1, e: "உண்மை × பொய்." },
+    { q: "'பொய்' என்பதன் எதிர்ச்சொல் எது?", a: ["உண்மை", "தோல்வி", "தாழ்வு", "அறியாமை"], c: 0, e: "பொய் × உண்மை." },
+    { q: "'உயர்வு' என்பதன் எதிர்ச்சொல் எது?", a: ["மேல்", "தாழ்வு", "அருகில்", "வெளியே"], c: 1, e: "உயர்வு × தாழ்வு." },
+    { q: "'தாழ்வு' என்பதன் எதிர்ச்சொல் எது?", a: ["உயர்வு", "கீழ்", "பெரியது", "வெற்றி"], c: 0, e: "தாழ்வு × உயர்வு." },
+    { q: "'பெரிய' என்பதன் எதிர்ச்சொல் எது?", a: ["உயர்ந்த", "சிறிய", "புதிய", "அதிகம்"], c: 1, e: "பெரிய × சிறிய." },
+    
+    { q: "'சிறிய' என்பதன் எதிர்ச்சொல் எது?", a: ["பெரிய", "குறைவு", "பழைய", "தாழ்வு"], c: 0, e: "சிறிய × பெரிய." },
+    { q: "'புதிய' என்பதன் எதிர்ச்சொல் எது?", a: ["பழைய", "பெரிய", "சிறிய", "புதியது"], c: 0, e: "புதிய × பழைய." },
+    { q: "'பழைய' என்பதன் எதிர்ச்சொல் எது?", a: ["புதிய", "பழுப்பு", "சிறிய", "குறைவு"], c: 0, e: "பழைய × புதிய." },
+    { q: "'பகல்' என்பதன் எதிர்ச்சொல் எது?", a: ["மாலை", "இரவு", "காலை", "வெளிச்சம்"], c: 1, e: "பகல் × இரவு." },
+    { q: "'இரவு' என்பதன் எதிர்ச்சொல் எது?", a: ["பகல்", "மாலை", "இருள்", "நள்ளிரவு"], c: 0, e: "இரவு × பகல்." },
+    
+    { q: "'பிறப்பு' என்பதன் எதிர்ச்சொல் எது?", a: ["வாழ்வு", "இறப்பு", "ஆரம்பம்", "வெற்றி"], c: 1, e: "பிறப்பு × இறப்பு." },
+    { q: "'இறப்பு' என்பதன் எதிர்ச்சொல் எது?", a: ["பிறப்பு", "சாவு", "தோல்வி", "முடிவு"], c: 0, e: "இறப்பு × பிறப்பு." },
+    { q: "'வாழ்வு' என்பதன் எதிர்ச்சொல் எது?", a: ["பிறப்பு", "சாவு", "இன்பம்", "துன்பம்"], c: 1, e: "வாழ்வு × சாவு." },
+    { q: "'வெற்றி' என்பதன் எதிர்ச்சொல் எது?", a: ["வாழ்வு", "தோல்வி", "ஆக்கம்", "புகழ்"], c: 1, e: "வெற்றி × தோல்வி." },
+    { q: "'தோல்வி' என்பதன் எதிர்ச்சொல் எது?", a: ["வெற்றி", "இறப்பு", "தாழ்வு", "பகை"], c: 0, e: "தோல்வி × வெற்றி." },
+    
+    { q: "'ஆரம்பம்' என்பதன் எதிர்ச்சொல் எது?", a: ["தொடக்கம்", "முடிவு", "பிறப்பு", "வெற்றி"], c: 1, e: "ஆரம்பம் × முடிவு." },
+    { q: "'முடிவு' என்பதன் எதிர்ச்சொல் எது?", a: ["ஆரம்பம்", "இறப்பு", "தாழ்வு", "தோல்வி"], c: 0, e: "முடிவு × ஆரம்பம்." },
+    { q: "'உள்ளே' என்பதன் எதிர்ச்சொல் எது?", a: ["அருகில்", "வெளியே", "மேலே", "முன்னால்"], c: 1, e: "உள்ளே × வெளியே." },
+    { q: "'வெளியே' என்பதன் எதிர்ச்சொல் எது?", a: ["உள்ளே", "கீழே", "பின்னால்", "அருகில்"], c: 0, e: "வெளியே × உள்ளே." },
+    { q: "'அருகில்' என்பதன் எதிர்ச்சொல் எது?", a: ["முன்னால்", "தொலைவில்", "உள்ளே", "மேல்"], c: 1, e: "அருகில் × தொலைவில்." },
+    
+    { q: "'தொலைவில்' என்பதன் எதிர்ச்சொல் எது?", a: ["அருகில்", "வெளியே", "கீழ்", "பின்னால்"], c: 0, e: "தொலைவில் × அருகில்." },
+    { q: "'முன்னால்' என்பதன் எதிர்ச்சொல் எது?", a: ["மேல்", "பின்னால்", "கீழ்", "வெளியே"], c: 1, e: "முன்னால் × பின்னால்." },
+    { q: "'பின்னால்' என்பதன் எதிர்ச்சொல் எது?", a: ["முன்னால்", "அருகில்", "உள்ளே", "மேல்"], c: 0, e: "பின்னால் × முன்னால்." },
+    { q: "'மேல்' என்பதன் எதிர்ச்சொல் எது?", a: ["உயரம்", "கீழ்", "முன்னால்", "வெளியே"], c: 1, e: "மேல் × கீழ்." },
+    { q: "'கீழ்' என்பதன் எதிர்ச்சொல் எது?", a: ["மேல்", "தாழ்வு", "பின்னால்", "அருகில்"], c: 0, e: "கீழ் × மேல்." },
+    
+    { q: "'அதிகம்' என்பதன் எதிர்ச்சொல் எது?", a: ["மேல்", "குறைவு", "சிறப்பு", "பெரியது"], c: 1, e: "அதிகம் × குறைவு." },
+    { q: "'குறைவு' என்பதன் எதிர்ச்சொல் எது?", a: ["அதிகம்", "சிறியது", "பழைய", "தாழ்வு"], c: 0, e: "குறைவு × அதிகம்." },
+    { q: "'வேகம்' என்பதன் எதிர்ச்சொல் எது?", a: ["விரைவு", "மெதுவு", "அதிகம்", "தாழ்வு"], c: 1, e: "வேகம் × மெதுவு." },
+    { q: "'அன்பு' என்பதன் எதிர்ச்சொல் எது?", a: ["நட்பு", "வெறுப்பு", "இன்பம்", "நன்மை"], c: 1, e: "அன்பு × வெறுப்பு." },
+    { q: "'வெறுப்பு' என்பதன் எதிர்ச்சொல் எது?", a: ["அன்பு", "பகை", "துன்பம்", "தீமை"], c: 0, e: "வெறுப்பு × அன்பு." },
+    
+    { q: "'நட்பு' என்பதன் எதிர்ச்சொல் எது?", a: ["அன்பு", "பகை", "நன்மை", "வெற்றி"], c: 1, e: "நட்பு × பகை." },
+    { q: "'பகை' என்பதன் எதிர்ச்சொல் எது?", a: ["நட்பு", "வெறுப்பு", "துன்பம்", "தீமை"], c: 0, e: "பகை × நட்பு." },
+    { q: "'செல்வம்' என்பதன் எதிர்ச்சொல் எது?", a: ["அறிவு", "வறுமை", "வெற்றி", "நன்மை"], c: 1, e: "செல்வம் × வறுமை." },
+    { q: "'வறுமை' என்பதன் எதிர்ச்சொல் எது?", a: ["செல்வம்", "தாழ்வு", "குறைவு", "பகை"], c: 0, e: "வறுமை × செல்வம்." },
+    { q: "'ஒற்றுமை' என்பதன் எதிர்ச்சொல் எது?", a: ["நட்பு", "வேற்றுமை", "அன்பு", "நன்மை"], c: 1, e: "ஒற்றுமை × வேற்றுமை." },
+    
+    { q: "'வேற்றுமை' என்பதன் எதிர்ச்சொல் எது?", a: ["ஒற்றுமை", "பகை", "தீமை", "வறுமை"], c: 0, e: "வேற்றுமை × ஒற்றுமை." },
+    { q: "'சுத்தம்' என்பதன் எதிர்ச்சொல் எது?", a: ["தூய்மை", "அசுத்தம்", "அறிவு", "அன்பு"], c: 1, e: "சுத்தம் × அசுத்தம்." },
+    { q: "'அசுத்தம்' என்பதன் எதிர்ச்சொல் எது?", a: ["சுத்தம்", "தீமை", "பொய்", "வறுமை"], c: 0, e: "அசுத்தம் × சுத்தம்." },
+    { q: "'அறிவு' என்பதன் எதிர்ச்சொல் எது?", a: ["கல்வி", "அறியாமை", "துணிவு", "நன்மை"], c: 1, e: "அறிவு × அறியாமை." },
+    { q: "'துணிவு' என்பதன் எதிர்ச்சொல் எது?", a: ["வெற்றி", "பயம்", "அன்பு", "அறிவு"], c: 1, e: "துணிவு × பயம்." },
+    
+    { q: "'இனிமை' என்பதன் எதிர்ச்சொல் எது?", a: ["அன்பு", "கசப்பு", "இன்பம்", "நன்மை"], c: 1, e: "இனிமை × கசப்பு." },
+    { q: "'அகம்' என்பதன் எதிர்ச்சொல் எது?", a: ["உள்ளம்", "புறம்", "மேல்", "கீழ்"], c: 1, e: "அகம் × புறம்." },
+    { q: "'ஆக்கம்' என்பதன் எதிர்ச்சொல் எது?", a: ["அழிவு", "வெற்றி", "நன்மை", "வாழ்வு"], c: 0, e: "ஆக்கம் × அழிவு." },
+    { q: "'புகழ்' என்பதன் எதிர்ச்சொல் எது?", a: ["பெருமை", "இகழ்ச்சி", "வெற்றி", "அன்பு"], c: 1, e: "புகழ் × இகழ்ச்சி." },
+    { q: "'இகழ்ச்சி' என்பதன் எதிர்ச்சொல் எது?", a: ["புகழ்", "பகை", "தாழ்வு", "பொய்"], c: 0, e: "இகழ்ச்சி × புகழ்." }
+],
+appropriate: [
+    { q: "பறவைகள் ______.", a: ["நடக்கும்", "பறக்கும்", "நீந்தும்", "ஊரும்"], c: 1, e: "பறவைகள் பறக்கும்." },
+    { q: "மீன் ______ வாழும்.", a: ["நிலத்தில்", "வானில்", "நீரில்", "மரத்தில்"], c: 2, e: "மீன் நீரில் வாழும்." },
+    { q: "மாணவர்கள் பள்ளியில் ______.", a: ["பறக்கிறார்கள்", "படிக்கிறார்கள்", "நீந்துகிறார்கள்", "ஊர்கிறார்கள்"], c: 1, e: "மாணவர்கள் பள்ளியில் படிக்கிறார்கள்." },
+    { q: "மீன்கள் நீரில் ______.", a: ["பறக்கும்", "நீந்தும்", "ஓடும்", "நடக்கும்"], c: 1, e: "மீன்கள் நீரில் நீந்தும்." },
+    { q: "பசு ______ தரும்.", a: ["பால்", "தேன்", "எண்ணெய்", "நீர்"], c: 0, e: "பசு பால் தரும்." },
+    
+    { q: "சூரியன் கிழக்கில் ______.", a: ["மறையும்", "உதிக்கும்", "தூங்கும்", "ஓடும்"], c: 1, e: "சூரியன் கிழக்கில் உதிக்கும்." },
+    { q: "மழை ______ இருந்து வருகிறது.", a: ["வானம்", "மண்", "கடல் மட்டும்", "மலை மட்டும்"], c: 0, e: "மழை வானத்திலிருந்து வருகிறது." },
+    { q: "மரங்கள் நமக்கு ______ தருகின்றன.", a: ["நிழல்", "புகை", "கல்", "மண்"], c: 0, e: "மரங்கள் நமக்கு நிழல் தருகின்றன." },
+    { q: "ஆசிரியர் மாணவர்களுக்கு ______ கற்பிக்கிறார்.", a: ["பாடம்", "உணவு", "தண்ணீர்", "விளையாட்டு மட்டும்"], c: 0, e: "ஆசிரியர் மாணவர்களுக்கு பாடம் கற்பிக்கிறார்." },
+    { q: "விவசாயி வயலில் ______ செய்கிறார்.", a: ["விவசாயம்", "பாடம்", "பறத்தல்", "நீச்சல்"], c: 0, e: "விவசாயி வயலில் விவசாயம் செய்கிறார்." },
+    
+    { q: "பயம் இல்லாதவர் ______.", a: ["வாயாடி", "அஞ்சாநெஞ்சர்", "நன்றியாளர்", "அறிஞர்"], c: 1, e: "பயம் இல்லாதவர் அஞ்சாநெஞ்சர்." },
+    { q: "பிறருக்கு உதவி செய்பவர் ______.", a: ["உதவியாளர்", "வாயாடி", "அறிஞர்", "வீரர்"], c: 0, e: "பிறருக்கு உதவி செய்பவர் உதவியாளர்." },
+    { q: "நாட்டைக் காப்பவர் ______.", a: ["வீரர்", "வாய்மையாளர்", "உழைப்பாளர்", "அன்பாளர்"], c: 0, e: "நாட்டைக் காப்பவர் வீரர்." },
+    { q: "கல்வி கற்றவர் ______.", a: ["கற்றவர்", "வாயாடி", "அஞ்சாநெஞ்சர்", "வீரர்"], c: 0, e: "கல்வி கற்றவர் கற்றவர் எனப்படுகிறார்." },
+    { q: "அறிவுடையவர் ______.", a: ["அறிஞர்", "வாயாடி", "உதவியாளர்", "வீரர்"], c: 0, e: "அறிவுடையவர் அறிஞர்." },
+    
+    { q: "அதிகமாக பேசுபவர் ______.", a: ["அறிஞர்", "வாயாடி", "வீரர்", "நன்றியாளர்"], c: 1, e: "அதிகமாக பேசுபவர் வாயாடி." },
+    { q: "பொய் பேசாதவர் ______.", a: ["வாய்மையாளர்", "வாயாடி", "அன்பாளர்", "வீரர்"], c: 0, e: "பொய் பேசாதவர் வாய்மையாளர்." },
+    { q: "பிறரிடம் அன்பாக இருப்பவர் ______.", a: ["அன்பாளர்", "வாயாடி", "வீரர்", "கற்றவர்"], c: 0, e: "பிறரிடம் அன்பாக இருப்பவர் அன்பாளர்." },
+    { q: "உழைப்பவர் ______.", a: ["உழைப்பாளர்", "அறிஞர்", "வாயாடி", "வீரர்"], c: 0, e: "உழைப்பவர் உழைப்பாளர்." },
+    { q: "நன்றி மறக்காதவர் ______.", a: ["நன்றியாளர்", "வாயாடி", "அஞ்சாநெஞ்சர்", "வீரர்"], c: 0, e: "நன்றி மறக்காதவர் நன்றியாளர்." },
+    
+    { q: "'காடு' என்பதற்கு பொருத்தமான சொல் எது?", a: ["வனம்", "கடல்", "வயல்", "மலை"], c: 0, e: "காடு = வனம்." },
+    { q: "'கடல்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["வனம்", "சமுத்திரம்", "வயல்", "காடு"], c: 1, e: "கடல் = சமுத்திரம்." },
+    { q: "'வீடு' என்பதற்கு பொருத்தமான சொல் எது?", a: ["இல்லம்", "வனம்", "கடல்", "வயல்"], c: 0, e: "வீடு = இல்லம்." },
+    { q: "'மலை' என்பதற்கு பொருத்தமான சொல் எது?", a: ["குன்று", "கடல்", "வனம்", "வயல்"], c: 0, e: "மலைக்கு பொருத்தமான சொல் குன்று." },
+    { q: "'மகிழ்ச்சி' என்பதற்கு பொருத்தமான சொல் எது?", a: ["துயரம்", "களிப்பு", "கோபம்", "பயம்"], c: 1, e: "மகிழ்ச்சி = களிப்பு." },
+    
+    { q: "'மிகுந்த மகிழ்ச்சி' என்பதற்கு பொருத்தமான சொல் எது?", a: ["துயரம்", "களிப்பு", "கோபம்", "மலை"], c: 1, e: "மிகுந்த மகிழ்ச்சி = களிப்பு." },
+    { q: "'துயரம்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["மகிழ்ச்சி", "வருத்தம்", "களிப்பு", "அன்பு"], c: 1, e: "துயரம் = வருத்தம்." },
+    { q: "'கோபம்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["சினம்", "அன்பு", "களிப்பு", "அமைதி"], c: 0, e: "கோபம் = சினம்." },
+    { q: "'பயம்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["அச்சம்", "அன்பு", "வெற்றி", "களிப்பு"], c: 0, e: "பயம் = அச்சம்." },
+    { q: "'அன்பு' என்பதற்கு பொருத்தமான சொல் எது?", a: ["பாசம்", "பகை", "கோபம்", "துயரம்"], c: 0, e: "அன்பு = பாசம்." },
+    
+    { q: "'விரைவு' என்பதற்கு பொருத்தமான சொல் எது?", a: ["வேகம்", "மெதுவு", "தாமதம்", "அமைதி"], c: 0, e: "விரைவு = வேகம்." },
+    { q: "'உண்மை' என்பதற்கு பொருத்தமான சொல் எது?", a: ["வாய்மை", "பொய்", "பகை", "துயரம்"], c: 0, e: "உண்மை = வாய்மை." },
+    { q: "'புகழ்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["கீர்த்தி", "இகழ்ச்சி", "பகை", "தோல்வி"], c: 0, e: "புகழ் = கீர்த்தி." },
+    { q: "'உதவி' என்பதற்கு பொருத்தமான சொல் எது?", a: ["துணை", "தடை", "பகை", "தோல்வி"], c: 0, e: "உதவி = துணை." },
+    { q: "'வெற்றி' என்பதற்கு பொருத்தமான சொல் எது?", a: ["வெற்றி", "தோல்வி", "இறப்பு", "தாழ்வு"], c: 0, e: "வெற்றி என்பது சாதனையைக் குறிக்கும்." },
+    
+    { q: "மாணவர்கள் பள்ளியில் ______.", a: ["படிக்கிறார்கள்", "பறக்கிறார்கள்", "நீந்துகிறார்கள்", "ஊர்கிறார்கள்"], c: 0, e: "மாணவர்கள் பள்ளியில் படிக்கிறார்கள்." },
+    { q: "மருத்துவர் நோயாளியை ______.", a: ["சிகிச்சை செய்கிறார்", "விவசாயம் செய்கிறார்", "பறக்கிறார்", "நீந்துகிறார்"], c: 0, e: "மருத்துவர் நோயாளிக்கு சிகிச்சை அளிக்கிறார்." },
+    { q: "காவலர் மக்களை ______.", a: ["பாதுகாக்கிறார்", "விவசாயம் செய்கிறார்", "பாடுகிறார்", "நீந்துகிறார்"], c: 0, e: "காவலர் மக்களைப் பாதுகாக்கிறார்." },
+    { q: "கவிஞர் ______ எழுதுகிறார்.", a: ["கவிதை", "வீடு", "வயல்", "மரம்"], c: 0, e: "கவிஞர் கவிதை எழுதுகிறார்." },
+    { q: "விவசாயி ______ உழைக்கிறார்.", a: ["வயலில்", "வானில்", "கடலில்", "பள்ளியில்"], c: 0, e: "விவசாயி வயலில் உழைக்கிறார்." },
+    
+    { q: "புத்தகத்தை ______ வேண்டும்.", a: ["படிக்க", "பறக்க", "நீந்த", "ஓட"], c: 0, e: "புத்தகத்தை படிக்க வேண்டும்." },
+    { q: "சாலையில் வாகனங்கள் ______.", a: ["ஓடுகின்றன", "பறக்கின்றன", "நீந்துகின்றன", "தூங்குகின்றன"], c: 0, e: "சாலையில் வாகனங்கள் ஓடுகின்றன." },
+    { q: "மரத்தில் பறவைகள் ______.", a: ["கூடு கட்டுகின்றன", "நீந்துகின்றன", "விவசாயம் செய்கின்றன", "ஓடுகின்றன"], c: 0, e: "பறவைகள் மரத்தில் கூடு கட்டுகின்றன." },
+    { q: "நாம் உணவை ______.", a: ["உண்ண வேண்டும்", "பறக்க வேண்டும்", "நீந்த வேண்டும்", "ஓட்ட வேண்டும்"], c: 0, e: "நாம் உணவை உண்ண வேண்டும்." },
+    { q: "மாணவர்கள் ஆசிரியரை ______ வேண்டும்.", a: ["மதிக்க", "மறக்க", "ஏமாற்ற", "துன்புறுத்த"], c: 0, e: "மாணவர்கள் ஆசிரியரை மதிக்க வேண்டும்." },
+    
+    { q: "'அறிவுடையவர்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["அறிஞர்", "வாயாடி", "வீரர்", "அன்பாளர்"], c: 0, e: "அறிவுடையவர் = அறிஞர்." },
+    { q: "'நன்றி மறக்காதவர்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["நன்றியாளர்", "வாயாடி", "வீரர்", "அறிஞர்"], c: 0, e: "நன்றி மறக்காதவர் = நன்றியாளர்." },
+    { q: "'பொய் பேசாதவர்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["வாய்மையாளர்", "வாயாடி", "வீரர்", "உழைப்பாளர்"], c: 0, e: "பொய் பேசாதவர் = வாய்மையாளர்." },
+    { q: "'அதிகமாக பேசுபவர்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["வாயாடி", "அறிஞர்", "அன்பாளர்", "வீரர்"], c: 0, e: "அதிகமாக பேசுபவர் = வாயாடி." },
+    { q: "'நாட்டைக் காப்பவர்' என்பதற்கு பொருத்தமான சொல் எது?", a: ["வீரர்", "வாயாடி", "அறிஞர்", "நன்றியாளர்"], c: 0, e: "நாட்டைக் காப்பவர் = வீரர்." }
+],
+correction:[
+{q:"'தமிழ் நாடு' என்பதன் சரியான வடிவம் எது?",a:["தமிழ் நாடு","தமிழ்நாடு","தமிழ்நாட்டு","தமிழ்-நாடு"],c:1,e:"சரியான வடிவம்: தமிழ்நாடு."},
+{q:"'அரிவியல்' என்பதன் சரியான வடிவம் எது?",a:["அரிவியல்","அறிவியல்","அறிவியள்","அறிவியல்"],c:1,e:"சரியான சொல்: அறிவியல்."},
+{q:"'வால்க்கை' என்பதன் சரியான வடிவம் எது?",a:["வால்க்கை","வாழ்க்கை","வாழ்கை","வால்கை"],c:1,e:"சரியான சொல்: வாழ்க்கை."},
+{q:"'முயர்ச்சி' என்பதன் சரியான வடிவம் எது?",a:["முயர்ச்சி","முயற்சி","முயச்சி","முயர்சசி"],c:1,e:"சரியான சொல்: முயற்சி."},
+{q:"'சிரப்பு' என்பதன் சரியான வடிவம் எது?",a:["சிரப்பு","சிறப்பு","சிறப்ப","சிரப்ப"],c:1,e:"சரியான சொல்: சிறப்பு."},
+{q:"'உறிமை' என்பதன் சரியான வடிவம் எது?",a:["உறிமை","உரிமை","உறுமை","உருமை"],c:1,e:"சரியான சொல்: உரிமை."},
+{q:"'அவன் சென்றாள்' என்பதன் சரியான வடிவம் எது?",a:["அவன் சென்றான்","அவன் சென்றாள்","அவன் சென்றார்கள்","அவன் சென்றது"],c:0,e:"அவன் என்பது ஆண்பால்; எனவே 'சென்றான்' என்பதே சரி."},
+{q:"'அவள் சென்றான்' என்பதன் சரியான வடிவம் எது?",a:["அவள் சென்றான்","அவள் சென்றாள்","அவள் சென்றார்கள்","அவள் சென்றது"],c:1,e:"அவள் என்பது பெண்பால்; எனவே 'சென்றாள்' என்பதே சரி."},
+{q:"'மாணவர்கள் பள்ளிக்குச் சென்றான்' என்பதன் சரியான வடிவம் எது?",a:["மாணவர்கள் பள்ளிக்குச் சென்றான்","மாணவர்கள் பள்ளிக்குச் சென்றாள்","மாணவர்கள் பள்ளிக்குச் சென்றார்கள்","மாணவர்கள் பள்ளிக்குச் சென்றது"],c:2,e:"மாணவர்கள் என்பது பலர்பால்; எனவே 'சென்றார்கள்' என்பதே சரி."},
+{q:"'ரவி புத்தகத்தை படித்தார்கள்' என்பதன் சரியான வடிவம் எது?",a:["ரவி புத்தகத்தை படித்தான்","ரவி புத்தகத்தை படித்தார்கள்","ரவி புத்தகத்தை படித்தாள்","ரவி புத்தகத்தை படித்தது"],c:0,e:"ரவி ஒருவரை குறிக்கும் ஆண்பால் பெயர்; எனவே 'படித்தான்' என்பதே சரி."},
+{q:"'யானை குரைத்தது' என்பதன் மரபுப்பிழை திருத்தம் எது?",a:["யானை பிளிறியது","யானை கத்தியது","யானை பாடியது","யானை சிரித்தது"],c:0,e:"யானை பிளிறும் என்பது மரபு."},
+{q:"'நாய் பிளிறியது' என்பதன் சரியான வடிவம் எது?",a:["நாய் பாடியது","நாய் குரைத்தது","நாய் பிளந்தது","நாய் முழங்கியது"],c:1,e:"நாய் குரைக்கும் என்பது மரபு."},
+{q:"'குயில் குரைத்தது' என்பதன் மரபுப்பிழை திருத்தம் எது?",a:["குயில் கூவியது","குயில் பிளிறியது","குயில் கத்தியது","குயில் உறுமியது"],c:0,e:"குயில் கூவும் என்பது மரபு."},
+{q:"'சிங்கம் குரைத்தது' என்பதன் சரியான வடிவம் எது?",a:["சிங்கம் கூவியது","சிங்கம் உறுமியது","சிங்கம் பிளிறியது","சிங்கம் பாடியது"],c:1,e:"சிங்கம் உறுமும் என்பது மரபு."},
+{q:"'பசு குரைத்தது' என்பதன் சரியான வடிவம் எது?",a:["பசு கத்தியது","பசு கதறியது","பசு குரைத்தது","பசு கூவியது"],c:0,e:"பசு கத்தும் என்பது மரபு."},
+{q:"'சேவல் கூவியது' என்ற வாக்கியம் சரியா?",a:["சரி","தவறு","இலக்கணமற்றது","பிழையான சொல்"],c:0,e:"சேவல் கூவும் என்பது சரியான மரபு."},
+{q:"'மாடு கத்தியது' என்ற வாக்கியம் சரியா?",a:["சரி","தவறு","எழுத்துப்பிழை","சொற்பிழை"],c:0,e:"மாடு கத்தும் என்பது மரபு."},
+{q:"'குதிரை குரைத்தது' என்பதன் சரியான வடிவம் எது?",a:["குதிரை கனைத்தது","குதிரை கூவியது","குதிரை பிளிறியது","குதிரை உறுமியது"],c:0,e:"குதிரை கனைக்கும் என்பது மரபு."},
+{q:"'யானை பிளிறியது' என்ற வாக்கியம் சரியா?",a:["சரி","தவறு","எழுத்துப்பிழை","சொற்பிழை"],c:0,e:"யானை பிளிறும் என்பது சரியான மரபு."},
+{q:"'அவன் வந்தாள்' என்பதன் சரியான வடிவம் எது?",a:["அவன் வந்தாள்","அவன் வந்தான்","அவன் வந்தார்கள்","அவன் வந்தது"],c:1,e:"அவன் ஆண்பால் என்பதால் 'வந்தான்' என வர வேண்டும்."},
+{q:"'அவள் வந்தான்' என்பதன் சரியான வடிவம் எது?",a:["அவள் வந்தான்","அவள் வந்தாள்","அவள் வந்தார்கள்","அவள் வந்தது"],c:1,e:"அவள் பெண்பால் என்பதால் 'வந்தாள்' என வர வேண்டும்."},
+{q:"'அவர்கள் வந்தான்' என்பதன் சரியான வடிவம் எது?",a:["அவர்கள் வந்தான்","அவர்கள் வந்தாள்","அவர்கள் வந்தார்கள்","அவர்கள் வந்தது"],c:2,e:"அவர்கள் பலரைக் குறிக்கும்; எனவே 'வந்தார்கள்' சரி."},
+{q:"'அது வந்தான்' என்பதன் சரியான வடிவம் எது?",a:["அது வந்தான்","அது வந்தாள்","அது வந்தார்கள்","அது வந்தது"],c:3,e:"அது அஃறிணை ஒன்றன்பால்; எனவே 'வந்தது' சரி."},
+{q:"'அவை வந்தான்' என்பதன் சரியான வடிவம் எது?",a:["அவை வந்தான்","அவை வந்தாள்","அவை வந்தார்கள்","அவை வந்தன"],c:3,e:"அவை பலவின்பால்; எனவே 'வந்தன' சரி."},
+{q:"'மாணவன் பாடம் படித்தார்கள்' என்பதன் சரியான வடிவம் எது?",a:["மாணவன் பாடம் படித்தான்","மாணவன் பாடம் படித்தார்கள்","மாணவன் பாடம் படித்தாள்","மாணவன் பாடம் படித்தன"],c:0,e:"மாணவன் ஒருமை ஆண்பால்; எனவே 'படித்தான்' சரி."},
+{q:"'மாணவி பாடம் படித்தான்' என்பதன் சரியான வடிவம் எது?",a:["மாணவி பாடம் படித்தான்","மாணவி பாடம் படித்தாள்","மாணவி பாடம் படித்தார்கள்","மாணவி பாடம் படித்தது"],c:1,e:"மாணவி பெண்பால்; எனவே 'படித்தாள்' சரி."},
+{q:"'ஆசிரியர்கள் வகுப்பிற்கு வந்தான்' என்பதன் சரியான வடிவம் எது?",a:["ஆசிரியர்கள் வகுப்பிற்கு வந்தான்","ஆசிரியர்கள் வகுப்பிற்கு வந்தாள்","ஆசிரியர்கள் வகுப்பிற்கு வந்தார்கள்","ஆசிரியர்கள் வகுப்பிற்கு வந்தது"],c:2,e:"ஆசிரியர்கள் பலரைக் குறிக்கும்; எனவே 'வந்தார்கள்' சரி."},
+{q:"'குழந்தைகள் விளையாடினான்' என்பதன் சரியான வடிவம் எது?",a:["குழந்தைகள் விளையாடினான்","குழந்தைகள் விளையாடினாள்","குழந்தைகள் விளையாடினார்கள்","குழந்தைகள் விளையாடியது"],c:2,e:"குழந்தைகள் பலரைக் குறிக்கும்; எனவே 'விளையாடினார்கள்' சரி."},
+{q:"'பறவைகள் பறந்தான்' என்பதன் சரியான வடிவம் எது?",a:["பறவைகள் பறந்தான்","பறவைகள் பறந்தாள்","பறவைகள் பறந்தார்கள்","பறவைகள் பறந்தன"],c:3,e:"பறவைகள் பலவின்பால்; எனவே 'பறந்தன' சரி."},
+{q:"'மரம் வளர்ந்தான்' என்பதன் சரியான வடிவம் எது?",a:["மரம் வளர்ந்தான்","மரம் வளர்ந்தாள்","மரம் வளர்ந்தது","மரம் வளர்ந்தார்கள்"],c:2,e:"மரம் ஒன்றன்பால்; எனவே 'வளர்ந்தது' சரி."},
+{q:"'மரங்கள் வளர்ந்தது' என்பதன் சரியான வடிவம் எது?",a:["மரங்கள் வளர்ந்தான்","மரங்கள் வளர்ந்தாள்","மரங்கள் வளர்ந்தது","மரங்கள் வளர்ந்தன"],c:3,e:"மரங்கள் பலவின்பால்; எனவே 'வளர்ந்தன' சரி."},
+{q:"'அவன் நல்ல பெண்' என்பதன் சரியான வடிவம் எது?",a:["அவன் நல்ல பெண்","அவன் நல்ல ஆண்","அவன் நல்ல பெண்கள்","அவன் நல்லவர்கள்"],c:1,e:"'அவன்' ஆண்பால்; எனவே 'நல்ல ஆண்' என வர வேண்டும்."},
+{q:"'அவள் நல்ல மாணவன்' என்பதன் சரியான வடிவம் எது?",a:["அவள் நல்ல மாணவன்","அவள் நல்ல மாணவி","அவள் நல்ல மாணவர்கள்","அவள் நல்ல மாணவர்"],c:1,e:"'அவள்' பெண்பால்; எனவே 'மாணவி' சரி."},
+{q:"'அவர்கள் நல்ல மாணவன்' என்பதன் சரியான வடிவம் எது?",a:["அவர்கள் நல்ல மாணவன்","அவர்கள் நல்ல மாணவி","அவர்கள் நல்ல மாணவர்கள்","அவர்கள் நல்ல மாணவி"],c:2,e:"'அவர்கள்' பலரைக் குறிக்கும்; எனவே 'மாணவர்கள்' சரி."},
+{q:"'நான் சென்றான்' என்பதன் சரியான வடிவம் எது?",a:["நான் சென்றான்","நான் சென்றாள்","நான் சென்றேன்","நான் சென்றார்கள்"],c:2,e:"'நான்' தன்மையை குறிக்கும்; எனவே 'சென்றேன்' சரி."},
+{q:"'நாங்கள் சென்றான்' என்பதன் சரியான வடிவம் எது?",a:["நாங்கள் சென்றோம்","நாங்கள் சென்றான்","நாங்கள் சென்றாள்","நாங்கள் சென்றது"],c:0,e:"'நாங்கள்' என்பதற்கு 'சென்றோம்' என வர வேண்டும்."},
+{q:"'நீ சென்றான்' என்பதன் சரியான வடிவம் எது?",a:["நீ சென்றான்","நீ சென்றாய்","நீ சென்றோம்","நீ சென்றார்கள்"],c:1,e:"'நீ' முன்னிலையை குறிக்கும்; எனவே 'சென்றாய்' சரி."},
+{q:"'நீங்கள் சென்றான்' என்பதன் சரியான வடிவம் எது?",a:["நீங்கள் சென்றான்","நீங்கள் சென்றாய்","நீங்கள் சென்றீர்கள்","நீங்கள் சென்றது"],c:2,e:"'நீங்கள்' என்பதற்கு 'சென்றீர்கள்' என வர வேண்டும்."},
+{q:"'நான் பள்ளிக்குச் சென்றான்' என்பதன் சரியான வடிவம் எது?",a:["நான் பள்ளிக்குச் சென்றான்","நான் பள்ளிக்குச் சென்றேன்","நான் பள்ளிக்குச் சென்றாள்","நான் பள்ளிக்குச் சென்றார்கள்"],c:1,e:"'நான்' என்பதற்கு 'சென்றேன்' என வர வேண்டும்."},
+{q:"'அவள் உணவு சாப்பிட்டான்' என்பதன் சரியான வடிவம் எது?",a:["அவள் உணவு சாப்பிட்டான்","அவள் உணவு சாப்பிட்டாள்","அவள் உணவு சாப்பிட்டார்கள்","அவள் உணவு சாப்பிட்டது"],c:1,e:"அவள் பெண்பால்; எனவே 'சாப்பிட்டாள்' சரி."},
+{q:"'அவன் பாடல் பாடினாள்' என்பதன் சரியான வடிவம் எது?",a:["அவன் பாடல் பாடினான்","அவன் பாடல் பாடினாள்","அவன் பாடல் பாடினார்கள்","அவன் பாடல் பாடியது"],c:0,e:"அவன் ஆண்பால்; எனவே 'பாடினான்' சரி."},
+{q:"'மாணவர்கள் பாடம் படித்தது' என்பதன் சரியான வடிவம் எது?",a:["மாணவர்கள் பாடம் படித்தது","மாணவர்கள் பாடம் படித்தான்","மாணவர்கள் பாடம் படித்தார்கள்","மாணவர்கள் பாடம் படித்தாள்"],c:2,e:"மாணவர்கள் பலர்பால்; எனவே 'படித்தார்கள்' சரி."},
+{q:"'ஆசிரியர் பாடம் நடத்தினார்கள்' என்பதன் சரியான வடிவம் எது?",a:["ஆசிரியர் பாடம் நடத்தினான்","ஆசிரியர் பாடம் நடத்தினாள்","ஆசிரியர் பாடம் நடத்தினார்","ஆசிரியர் பாடம் நடத்தினது"],c:2,e:"ஆசிரியர் ஒருவரை மரியாதையுடன் குறிக்கும்; 'நடத்தினார்' சரி."},
+{q:"'மருத்துவர் நோயாளியை பார்த்தாள்' என்பதன் சரியான வடிவம் எது?",a:["மருத்துவர் நோயாளியை பார்த்தான்","மருத்துவர் நோயாளியை பார்த்தாள்","மருத்துவர் நோயாளியை பார்த்தார்","மருத்துவர் நோயாளியை பார்த்தது"],c:2,e:"மருத்துவர் என்ற சொல்லுக்கு மரியாதை ஒருமையில் 'பார்த்தார்' எனலாம்."},
+{q:"'குயில் பிளிறியது' என்பதன் சரியான வடிவம் எது?",a:["குயில் கூவியது","குயில் பிளிறியது","குயில் குரைத்தது","குயில் உறுமியது"],c:0,e:"குயில் கூவும் என்பது மரபு."},
+{q:"'சிங்கம் கத்தியது' என்பதன் மரபுப்படி சரியான வடிவம் எது?",a:["சிங்கம் உறுமியது","சிங்கம் கூவியது","சிங்கம் குரைத்தது","சிங்கம் பாடியது"],c:0,e:"சிங்கம் உறுமும் என்பது மரபு."},
+{q:"'குதிரை குரைத்தது' என்பதன் சரியான வடிவம் எது?",a:["குதிரை கனைத்தது","குதிரை கூவியது","குதிரை பிளிறியது","குதிரை பாடியது"],c:0,e:"குதிரை கனைக்கும் என்பது மரபு."},
+{q:"'நாய் கூவியது' என்பதன் சரியான வடிவம் எது?",a:["நாய் குரைத்தது","நாய் பிளிறியது","நாய் உறுமியது","நாய் கனைத்தது"],c:0,e:"நாய் குரைக்கும் என்பது மரபு."},
+{q:"'யானை குரைத்தது' என்பதில் உள்ள பிழை எது?",a:["எழுத்துப்பிழை","சொற்பிழை","மரபுப்பிழை","எண்ணுப்பிழை"],c:2,e:"யானை குரைக்காது; பிளிறும். எனவே இது மரபுப்பிழை."},
+{q:"'மாணவர்கள் பள்ளிக்குச் சென்றான்' என்பதில் உள்ள பிழை எது?",a:["எழுத்துப்பிழை","சொல்/வினை பிழை","மரபுப்பிழை","பொருள்பிழை"],c:1,e:"எழுவாய் 'மாணவர்கள்' என்பதற்கு 'சென்றார்கள்' என வினை அமைய வேண்டும்."}
+],
+technical:[
+{q:"Computer என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["கணினி","கைப்பேசி","வலைத்தளம்","மின்னஞ்சல்"],c:0,e:"Computer = கணினி."},
+{q:"Internet என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["இணையம்","இணையதளம்","கணினி","மென்பொருள்"],c:0,e:"Internet = இணையம்."},
+{q:"Website என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["வலைப்பின்னல்","வலைத்தளம்","வலைச்சுட்டி","இணையம்"],c:1,e:"Website = வலைத்தளம்."},
+{q:"Software என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["வன்பொருள்","மென்பொருள்","கணினி","சுட்டி"],c:1,e:"Software = மென்பொருள்."},
+{q:"Hardware என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["மென்பொருள்","வன்பொருள்","வலைத்தளம்","கணினி"],c:1,e:"Hardware = வன்பொருள்."},
+{q:"Keyboard என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["சுட்டி","விசைப்பலகை","அச்சுப்பொறி","கைப்பேசி"],c:1,e:"Keyboard = விசைப்பலகை."},
+{q:"Mouse என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["சுட்டி","விசைப்பலகை","அச்சுப்பொறி","கணினி"],c:0,e:"Mouse = சுட்டி."},
+{q:"Printer என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["அச்சுப்பொறி","அச்சகம்","விசைப்பலகை","சுட்டி"],c:0,e:"Printer = அச்சுப்பொறி."},
+{q:"Email என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["மின்னஞ்சல்","மின்சாரம்","இணையம்","கடவுச்சொல்"],c:0,e:"Email = மின்னஞ்சல்."},
+{q:"Password என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["கடவுச்சொல்","குறியீடு","மின்னஞ்சல்","விசை"],c:0,e:"Password = கடவுச்சொல்."},
+
+{q:"Mobile என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["தொலைபேசி","கைப்பேசி","தொலைக்காட்சி","கணினி"],c:1,e:"Mobile = கைப்பேசி."},
+{q:"Telephone என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["கைப்பேசி","தொலைபேசி","மின்னஞ்சல்","வானொலி"],c:1,e:"Telephone = தொலைபேசி."},
+{q:"Television என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["தொலைக்காட்சி","தொலைபேசி","வானொலி","கைப்பேசி"],c:0,e:"Television = தொலைக்காட்சி."},
+{q:"Electricity என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["மின்சாரம்","மின்னஞ்சல்","மின்கலம்","ஆற்றல்"],c:0,e:"Electricity = மின்சாரம்."},
+{q:"Science என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["அறிவியல்","உயிரியல்","இயற்பியல்","வேதியியல்"],c:0,e:"Science = அறிவியல்."},
+{q:"Biology என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["உயிரியல்","வேதியியல்","இயற்பியல்","புவியியல்"],c:0,e:"Biology = உயிரியல்."},
+{q:"Chemistry என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["இயற்பியல்","வேதியியல்","உயிரியல்","புவியியல்"],c:1,e:"Chemistry = வேதியியல்."},
+{q:"Physics என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["உயிரியல்","வேதியியல்","இயற்பியல்","வரலாறு"],c:2,e:"Physics = இயற்பியல்."},
+{q:"Geography என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["புவியியல்","வரலாறு","உயிரியல்","அறிவியல்"],c:0,e:"Geography = புவியியல்."},
+{q:"History என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["வரலாறு","புவியியல்","அறிவியல்","கல்வி"],c:0,e:"History = வரலாறு."},
+
+{q:"Education என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["கல்வி","தேர்வு","சான்றிதழ்","ஆய்வகம்"],c:0,e:"Education = கல்வி."},
+{q:"University என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["கல்லூரி","பல்கலைக்கழகம்","நூலகம்","பள்ளி"],c:1,e:"University = பல்கலைக்கழகம்."},
+{q:"College என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["பல்கலைக்கழகம்","கல்லூரி","நூலகம்","ஆய்வகம்"],c:1,e:"College = கல்லூரி."},
+{q:"Examination என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["தேர்வு","சான்றிதழ்","கல்வி","பாடம்"],c:0,e:"Examination = தேர்வு."},
+{q:"Certificate என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["சான்றிதழ்","தேர்வு","நூலகம்","கல்வி"],c:0,e:"Certificate = சான்றிதழ்."},
+{q:"Library என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["நூலகம்","ஆய்வகம்","கல்லூரி","பல்கலைக்கழகம்"],c:0,e:"Library = நூலகம்."},
+{q:"Laboratory என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["நூலகம்","ஆய்வகம்","வகுப்பறை","கல்லூரி"],c:1,e:"Laboratory = ஆய்வகம்."},
+{q:"Environment என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["சுற்றுச்சூழல்","மாசுபாடு","ஆற்றல்","அறிவியல்"],c:0,e:"Environment = சுற்றுச்சூழல்."},
+{q:"Pollution என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["சுற்றுச்சூழல்","மாசுபாடு","ஆற்றல்","ஈர்ப்பு விசை"],c:1,e:"Pollution = மாசுபாடு."},
+{q:"Energy என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["ஆற்றல்","மின்சாரம்","ஈர்ப்பு விசை","அணு"],c:0,e:"Energy = ஆற்றல்."},
+
+{q:"Gravity என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["ஈர்ப்பு விசை","மின்சாரம்","ஆற்றல்","அணு"],c:0,e:"Gravity = ஈர்ப்பு விசை."},
+{q:"Atom என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["செல்","அணு","ஆற்றல்","மூலக்கூறு"],c:1,e:"Atom = அணு."},
+{q:"Cell என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["அணு","செல்","திசு","உயிரியல்"],c:1,e:"Cell = செல்."},
+{q:"Vaccine என்பதன் தமிழ்க் கலைச்சொல் எது?",a:["மருந்து","தடுப்பூசி","சிகிச்சை","நோய்"],c:1,e:"Vaccine = தடுப்பூசி."},
+{q:"'கணினி' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Computer","Internet","Software","Hardware"],c:0,e:"கணினி = Computer."},
+{q:"'மென்பொருள்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Hardware","Software","Website","Keyboard"],c:1,e:"மென்பொருள் = Software."},
+{q:"'வன்பொருள்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Software","Hardware","Computer","Mouse"],c:1,e:"வன்பொருள் = Hardware."},
+{q:"'விசைப்பலகை' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Keyboard","Mouse","Printer","Monitor"],c:0,e:"விசைப்பலகை = Keyboard."},
+{q:"'சுட்டி' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Printer","Mouse","Keyboard","Computer"],c:1,e:"சுட்டி = Mouse."},
+{q:"'அச்சுப்பொறி' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Printer","Scanner","Mouse","Keyboard"],c:0,e:"அச்சுப்பொறி = Printer."},
+
+{q:"'மின்னஞ்சல்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Internet","Email","Website","Password"],c:1,e:"மின்னஞ்சல் = Email."},
+{q:"'கடவுச்சொல்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Password","Username","Email","Website"],c:0,e:"கடவுச்சொல் = Password."},
+{q:"'உயிரியல்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Biology","Chemistry","Physics","Geography"],c:0,e:"உயிரியல் = Biology."},
+{q:"'வேதியியல்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Physics","Chemistry","Biology","Science"],c:1,e:"வேதியியல் = Chemistry."},
+{q:"'இயற்பியல்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Physics","Biology","Chemistry","History"],c:0,e:"இயற்பியல் = Physics."},
+{q:"'புவியியல்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["History","Geography","Biology","Science"],c:1,e:"புவியியல் = Geography."},
+{q:"'சுற்றுச்சூழல்' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Pollution","Environment","Energy","Science"],c:1,e:"சுற்றுச்சூழல் = Environment."},
+{q:"'மாசுபாடு' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Energy","Pollution","Environment","Gravity"],c:1,e:"மாசுபாடு = Pollution."},
+{q:"'ஈர்ப்பு விசை' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Gravity","Energy","Electricity","Atom"],c:0,e:"ஈர்ப்பு விசை = Gravity."},
+{q:"'தடுப்பூசி' என்பதன் ஆங்கிலக் கலைச்சொல் எது?",a:["Cell","Atom","Vaccine","Medicine"],c:2,e:"தடுப்பூசி = Vaccine."}
+],
+reading:[
+{q:"பத்தி: மரங்கள் மனிதர்களுக்கு மிகவும் பயனுள்ளவை. அவை நமக்கு நிழலையும் பழங்களையும் தருகின்றன. மேலும், காற்றை தூய்மைப்படுத்த உதவுகின்றன. நாம் மரங்களை பாதுகாக்க வேண்டும்.\n\nமரங்கள் மனிதர்களுக்கு எவ்வாறு பயனுள்ளதாக உள்ளன?",a:["நிழல் மற்றும் பழங்களைத் தருகின்றன","மழையை நிறுத்துகின்றன","வெப்பத்தை அதிகரிக்கின்றன","நீரை அழிக்கின்றன"],c:0,e:"பத்தியில் மரங்கள் நிழலும் பழங்களும் தருவதாகக் கூறப்பட்டுள்ளது."},
+{q:"மேலுள்ள பத்தியின் அடிப்படையில் நாம் எதைப் பாதுகாக்க வேண்டும்?",a:["காற்றை மட்டும்","மரங்களை","பழங்களை மட்டும்","நிழலை மட்டும்"],c:1,e:"நாம் மரங்களைப் பாதுகாக்க வேண்டும் என்று பத்தியில் கூறப்பட்டுள்ளது."},
+{q:"மேலுள்ள பத்தியின் முக்கியக் கருத்து என்ன?",a:["மரங்களை வெட்டுதல்","மரங்களின் பயனும் பாதுகாப்பின் அவசியமும்","பழங்களின் பயன் மட்டும்","காற்றின் தன்மை"],c:1,e:"பத்தியின் மையக் கருத்து மரங்களின் பயனையும் அவற்றைப் பாதுகாக்க வேண்டிய அவசியத்தையும் கூறுவதாகும்."},
+{q:"பத்தி: குமார் தினமும் அதிகாலையில் எழுந்து உடற்பயிற்சி செய்கிறான். பின்னர் குளித்து காலை உணவை உண்டு பள்ளிக்குச் செல்கிறான். அவன் தனது நேரத்தை சரியாகப் பயன்படுத்துகிறான்.\n\nகுமார் எப்போது எழுகிறான்?",a:["நள்ளிரவில்","மதியம்","அதிகாலையில்","மாலையில்"],c:2,e:"குமார் தினமும் அதிகாலையில் எழுகிறான்."},
+{q:"குமார் பள்ளிக்குச் செல்வதற்கு முன் என்ன செய்கிறான்?",a:["விளையாடுகிறான்","உடற்பயிற்சி செய்கிறான்","தூங்குகிறான்","புத்தகம் வாங்குகிறான்"],c:1,e:"அதிகாலையில் எழுந்து உடற்பயிற்சி செய்த பின்னர் பள்ளிக்குச் செல்கிறான்."},
+{q:"குமாரின் சிறப்பு என்ன?",a:["நேரத்தை வீணாக்குகிறான்","நேரத்தை சரியாகப் பயன்படுத்துகிறான்","தினமும் தாமதமாக எழுகிறான்","பள்ளிக்குச் செல்வதில்லை"],c:1,e:"அவன் தனது நேரத்தை சரியாகப் பயன்படுத்துகிறான்."},
+{q:"பத்தி: மழை விவசாயத்திற்கு மிகவும் அவசியமானது. மழை பெய்வதால் நிலத்தில் நீர் கிடைக்கிறது. பயிர்கள் நன்றாக வளர்கின்றன. எனவே, மழை விவசாயிகளுக்கு மிகவும் முக்கியமானது.\n\nமழை எதற்கு மிகவும் அவசியமானது?",a:["விளையாட்டிற்கு","விவசாயத்திற்கு","பயணத்திற்கு","கட்டிடத்திற்கு"],c:1,e:"மழை விவசாயத்திற்கு மிகவும் அவசியமானது."},
+{q:"மழை பெய்வதால் என்ன கிடைக்கிறது?",a:["நிலத்தில் நீர்","புதிய வீடு","சாலை","புத்தகம்"],c:0,e:"மழை பெய்வதால் நிலத்தில் நீர் கிடைக்கிறது."},
+{q:"பத்தியின் பொருத்தமான தலைப்பு எது?",a:["விவசாயத்தில் மழையின் முக்கியத்துவம்","விளையாட்டின் பயன்","சாலையின் முக்கியத்துவம்","கட்டிட வேலை"],c:0,e:"பத்தி விவசாயத்திற்கு மழை எவ்வளவு முக்கியம் என்பதை விளக்குகிறது."},
+{q:"பத்தி: நூலகம் அறிவைப் பெறுவதற்கான சிறந்த இடமாகும். அங்கு பல்வேறு வகையான புத்தகங்கள் உள்ளன. மாணவர்கள் நூலகத்திற்குச் சென்று புத்தகங்களைப் படித்து தங்கள் அறிவை வளர்த்துக் கொள்ளலாம்.\n\nநூலகம் எதற்கான சிறந்த இடம்?",a:["விளையாடுவதற்கு","அறிவைப் பெறுவதற்கு","தூங்குவதற்கு","உணவு சமைப்பதற்கு"],c:1,e:"நூலகம் அறிவைப் பெறுவதற்கான சிறந்த இடம்."},
+{q:"நூலகத்தில் என்ன உள்ளன?",a:["விளையாட்டுப் பொருட்கள் மட்டும்","பல்வேறு வகையான புத்தகங்கள்","உணவுகள்","துணிகள்"],c:1,e:"நூலகத்தில் பல்வேறு வகையான புத்தகங்கள் உள்ளன."},
+{q:"மாணவர்கள் நூலகத்திற்குச் சென்று என்ன செய்யலாம்?",a:["புத்தகங்களைப் படித்து அறிவை வளர்த்துக் கொள்ளலாம்","விளையாடலாம்","தூங்கலாம்","சந்தைக்கு செல்லலாம்"],c:0,e:"புத்தகங்களைப் படித்து அறிவை வளர்த்துக் கொள்ளலாம்."},
+{q:"பத்தி: சுத்தமான நீர் மனிதர்களின் ஆரோக்கியத்திற்கு அவசியமானது. நீரைப் பயன்படுத்துவதற்கு முன் அது தூய்மையாக உள்ளதா என்பதை உறுதி செய்ய வேண்டும். அசுத்தமான நீரைப் பருகுவதால் நோய்கள் ஏற்படலாம்.\n\nஎதற்கு சுத்தமான நீர் அவசியம்?",a:["ஆரோக்கியத்திற்கு","விளையாட்டிற்கு","பயணத்திற்கு","வீட்டிற்கு மட்டும்"],c:0,e:"சுத்தமான நீர் மனிதர்களின் ஆரோக்கியத்திற்கு அவசியமானது."},
+{q:"அசுத்தமான நீரைப் பருகுவதால் என்ன ஏற்படலாம்?",a:["ஆரோக்கியம் அதிகரிக்கும்","நோய்கள் ஏற்படலாம்","பசி குறையும்","தூக்கம் வராது"],c:1,e:"அசுத்தமான நீரைப் பருகுவதால் நோய்கள் ஏற்படலாம்."},
+{q:"நீரைப் பயன்படுத்துவதற்கு முன் எதை உறுதி செய்ய வேண்டும்?",a:["அது சூடாக உள்ளதா","அது தூய்மையாக உள்ளதா","அது இனிப்பாக உள்ளதா","அது நிறமுள்ளதாக உள்ளதா"],c:1,e:"நீர் தூய்மையாக உள்ளதா என்பதை உறுதி செய்ய வேண்டும்."},
+{q:"பத்தி: நேரம் மிகவும் மதிப்புமிக்கது. கடந்த காலத்தை மீண்டும் கொண்டு வர முடியாது. எனவே, ஒவ்வொருவரும் தமக்குக் கிடைக்கும் நேரத்தை வீணாக்காமல் பயனுள்ளதாகப் பயன்படுத்த வேண்டும்.\n\nஎது மிகவும் மதிப்புமிக்கது?",a:["பணம்","நேரம்","பொருள்","விளையாட்டு"],c:1,e:"பத்தியில் நேரம் மிகவும் மதிப்புமிக்கது என்று கூறப்பட்டுள்ளது."},
+{q:"கடந்த காலத்தை என்ன செய்ய முடியாது?",a:["மாற்ற முடியாது","மீண்டும் கொண்டு வர முடியாது","நினைக்க முடியாது","படிக்க முடியாது"],c:1,e:"கடந்த காலத்தை மீண்டும் கொண்டு வர முடியாது."},
+{q:"நேரத்தை எவ்வாறு பயன்படுத்த வேண்டும்?",a:["வீணாக்க வேண்டும்","பயனுள்ளதாகப் பயன்படுத்த வேண்டும்","மறந்துவிட வேண்டும்","தாமதப்படுத்த வேண்டும்"],c:1,e:"கிடைக்கும் நேரத்தை வீணாக்காமல் பயனுள்ளதாகப் பயன்படுத்த வேண்டும்."},
+{q:"பத்தி: புத்தகம் மனிதனின் சிறந்த நண்பன் என்று கூறப்படுகிறது. நல்ல புத்தகங்களைப் படிப்பதால் அறிவும் சிந்திக்கும் திறனும் வளர்கின்றன. எனவே, அனைவரும் நல்ல நூல்களை வாசிக்கும் பழக்கத்தை வளர்த்துக் கொள்ள வேண்டும்.\n\nமனிதனின் சிறந்த நண்பன் எனப்படுவது எது?",a:["பணம்","புத்தகம்","விளையாட்டு","பயணம்"],c:1,e:"புத்தகம் மனிதனின் சிறந்த நண்பன் என்று பத்தியில் கூறப்பட்டுள்ளது."},
+{q:"நல்ல புத்தகங்களைப் படிப்பதால் என்ன வளர்கிறது?",a:["உடல் எடை","அறிவும் சிந்திக்கும் திறனும்","உயரம் மட்டும்","செல்வம் மட்டும்"],c:1,e:"நல்ல புத்தகங்கள் அறிவையும் சிந்திக்கும் திறனையும் வளர்க்கின்றன."},
+{q:"பத்திக்கு ஏற்ற தலைப்பு எது?",a:["நல்ல நூல்களின் பயன்","விளையாட்டின் பயன்","பணத்தின் முக்கியத்துவம்","பயணத்தின் சிறப்பு"],c:0,e:"பத்தியின் முக்கிய கருத்து நல்ல நூல்களை வாசிப்பதன் பயன்."},
+{q:"பத்தி: ஒற்றுமை ஒரு குடும்பத்திற்கும் நாட்டிற்கும் வலிமையைத் தருகிறது. குடும்ப உறுப்பினர்கள் ஒருவருக்கொருவர் உதவி செய்து அன்புடன் வாழ வேண்டும். ஒற்றுமையாக வாழும் இடத்தில் மகிழ்ச்சியும் அமைதியும் நிலவும்.\n\nஎது வலிமையைத் தருகிறது?",a:["பகைமை","ஒற்றுமை","சோம்பல்","கோபம்"],c:1,e:"ஒற்றுமை குடும்பத்திற்கும் நாட்டிற்கும் வலிமையைத் தருகிறது."},
+{q:"குடும்ப உறுப்பினர்கள் எவ்வாறு வாழ வேண்டும்?",a:["சண்டையிட்டு","அன்புடன் உதவி செய்து","தனித்தனியாக","பகையுடன்"],c:1,e:"குடும்ப உறுப்பினர்கள் ஒருவருக்கொருவர் உதவி செய்து அன்புடன் வாழ வேண்டும்."},
+{q:"ஒற்றுமையாக வாழும் இடத்தில் என்ன நிலவும்?",a:["பகைமை","அமைதியும் மகிழ்ச்சியும்","பயம்","குழப்பம்"],c:1,e:"ஒற்றுமையாக வாழும் இடத்தில் மகிழ்ச்சியும் அமைதியும் நிலவும்."},
+{q:"பத்தி: உடற்பயிற்சி உடலையும் மனதையும் ஆரோக்கியமாக வைத்திருக்க உதவுகிறது. தினமும் சிறிது நேரம் நடைப்பயிற்சி செய்வது நல்ல பழக்கம். உடற்பயிற்சியுடன் சத்தான உணவும் அவசியம்.\n\nஉடற்பயிற்சி எவற்றை ஆரோக்கியமாக வைத்திருக்க உதவுகிறது?",a:["உடலை மட்டும்","மனதை மட்டும்","உடலையும் மனதையும்","வீட்டை"],c:2,e:"உடற்பயிற்சி உடலையும் மனதையும் ஆரோக்கியமாக வைத்திருக்க உதவுகிறது."},
+{q:"தினமும் செய்ய நல்ல பழக்கம் எது?",a:["நடைப்பயிற்சி","நீண்ட நேரம் தூங்குதல்","உணவைத் தவிர்த்தல்","விளையாடாமல் இருப்பது"],c:0,e:"தினமும் சிறிது நேரம் நடைப்பயிற்சி செய்வது நல்ல பழக்கம்."},
+{q:"உடற்பயிற்சியுடன் எது அவசியம்?",a:["சத்தான உணவு","அதிக இனிப்பு","தூக்கம் மட்டும்","தொலைக்காட்சி"],c:0,e:"உடற்பயிற்சியுடன் சத்தான உணவும் அவசியம்."},
+{q:"பத்தி: மின்சாரம் நம் அன்றாட வாழ்க்கையில் முக்கிய பங்கு வகிக்கிறது. விளக்குகள், மின்விசிறிகள், கணினிகள் போன்ற பல சாதனங்கள் மின்சாரத்தால் இயங்குகின்றன. எனவே, மின்சாரத்தை வீணாக்காமல் சிக்கனமாகப் பயன்படுத்த வேண்டும்.\n\nமின்சாரம் எதில் முக்கிய பங்கு வகிக்கிறது?",a:["அன்றாட வாழ்க்கையில்","விளையாட்டில் மட்டும்","பயணத்தில் மட்டும்","விவசாயத்தில் மட்டும்"],c:0,e:"மின்சாரம் நம் அன்றாட வாழ்க்கையில் முக்கிய பங்கு வகிக்கிறது."},
+{q:"கீழ்கண்டவற்றில் மின்சாரத்தால் இயங்குவது எது?",a:["மின்விசிறி","மரம்","புத்தகம்","பென்சில்"],c:0,e:"மின்விசிறி மின்சாரத்தால் இயங்கும் சாதனம்."},
+{q:"மின்சாரத்தை எவ்வாறு பயன்படுத்த வேண்டும்?",a:["வீணாக்க வேண்டும்","சிக்கனமாகப் பயன்படுத்த வேண்டும்","எப்போதும் பயன்படுத்த வேண்டும்","பயன்படுத்தக்கூடாது"],c:1,e:"மின்சாரத்தை வீணாக்காமல் சிக்கனமாகப் பயன்படுத்த வேண்டும்."},
+{q:"பத்தி: விவசாயி கடுமையாக உழைத்து உணவுப் பொருட்களை உற்பத்தி செய்கிறார். அவர் வெயில், மழை போன்றவற்றைப் பொருட்படுத்தாமல் வயலில் உழைக்கிறார். எனவே, விவசாயிகளின் உழைப்பை நாம் மதிக்க வேண்டும்.\n\nவிவசாயி என்ன செய்கிறார்?",a:["உணவுப் பொருட்களை உற்பத்தி செய்கிறார்","வீடுகளை கட்டுகிறார்","புத்தகங்களை எழுதுகிறார்","வாகனங்களை ஓட்டுகிறார்"],c:0,e:"விவசாயி உணவுப் பொருட்களை உற்பத்தி செய்கிறார்."},
+{q:"விவசாயி எதைப் பொருட்படுத்தாமல் உழைக்கிறார்?",a:["பணம்","வெயிலும் மழையும்","நண்பர்கள்","பள்ளி"],c:1,e:"விவசாயி வெயில், மழை போன்றவற்றைப் பொருட்படுத்தாமல் உழைக்கிறார்."},
+{q:"நாம் எதை மதிக்க வேண்டும்?",a:["விவசாயிகளின் உழைப்பை","மழையை மட்டும்","வயலை மட்டும்","உணவை மட்டும்"],c:0,e:"விவசாயிகளின் உழைப்பை நாம் மதிக்க வேண்டும்."},
+{q:"பத்தி: பெற்றோர் தங்கள் குழந்தைகளின் நலனுக்காக பல தியாகங்களைச் செய்கிறார்கள். அவர்கள் குழந்தைகளுக்கு கல்வி, உணவு, உடை ஆகியவற்றை வழங்குகிறார்கள். எனவே, குழந்தைகள் பெற்றோர்களை மதித்து அன்புடன் நடத்த வேண்டும்.\n\nபெற்றோர் எதற்காக தியாகம் செய்கிறார்கள்?",a:["தங்கள் குழந்தைகளின் நலனுக்காக","பணத்திற்காக மட்டும்","பயணத்திற்காக","விளையாட்டிற்காக"],c:0,e:"பெற்றோர் குழந்தைகளின் நலனுக்காக பல தியாகங்களைச் செய்கிறார்கள்."},
+{q:"பெற்றோர் குழந்தைகளுக்கு எதை வழங்குகிறார்கள்?",a:["கல்வி, உணவு, உடை","பணம் மட்டும்","விளையாட்டு மட்டும்","பயணம் மட்டும்"],c:0,e:"பத்தியில் கல்வி, உணவு, உடை வழங்குவதாகக் கூறப்பட்டுள்ளது."},
+{q:"குழந்தைகள் பெற்றோர்களை எவ்வாறு நடத்த வேண்டும்?",a:["புறக்கணிக்க வேண்டும்","மதித்து அன்புடன் நடத்த வேண்டும்","கோபமாக நடத்த வேண்டும்","விட்டு செல்ல வேண்டும்"],c:1,e:"குழந்தைகள் பெற்றோர்களை மதித்து அன்புடன் நடத்த வேண்டும்."},
+{q:"பத்தி: மழைநீர் சேகரிப்பு நீரைப் பாதுகாக்க உதவும் சிறந்த முறையாகும். வீடுகளின் கூரைகளில் விழும் மழைநீரைத் தொட்டிகளில் சேமிக்கலாம். இதனால் நிலத்தடி நீர்மட்டமும் உயர உதவும்.\n\nமழைநீர் சேகரிப்பு எதற்கு உதவுகிறது?",a:["நீரைப் பாதுகாக்க","நீரை வீணாக்க","மின்சாரத்தை உருவாக்க மட்டும்","மரங்களை வெட்ட"],c:0,e:"மழைநீர் சேகரிப்பு நீரைப் பாதுகாக்க உதவுகிறது."},
+{q:"மழைநீரை எங்கு சேமிக்கலாம்?",a:["தொட்டிகளில்","சாலைகளில் மட்டும்","குப்பைத்தொட்டியில்","வகுப்பறையில்"],c:0,e:"மழைநீரைத் தொட்டிகளில் சேமிக்கலாம்."},
+{q:"மழைநீர் சேகரிப்பால் எது உயர உதவும்?",a:["காற்றின் வேகம்","நிலத்தடி நீர்மட்டம்","வெப்பநிலை","மரங்களின் உயரம்"],c:1,e:"மழைநீர் சேகரிப்பு நிலத்தடி நீர்மட்டம் உயர உதவும்."},
+{q:"பத்தி: சாலைப் பாதுகாப்பு அனைவரின் பொறுப்பாகும். வாகன ஓட்டிகள் போக்குவரத்து விதிகளைப் பின்பற்ற வேண்டும். பாதசாரிகள் சாலையைக் கடக்கும்போது குறிப்பிட்ட இடங்களைப் பயன்படுத்த வேண்டும். இதனால் விபத்துகளைத் தவிர்க்கலாம்.\n\nசாலைப் பாதுகாப்பு யாருடைய பொறுப்பு?",a:["வாகன ஓட்டிகளின் மட்டும்","பாதசாரிகளின் மட்டும்","அனைவரின்","காவலர்களின் மட்டும்"],c:2,e:"சாலைப் பாதுகாப்பு அனைவரின் பொறுப்பு என்று பத்தியில் கூறப்பட்டுள்ளது."},
+{q:"வாகன ஓட்டிகள் எதைப் பின்பற்ற வேண்டும்?",a:["விளையாட்டு விதிகளை","போக்குவரத்து விதிகளை","பள்ளி விதிகளை","வீட்டு விதிகளை"],c:1,e:"வாகன ஓட்டிகள் போக்குவரத்து விதிகளைப் பின்பற்ற வேண்டும்."},
+{q:"சாலையைக் கடக்கும்போது பாதசாரிகள் எதைப் பயன்படுத்த வேண்டும்?",a:["குறிப்பிட்ட இடங்களை","சாலையின் நடுப்பகுதியை","வாகனப் பாதையை","எங்கு வேண்டுமானாலும்"],c:0,e:"பாதசாரிகள் சாலையைக் கடக்கும்போது குறிப்பிட்ட இடங்களைப் பயன்படுத்த வேண்டும்."},
+{q:"பத்தி: நேர்மை மனிதனின் சிறந்த பண்புகளில் ஒன்றாகும். உண்மையைப் பேசுபவரை மற்றவர்கள் நம்புவர். நேர்மையான வாழ்க்கை மன அமைதியைத் தரும். எனவே, அனைவரும் நேர்மையைப் பின்பற்ற வேண்டும்.\n\nநேர்மை எவ்வாறு குறிப்பிடப்படுகிறது?",a:["சிறந்த பண்புகளில் ஒன்று","பலவீனம்","தீய பழக்கம்","தேவையற்றது"],c:0,e:"நேர்மை மனிதனின் சிறந்த பண்புகளில் ஒன்றாகும்."},
+{q:"உண்மையைப் பேசுபவரை மற்றவர்கள் என்ன செய்வார்கள்?",a:["வெறுப்பார்கள்","நம்புவர்","புறக்கணிப்பார்கள்","தண்டிப்பார்கள்"],c:1,e:"உண்மையைப் பேசுபவரை மற்றவர்கள் நம்புவர்."},
+{q:"நேர்மையான வாழ்க்கை எதைத் தரும்?",a:["மன அமைதியை","பயத்தை","கோபத்தை","துன்பத்தை"],c:0,e:"நேர்மையான வாழ்க்கை மன அமைதியைத் தரும்."},
+{q:"பத்தி: சுற்றுச்சூழலைப் பாதுகாப்பது ஒவ்வொருவரின் கடமையாகும். மரங்களை வளர்த்தல், குப்பைகளை முறையாக அகற்றுதல், பிளாஸ்டிக் பயன்பாட்டைக் குறைத்தல் போன்ற செயல்கள் சுற்றுச்சூழலைப் பாதுகாக்க உதவும்.\n\nசுற்றுச்சூழலைப் பாதுகாப்பது யாருடைய கடமை?",a:["அரசின் மட்டும்","மாணவர்களின் மட்டும்","ஒவ்வொருவரின்","விவசாயிகளின் மட்டும்"],c:2,e:"சுற்றுச்சூழலைப் பாதுகாப்பது ஒவ்வொருவரின் கடமை."},
+{q:"கீழ்கண்டவற்றில் சுற்றுச்சூழலைப் பாதுகாக்க உதவும் செயல் எது?",a:["மரங்களை வளர்த்தல்","குப்பைகளை வீசுதல்","பிளாஸ்டிக்கை அதிகம் பயன்படுத்துதல்","மரங்களை வெட்டுதல்"],c:0,e:"மரங்களை வளர்ப்பது சுற்றுச்சூழலைப் பாதுகாக்க உதவும்."},
+{q:"பிளாஸ்டிக் பயன்பாட்டைப் பற்றி பத்தி கூறுவது என்ன?",a:["அதிகரிக்க வேண்டும்","குறைக்க வேண்டும்","எப்போதும் பயன்படுத்த வேண்டும்","முற்றிலும் மறக்க வேண்டும்"],c:1,e:"பிளாஸ்டிக் பயன்பாட்டைக் குறைக்க வேண்டும் என்று பத்தியில் கூறப்பட்டுள்ளது."},
+{q:"மேலுள்ள சுற்றுச்சூழல் பத்தியின் ஏற்ற தலைப்பு எது?",a:["சுற்றுச்சூழல் பாதுகாப்பு","விளையாட்டு","கல்வி","பயணம்"],c:0,e:"பத்தியின் மையக்கருத்து சுற்றுச்சூழலைப் பாதுகாப்பது."},
+{q:"பத்தியைப் படித்து கேள்விக்குப் பதிலளிக்கவும்: \"நேரத்தை சரியாகப் பயன்படுத்துபவர்கள் தங்கள் பணிகளை திட்டமிட்டு செய்கிறார்கள். அவர்கள் நேரத்தை வீணாக்காமல், ஒவ்வொரு பணியையும் உரிய நேரத்தில் முடிக்க முயற்சி செய்கிறார்கள்.\" இவர்களின் முக்கியமான பண்பு எது?",a:["நேரத்தை வீணாக்குதல்","நேரத்தை சரியாகப் பயன்படுத்துதல்","வேலை செய்யாமல் இருத்தல்","தாமதமாக செயல்படுதல்"],c:1,e:"பத்தியில் அவர்கள் நேரத்தை வீணாக்காமல் சரியாகப் பயன்படுத்துகிறார்கள் என்று கூறப்பட்டுள்ளது."} 
+],
+literature:[
+{q:"ஐம்பெருங்காப்பியங்களில் ஒன்று எது?",a:["சிலப்பதிகாரம்","திருக்குறள்","ஆத்திசூடி","பெரியபுராணம்"],c:0,e:"சிலப்பதிகாரம் ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+{q:"ஐம்பெருங்காப்பியங்களில் இடம்பெறும் நூல் எது?",a:["மணிமேகலை","திருவாசகம்","கம்பராமாயணம்","ஆத்திசூடி"],c:0,e:"மணிமேகலை ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+{q:"கீழ்கண்டவற்றில் ஐம்பெருங்காப்பியங்களில் ஒன்று எது?",a:["சீவக சிந்தாமணி","திருக்குறள்","பெரியபுராணம்","நாலடியார்"],c:0,e:"சீவக சிந்தாமணி ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+{q:"ஐம்பெருங்காப்பியங்களில் இடம்பெறும் நூல் எது?",a:["வளையாபதி","ஆத்திசூடி","திருவாசகம்","கம்பராமாயணம்"],c:0,e:"வளையாபதி ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+{q:"ஐம்பெருங்காப்பியங்களில் இடம்பெறும் நூல் எது?",a:["குண்டலகேசி","பெரியபுராணம்","திருக்குறள்","திருவாசகம்"],c:0,e:"குண்டலகேசி ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+{q:"ஐம்பெருங்காப்பியங்கள் எத்தனை?",a:["மூன்று","நான்கு","ஐந்து","ஆறு"],c:2,e:"தமிழில் ஐம்பெருங்காப்பியங்கள் ஐந்து."},
+{q:"கீழ்கண்டவற்றில் ஐம்பெருங்காப்பியங்களில் சேராதது எது?",a:["சிலப்பதிகாரம்","மணிமேகலை","திருக்குறள்","குண்டலகேசி"],c:2,e:"திருக்குறள் ஐம்பெருங்காப்பியங்களில் சேராது."},
+{q:"கீழ்கண்டவற்றில் ஐம்பெருங்காப்பியங்களில் சேராதது எது?",a:["வளையாபதி","சீவக சிந்தாமணி","ஆத்திசூடி","மணிமேகலை"],c:2,e:"ஆத்திசூடி ஐம்பெருங்காப்பியங்களில் சேராது."},
+{q:"'சிலப்பதிகாரம்' நூலின் ஆசிரியர் யார்?",a:["கம்பர்","இளங்கோ அடிகள்","சேக்கிழார்","திருவள்ளுவர்"],c:1,e:"சிலப்பதிகாரத்தை இயற்றியவர் இளங்கோ அடிகள்."},
+{q:"'மணிமேகலை' நூலின் ஆசிரியர் யார்?",a:["சீத்தலைச் சாத்தனார்","இளங்கோ அடிகள்","கம்பர்","மாணிக்கவாசகர்"],c:0,e:"மணிமேகலையை இயற்றியவர் சீத்தலைச் சாத்தனார்."},
+
+{q:"'திருக்குறள்' நூலின் ஆசிரியர் யார்?",a:["திருவள்ளுவர்","கம்பர்","சேக்கிழார்","அவ்வையார்"],c:0,e:"திருக்குறளை இயற்றியவர் திருவள்ளுவர்."},
+{q:"'கம்பராமாயணம்' நூலுடன் தொடர்புடைய ஆசிரியர் யார்?",a:["கம்பர்","திருவள்ளுவர்","இளங்கோ அடிகள்","சேக்கிழார்"],c:0,e:"கம்பராமாயணத்தை இயற்றியவர் கம்பர்."},
+{q:"'பெரியபுராணம்' நூலின் ஆசிரியர் யார்?",a:["மாணிக்கவாசகர்","சேக்கிழார்","கம்பர்","அவ்வையார்"],c:1,e:"பெரியபுராணத்தை இயற்றியவர் சேக்கிழார்."},
+{q:"'திருவாசகம்' நூலின் ஆசிரியர் யார்?",a:["திருவள்ளுவர்","மாணிக்கவாசகர்","கம்பர்","சீத்தலைச் சாத்தனார்"],c:1,e:"திருவாசகத்தை இயற்றியவர் மாணிக்கவாசகர்."},
+{q:"'ஆத்திசூடி' நூலுடன் தொடர்புடைய ஆசிரியர் யார்?",a:["அவ்வையார்","கம்பர்","சேக்கிழார்","திருவள்ளுவர்"],c:0,e:"ஆத்திசூடியுடன் தொடர்புடையவர் அவ்வையார்."},
+{q:"இளங்கோ அடிகளுடன் தொடர்புடைய நூல் எது?",a:["சிலப்பதிகாரம்","மணிமேகலை","திருக்குறள்","திருவாசகம்"],c:0,e:"இளங்கோ அடிகள் – சிலப்பதிகாரம்."},
+{q:"சீத்தலைச் சாத்தனாருடன் தொடர்புடைய நூல் எது?",a:["மணிமேகலை","சிலப்பதிகாரம்","பெரியபுராணம்","ஆத்திசூடி"],c:0,e:"சீத்தலைச் சாத்தனார் – மணிமேகலை."},
+{q:"திருவள்ளுவருடன் தொடர்புடைய நூல் எது?",a:["திருக்குறள்","கம்பராமாயணம்","திருவாசகம்","சிலப்பதிகாரம்"],c:0,e:"திருவள்ளுவர் – திருக்குறள்."},
+{q:"கம்பருடன் தொடர்புடைய நூல் எது?",a:["பெரியபுராணம்","கம்பராமாயணம்","திருக்குறள்","ஆத்திசூடி"],c:1,e:"கம்பர் – கம்பராமாயணம்."},
+{q:"சேக்கிழாருடன் தொடர்புடைய நூல் எது?",a:["திருவாசகம்","பெரியபுராணம்","மணிமேகலை","சிலப்பதிகாரம்"],c:1,e:"சேக்கிழார் – பெரியபுராணம்."},
+
+{q:"மாணிக்கவாசகருடன் தொடர்புடைய நூல் எது?",a:["திருவாசகம்","திருக்குறள்","ஆத்திசூடி","கம்பராமாயணம்"],c:0,e:"மாணிக்கவாசகர் – திருவாசகம்."},
+{q:"அவ்வையாருடன் தொடர்புடைய நூல் எது?",a:["ஆத்திசூடி","பெரியபுராணம்","மணிமேகலை","திருவாசகம்"],c:0,e:"அவ்வையார் – ஆத்திசூடி."},
+{q:"'சிலப்பதிகாரம்' யாரால் இயற்றப்பட்டது?",a:["கம்பர்","இளங்கோ அடிகள்","சீத்தலைச் சாத்தனார்","சேக்கிழார்"],c:1,e:"சிலப்பதிகாரம் – இளங்கோ அடிகள்."},
+{q:"'மணிமேகலை' யாரால் இயற்றப்பட்டது?",a:["இளங்கோ அடிகள்","சீத்தலைச் சாத்தனார்","கம்பர்","மாணிக்கவாசகர்"],c:1,e:"மணிமேகலை – சீத்தலைச் சாத்தனார்."},
+{q:"'திருக்குறள்' யாரால் இயற்றப்பட்டது?",a:["திருவள்ளுவர்","அவ்வையார்","சேக்கிழார்","கம்பர்"],c:0,e:"திருக்குறள் – திருவள்ளுவர்."},
+{q:"'கம்பராமாயணம்' யாரால் இயற்றப்பட்டது?",a:["சேக்கிழார்","கம்பர்","திருவள்ளுவர்","இளங்கோ அடிகள்"],c:1,e:"கம்பராமாயணம் – கம்பர்."},
+{q:"'பெரியபுராணம்' யாரால் இயற்றப்பட்டது?",a:["மாணிக்கவாசகர்","சேக்கிழார்","கம்பர்","அவ்வையார்"],c:1,e:"பெரியபுராணம் – சேக்கிழார்."},
+{q:"'திருவாசகம்' யாரால் இயற்றப்பட்டது?",a:["மாணிக்கவாசகர்","திருவள்ளுவர்","சேக்கிழார்","கம்பர்"],c:0,e:"திருவாசகம் – மாணிக்கவாசகர்."},
+{q:"'ஆத்திசூடி' யாருடன் தொடர்புடையது?",a:["அவ்வையார்","கம்பர்","திருவள்ளுவர்","சேக்கிழார்"],c:0,e:"ஆத்திசூடி – அவ்வையார்."},
+{q:"கீழ்கண்ட இணைகளில் சரியானது எது?",a:["திருவள்ளுவர் – சிலப்பதிகாரம்","இளங்கோ அடிகள் – சிலப்பதிகாரம்","கம்பர் – திருவாசகம்","சேக்கிழார் – ஆத்திசூடி"],c:1,e:"இளங்கோ அடிகள் – சிலப்பதிகாரம் என்பது சரியான இணை."},
+
+{q:"கீழ்கண்ட இணைகளில் சரியானது எது?",a:["சீத்தலைச் சாத்தனார் – மணிமேகலை","கம்பர் – திருக்குறள்","மாணிக்கவாசகர் – பெரியபுராணம்","அவ்வையார் – கம்பராமாயணம்"],c:0,e:"சீத்தலைச் சாத்தனார் – மணிமேகலை என்பது சரியான இணை."},
+{q:"கீழ்கண்ட இணைகளில் சரியானது எது?",a:["திருவள்ளுவர் – திருக்குறள்","கம்பர் – திருவாசகம்","சேக்கிழார் – ஆத்திசூடி","அவ்வையார் – பெரியபுராணம்"],c:0,e:"திருவள்ளுவர் – திருக்குறள் என்பது சரியான இணை."},
+{q:"கீழ்கண்ட இணைகளில் சரியானது எது?",a:["கம்பர் – கம்பராமாயணம்","கம்பர் – திருக்குறள்","கம்பர் – ஆத்திசூடி","கம்பர் – திருவாசகம்"],c:0,e:"கம்பர் – கம்பராமாயணம் என்பது சரியான இணை."},
+{q:"கீழ்கண்ட இணைகளில் சரியானது எது?",a:["சேக்கிழார் – பெரியபுராணம்","சேக்கிழார் – திருக்குறள்","சேக்கிழார் – சிலப்பதிகாரம்","சேக்கிழார் – ஆத்திசூடி"],c:0,e:"சேக்கிழார் – பெரியபுராணம் என்பது சரியான இணை."},
+{q:"கீழ்கண்ட இணைகளில் சரியானது எது?",a:["மாணிக்கவாசகர் – திருவாசகம்","மாணிக்கவாசகர் – சிலப்பதிகாரம்","மாணிக்கவாசகர் – திருக்குறள்","மாணிக்கவாசகர் – ஆத்திசூடி"],c:0,e:"மாணிக்கவாசகர் – திருவாசகம் என்பது சரியான இணை."},
+{q:"கீழ்கண்ட இணைகளில் சரியானது எது?",a:["அவ்வையார் – ஆத்திசூடி","அவ்வையார் – மணிமேகலை","அவ்வையார் – பெரியபுராணம்","அவ்வையார் – கம்பராமாயணம்"],c:0,e:"அவ்வையார் – ஆத்திசூடி என்பது சரியான இணை."},
+{q:"கீழ்கண்டவற்றில் எந்த நூல் காப்பியம்?",a:["சிலப்பதிகாரம்","ஆத்திசூடி","திருக்குறள்","திருவாசகம்"],c:0,e:"சிலப்பதிகாரம் ஒரு பெருங்காப்பியம்."},
+{q:"கீழ்கண்டவற்றில் எந்த நூல் ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்?",a:["மணிமேகலை","பெரியபுராணம்","திருவாசகம்","ஆத்திசூடி"],c:0,e:"மணிமேகலை ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+{q:"கீழ்கண்டவற்றில் எது ஐம்பெருங்காப்பியப் பட்டியலில் உள்ளது?",a:["குண்டலகேசி","திருக்குறள்","ஆத்திசூடி","திருவாசகம்"],c:0,e:"குண்டலகேசி ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+{q:"'வளையாபதி' எந்தப் பட்டியலில் இடம்பெறுகிறது?",a:["ஐம்பெருங்காப்பியங்கள்","பதினெண்கீழ்க்கணக்கு","எட்டுத்தொகை","பத்துப்பாட்டு"],c:0,e:"வளையாபதி ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+
+{q:"'சீவக சிந்தாமணி' எந்தப் பட்டியலில் இடம்பெறுகிறது?",a:["ஐம்பெருங்காப்பியங்கள்","எட்டுத்தொகை","பத்துப்பாட்டு","பதினெண்கீழ்க்கணக்கு"],c:0,e:"சீவக சிந்தாமணி ஐம்பெருங்காப்பியங்களில் ஒன்றாகும்."},
+{q:"கீழ்கண்டவற்றில் ஐம்பெருங்காப்பியங்களின் சரியான தொகுப்பு எது?",a:["சிலப்பதிகாரம், மணிமேகலை, சீவக சிந்தாமணி, வளையாபதி, குண்டலகேசி","திருக்குறள், ஆத்திசூடி, திருவாசகம், பெரியபுராணம், கம்பராமாயணம்","புறநானூறு, அகநானூறு, குறுந்தொகை, நற்றிணை, கலித்தொகை","திருமுருகாற்றுப்படை, பொருநராற்றுப்படை, பட்டினப்பாலை, மதுரைக்காஞ்சி, முல்லைப்பாட்டு"],c:0,e:"இந்த ஐந்து நூல்களே ஐம்பெருங்காப்பியங்கள்."},
+{q:"கீழ்கண்டவற்றில் ஆசிரியர்–நூல் இணை தவறானது எது?",a:["திருவள்ளுவர் – திருக்குறள்","இளங்கோ அடிகள் – சிலப்பதிகாரம்","கம்பர் – கம்பராமாயணம்","சேக்கிழார் – ஆத்திசூடி"],c:3,e:"ஆத்திசூடி – அவ்வையார். சேக்கிழார் – பெரியபுராணம்."},
+{q:"கீழ்கண்டவற்றில் ஆசிரியர்–நூல் இணை தவறானது எது?",a:["சீத்தலைச் சாத்தனார் – மணிமேகலை","மாணிக்கவாசகர் – திருவாசகம்","அவ்வையார் – ஆத்திசூடி","கம்பர் – பெரியபுராணம்"],c:3,e:"பெரியபுராணம் – சேக்கிழார்; கம்பர் – கம்பராமாயணம்."},
+{q:"'திருவள்ளுவர்' என்ற ஆசிரியருடன் தொடர்புடைய நூல் எது?",a:["திருக்குறள்","சிலப்பதிகாரம்","மணிமேகலை","திருவாசகம்"],c:0,e:"திருவள்ளுவர் – திருக்குறள்."},
+{q:"'இளங்கோ அடிகள்' என்ற ஆசிரியருடன் தொடர்புடைய நூல் எது?",a:["கம்பராமாயணம்","சிலப்பதிகாரம்","பெரியபுராணம்","ஆத்திசூடி"],c:1,e:"இளங்கோ அடிகள் – சிலப்பதிகாரம்."},
+{q:"'சீத்தலைச் சாத்தனார்' என்ற ஆசிரியருடன் தொடர்புடைய நூல் எது?",a:["மணிமேகலை","திருக்குறள்","திருவாசகம்","பெரியபுராணம்"],c:0,e:"சீத்தலைச் சாத்தனார் – மணிமேகலை."},
+{q:"'சேக்கிழார்' என்ற ஆசிரியருடன் தொடர்புடைய நூல் எது?",a:["பெரியபுராணம்","கம்பராமாயணம்","ஆத்திசூடி","திருக்குறள்"],c:0,e:"சேக்கிழார் – பெரியபுராணம்."},
+{q:"'மாணிக்கவாசகர்' என்ற ஆசிரியருடன் தொடர்புடைய நூல் எது?",a:["திருவாசகம்","சிலப்பதிகாரம்","மணிமேகலை","திருக்குறள்"],c:0,e:"மாணிக்கவாசகர் – திருவாசகம்."},
+{q:"'அவ்வையார்' என்ற ஆசிரியருடன் தொடர்புடைய நூல் எது?",a:["ஆத்திசூடி","பெரியபுராணம்","திருக்குறள்","கம்பராமாயணம்"],c:0,e:"அவ்வையார் – ஆத்திசூடி."}
+],
+scholars:[
+{q:"தமிழ் அறிஞர்கள் என்பவர்கள் யார்?",a:["தமிழ்மொழியின் வளர்ச்சிக்காக பாடுபட்டவர்கள்","விளையாட்டு வீரர்கள்","வணிகர்கள்","அரசியல்வாதிகள்"],c:0,e:"தமிழ்மொழியின் வளர்ச்சிக்காக பாடுபட்ட முக்கிய அறிஞர்கள் தமிழ் அறிஞர்கள் எனப்படுவர்."},
+{q:"தமிழ் வளர்ச்சிக்காக அறிஞர்கள் செய்த பணிகள் எவ்வாறு அழைக்கப்படுகின்றன?",a:["தமிழ்த்தொண்டு","சமூகப்பணி","வணிகப்பணி","கல்விப்பணி"],c:0,e:"தமிழ் வளர்ச்சிப் பணிகள் தமிழ்த்தொண்டு எனப்படும்."},
+{q:"உ.வே.சாமிநாதையர் எவ்வாறு போற்றப்படுகிறார்?",a:["தமிழ்த்தாத்தா","மகாகவி","புரட்சிக்கவிஞர்","தமிழ்க்கடல்"],c:0,e:"உ.வே.சாமிநாதையர் 'தமிழ்த்தாத்தா' என்று போற்றப்படுகிறார்."},
+{q:"உ.வே.சாமிநாதையர் செய்த முக்கிய தமிழ்த்தொண்டு எது?",a:["பழைய தமிழ் நூல்களைத் தேடி சேகரித்து பதிப்பித்தல்","தனித்தமிழ் இயக்கம்","சமூக சீர்திருத்தம் மட்டும்","அரசியல் பணி"],c:0,e:"அவர் ஓலைச்சுவடிகளில் இருந்த பழந்தமிழ் நூல்களைத் தேடி கண்டுபிடித்து பதிப்பித்தார்."},
+{q:"உ.வே.சாமிநாதையர் எந்த வகையான நூல்களைத் தேடிக் கண்டுபிடித்தார்?",a:["பழந்தமிழ் நூல்கள்","ஆங்கில நூல்கள்","அறிவியல் நூல்கள்","வெளிநாட்டு நூல்கள்"],c:0,e:"அவர் பல பழந்தமிழ் நூல்களைத் தேடிக் கண்டுபிடித்தார்."},
+{q:"பழந்தமிழ் நூல்கள் பெரும்பாலும் எதில் இருந்தன?",a:["ஓலைச்சுவடிகளில்","கணினிகளில்","செய்தித்தாள்களில்","தொலைக்காட்சியில்"],c:0,e:"பல பழந்தமிழ் நூல்கள் ஓலைச்சுவடிகளில் இருந்தன."},
+{q:"உ.வே.சாமிநாதையர் ஓலைச்சுவடிகளில் இருந்த நூல்களை என்ன செய்தார்?",a:["அச்சிட்டு வெளியிட்டார்","அழித்தார்","மொழிபெயர்க்காமல் விட்டார்","மறைத்தார்"],c:0,e:"அவர் அவற்றைத் தேடி கண்டுபிடித்து அச்சிட்டு வெளியிட்டார்."},
+{q:"'தமிழ்த்தாத்தா' என்று அழைக்கப்படுபவர் யார்?",a:["உ.வே.சாமிநாதையர்","பாரதியார்","பாரதிதாசன்","மறைமலை அடிகள்"],c:0,e:"உ.வே.சாமிநாதையர் தமிழ்த்தாத்தா என்று போற்றப்படுகிறார்."},
+{q:"மறைமலை அடிகள் எந்த இயக்கத்துடன் தொடர்புடையவர்?",a:["தனித்தமிழ் இயக்கம்","விடுதலை இயக்கம்","சுற்றுச்சூழல் இயக்கம்","விவசாய இயக்கம்"],c:0,e:"மறைமலை அடிகள் தனித்தமிழ் இயக்கத்தை வளர்த்தார்."},
+{q:"மறைமலை அடிகள் எவ்வாறு போற்றப்படுகிறார்?",a:["தனித்தமிழ் இயக்கத்தின் தந்தை","தமிழ்த்தாத்தா","மகாகவி","புரட்சிக்கவிஞர்"],c:0,e:"மறைமலை அடிகள் தனித்தமிழ் இயக்கத்தின் தந்தை என்று போற்றப்படுகிறார்."},
+
+{q:"மறைமலை அடிகள் எதை வலியுறுத்தினார்?",a:["தனித்தமிழைப் பயன்படுத்துவதை","பிறமொழிச் சொற்களை அதிகம் பயன்படுத்துவதை","ஆங்கிலத்தை மட்டும் பயன்படுத்துவதை","தமிழைப் பயன்படுத்தாமல் இருப்பதை"],c:0,e:"தமிழில் பிறமொழிச் சொற்களின் கலப்பைக் குறைத்து தனித்தமிழைப் பயன்படுத்த வலியுறுத்தினார்."},
+{q:"மறைமலை அடிகளின் நோக்கங்களில் ஒன்று எது?",a:["தமிழில் பிறமொழிக் கலப்பைக் குறைத்தல்","தமிழை மறத்தல்","ஆங்கிலத்தை வளர்த்தல்","தமிழ் நூல்களை அழித்தல்"],c:0,e:"அவர் தமிழில் பிறமொழிச் சொற்களின் கலப்பைக் குறைக்க முயன்றார்."},
+{q:"மகாகவி என்று அழைக்கப்படுபவர் யார்?",a:["சுப்பிரமணிய பாரதியார்","பாரதிதாசன்","உ.வே.சாமிநாதையர்","மறைமலை அடிகள்"],c:0,e:"சுப்பிரமணிய பாரதியார் 'மகாகவி பாரதியார்' என்று அழைக்கப்படுகிறார்."},
+{q:"பாரதியாரின் பாடல்களில் இடம்பெற்ற முக்கிய கருத்து எது?",a:["விடுதலை","வணிகம்","விவசாயம் மட்டும்","கணினி"],c:0,e:"பாரதியாரின் பாடல்களில் விடுதலை, சமத்துவம், பெண்கள் முன்னேற்றம் போன்ற கருத்துகள் இடம்பெற்றன."},
+{q:"பாரதியார் எதைப் பற்றி பாடினார்?",a:["பெண்கள் முன்னேற்றம்","தமிழை மறப்பது","சாதியை ஆதரிப்பது","அறிவியலை எதிர்ப்பது"],c:0,e:"பெண்கள் முன்னேற்றத்தை பாரதியார் தனது பாடல்களில் வலியுறுத்தினார்."},
+{q:"பாரதியார் எந்த கருத்தை எதிர்த்தார்?",a:["சாதி வேறுபாட்டை","சமத்துவத்தை","பெண்கள் முன்னேற்றத்தை","விடுதலையை"],c:0,e:"பாரதியாரின் பாடல்களில் சாதி எதிர்ப்புக் கருத்துகள் இடம்பெற்றன."},
+{q:"பாரதியார் பாடல்களில் இடம்பெற்ற சமூகக் கருத்து எது?",a:["சமத்துவம்","பகைமை","அடிமைத்தனம்","சாதி வேறுபாடு"],c:0,e:"சமத்துவம் பாரதியாரின் முக்கிய கருத்துகளில் ஒன்றாகும்."},
+{q:"பாரதியாரின் பாடல்களில் இடம்பெற்ற தேசப்பற்று சார்ந்த கருத்து எது?",a:["விடுதலை","அடிமைத்தனம்","பகைமை","சுயநலம்"],c:0,e:"பாரதியாரின் பாடல்களில் விடுதலை மற்றும் தேசப்பற்று முக்கியமாக இடம்பெற்றன."},
+{q:"பாரதிதாசன் எவ்வாறு அழைக்கப்படுகிறார்?",a:["புரட்சிக்கவிஞர்","மகாகவி","தமிழ்த்தாத்தா","தமிழ்க்கடல்"],c:0,e:"பாரதிதாசன் 'புரட்சிக்கவிஞர்' என்று அழைக்கப்படுகிறார்."},
+{q:"பாரதிதாசன் தனது படைப்புகளில் எதை வலியுறுத்தினார்?",a:["தமிழ் உணர்வு மற்றும் சமூக சீர்திருத்தம்","வணிகம் மட்டும்","விளையாட்டு மட்டும்","அறிவியல் மட்டும்"],c:0,e:"தமிழ் உணர்வு மற்றும் சமூக சீர்திருத்தக் கருத்துகளை வலியுறுத்தினார்."},
+
+{q:"'புரட்சிக்கவிஞர்' என்ற சிறப்புப் பெயர் யாருக்கு உரியது?",a:["பாரதிதாசன்","பாரதியார்","உ.வே.சாமிநாதையர்","மறைமலை அடிகள்"],c:0,e:"பாரதிதாசன் புரட்சிக்கவிஞர் என்று அழைக்கப்படுகிறார்."},
+{q:"பாரதிதாசனின் முக்கிய கருத்துகளில் ஒன்று எது?",a:["சமூக சீர்திருத்தம்","சாதி வேறுபாடு","அடிமைத்தனம்","தமிழ் எதிர்ப்பு"],c:0,e:"சமூக சீர்திருத்தம் பாரதிதாசனின் முக்கிய கருத்துகளில் ஒன்றாகும்."},
+{q:"தேவநேயப் பாவாணர் எந்தத் துறையில் சிறப்புப் பங்களிப்பு செய்தார்?",a:["தமிழ்மொழி ஆய்வு","விளையாட்டு","வணிகம்","கணினி"],c:0,e:"தேவநேயப் பாவாணர் தமிழ்மொழி ஆய்வில் சிறப்புப் பங்களிப்பு செய்தார்."},
+{q:"பெருஞ்சித்திரனார் எதை வளர்த்தார்?",a:["தனித்தமிழ் மற்றும் தமிழ் உணர்வு","விளையாட்டு","வணிகம்","ஆங்கில மொழி மட்டும்"],c:0,e:"பெருஞ்சித்திரனார் தனித்தமிழ் மற்றும் தமிழ் உணர்வை வளர்த்தார்."},
+{q:"திரு.வி.க. என்பதன் விரிவாக்கம் என்ன?",a:["திரு.வி.கல்யாணசுந்தரனார்","திரு.வீரகாளியப்பன்","திரு.விநாயகசுந்தரம்","திரு.வேலாயுதம்"],c:0,e:"திரு.வி.க. என்பவர் திரு.வி.கல்யாணசுந்தரனார்."},
+{q:"திரு.வி.கல்யாணசுந்தரனார் எந்தத் துறையில் பங்களித்தார்?",a:["தமிழ் உரைநடை மற்றும் சமூகப் பணி","விளையாட்டு","வணிகம்","கணினி"],c:0,e:"திரு.வி.கல்யாணசுந்தரனார் தமிழ் உரைநடை மற்றும் சமூகப் பணியில் பங்களித்தார்."},
+{q:"மு.வ. என்பதன் விரிவாக்கம் என்ன?",a:["மு.வரதராசனார்","மு.வீரசாமி","மு.விநாயகம்","மு.வேலாயுதம்"],c:0,e:"மு.வ. என்பது மு.வரதராசனாரைக் குறிக்கும்."},
+{q:"மு.வரதராசனார் எந்தத் துறைக்கு பங்களித்தார்?",a:["தமிழ் இலக்கியம் மற்றும் உரைநடை","விளையாட்டு","வணிகம்","மருத்துவம்"],c:0,e:"மு.வரதராசனார் தமிழ் இலக்கியம் மற்றும் உரைநடை வளர்ச்சிக்கு பங்களித்தார்."},
+{q:"சி.வை.தாமோதரம் பிள்ளை செய்த முக்கிய பணி எது?",a:["பழந்தமிழ் நூல்களைத் தேடி பதிப்பித்தல்","தனித்தமிழ் இயக்கம்","பெண்கள் முன்னேற்றம்","சமூக சீர்திருத்தம் மட்டும்"],c:0,e:"சி.வை.தாமோதரம் பிள்ளை பழந்தமிழ் நூல்களைத் தேடி பதிப்பித்தார்."},
+{q:"பழந்தமிழ் நூல்களைத் தேடி பதிப்பித்த அறிஞர்களில் ஒருவர் யார்?",a:["சி.வை.தாமோதரம் பிள்ளை","பாரதிதாசன்","பெருஞ்சித்திரனார்","மறைமலை அடிகள்"],c:0,e:"சி.வை.தாமோதரம் பிள்ளை பழந்தமிழ் நூல்களைத் தேடி பதிப்பித்தார்."},
+
+{q:"கீழ்கண்டவற்றில் சரியான இணை எது?",a:["உ.வே.சாமிநாதையர் – பழந்தமிழ் நூல்கள்","பாரதியார் – தனித்தமிழ் இயக்கம்","பாரதிதாசன் – தமிழ்த்தாத்தா","மறைமலை அடிகள் – மகாகவி"],c:0,e:"உ.வே.சாமிநாதையர் பழந்தமிழ் நூல்களைத் தேடி பதிப்பித்தார்."},
+{q:"கீழ்கண்டவற்றில் சரியான இணை எது?",a:["மறைமலை அடிகள் – தனித்தமிழ் இயக்கம்","பாரதியார் – தமிழ்த்தாத்தா","பாரதிதாசன் – மகாகவி","உ.வே.சாமிநாதையர் – புரட்சிக்கவிஞர்"],c:0,e:"மறைமலை அடிகள் தனித்தமிழ் இயக்கத்தை வளர்த்தார்."},
+{q:"கீழ்கண்டவற்றில் சரியான இணை எது?",a:["பாரதியார் – மகாகவி","பாரதிதாசன் – தமிழ்த்தாத்தா","உ.வே.சாமிநாதையர் – புரட்சிக்கவிஞர்","மறைமலை அடிகள் – மகாகவி"],c:0,e:"பாரதியார் மகாகவி என்று அழைக்கப்படுகிறார்."},
+{q:"கீழ்கண்டவற்றில் சரியான இணை எது?",a:["பாரதிதாசன் – புரட்சிக்கவிஞர்","பாரதியார் – தமிழ்த்தாத்தா","மறைமலை அடிகள் – மகாகவி","உ.வே.சாமிநாதையர் – புரட்சிக்கவிஞர்"],c:0,e:"பாரதிதாசன் புரட்சிக்கவிஞர் என்று அழைக்கப்படுகிறார்."},
+{q:"கீழ்கண்டவற்றில் தவறான இணை எது?",a:["உ.வே.சாமிநாதையர் – தமிழ்த்தாத்தா","பாரதியார் – மகாகவி","பாரதிதாசன் – புரட்சிக்கவிஞர்","மறைமலை அடிகள் – தமிழ்த்தாத்தா"],c:3,e:"தமிழ்த்தாத்தா என்பது உ.வே.சாமிநாதையரின் சிறப்புப் பெயர்."},
+{q:"பாரதியார் எந்த மூன்று முக்கிய கருத்துகளைப் பாடினார்?",a:["விடுதலை, சமத்துவம், பெண்கள் முன்னேற்றம்","வணிகம், விளையாட்டு, மருத்துவம்","விவசாயம், தொழில், கணினி","பணம், பதவி, புகழ்"],c:0,e:"பாரதியார் விடுதலை, சமத்துவம், பெண்கள் முன்னேற்றம் போன்ற கருத்துகளைப் பாடினார்."},
+{q:"தமிழில் பிறமொழிச் சொற்களின் கலப்பைக் குறைக்க வலியுறுத்தியவர் யார்?",a:["மறைமலை அடிகள்","பாரதியார்","உ.வே.சாமிநாதையர்","மு.வரதராசனார்"],c:0,e:"மறைமலை அடிகள் தனித்தமிழைப் பயன்படுத்த வலியுறுத்தினார்."},
+{q:"ஓலைச்சுவடிகளில் இருந்த பழந்தமிழ் நூல்களைத் தேடி வெளியிட்டவர் யார்?",a:["உ.வே.சாமிநாதையர்","பாரதிதாசன்","பெருஞ்சித்திரனார்","திரு.வி.க."],c:0,e:"உ.வே.சாமிநாதையர் ஓலைச்சுவடிகளில் இருந்த பழந்தமிழ் நூல்களைத் தேடி அச்சிட்டு வெளியிட்டார்."},
+{q:"தமிழ்மொழி ஆய்வில் சிறப்புப் பங்களிப்பு செய்தவர் யார்?",a:["தேவநேயப் பாவாணர்","கம்பர்","சேக்கிழார்","மாணிக்கவாசகர்"],c:0,e:"தேவநேயப் பாவாணர் தமிழ்மொழி ஆய்வில் சிறப்புப் பங்களிப்பு செய்தார்."},
+{q:"தனித்தமிழ் மற்றும் தமிழ் உணர்வை வளர்த்தவர் யார்?",a:["பெருஞ்சித்திரனார்","கம்பர்","சேக்கிழார்","திருவள்ளுவர்"],c:0,e:"பெருஞ்சித்திரனார் தனித்தமிழ் மற்றும் தமிழ் உணர்வை வளர்த்தார்."},
+
+{q:"தமிழ் உரைநடை மற்றும் சமூகப் பணியில் பங்களித்தவர் யார்?",a:["திரு.வி.கல்யாணசுந்தரனார்","தேவநேயப் பாவாணர்","பாரதியார்","பாரதிதாசன்"],c:0,e:"திரு.வி.கல்யாணசுந்தரனார் தமிழ் உரைநடை மற்றும் சமூகப் பணியில் பங்களித்தார்."},
+{q:"தமிழ் இலக்கியம் மற்றும் உரைநடை வளர்ச்சிக்கு பங்களித்தவர் யார்?",a:["மு.வரதராசனார்","மறைமலை அடிகள்","சி.வை.தாமோதரம் பிள்ளை","பெருஞ்சித்திரனார்"],c:0,e:"மு.வரதராசனார் தமிழ் இலக்கியம் மற்றும் உரைநடை வளர்ச்சிக்கு பங்களித்தார்."},
+{q:"பழந்தமிழ் நூல்களைத் தேடி பதிப்பித்தவர்களில் ஒருவர் யார்?",a:["உ.வே.சாமிநாதையர்","பாரதியார்","பாரதிதாசன்","தேவநேயப் பாவாணர்"],c:0,e:"உ.வே.சாமிநாதையர் பழந்தமிழ் நூல்களைத் தேடி பதிப்பித்தார்."},
+{q:"'தமிழ்த்தொண்டு' என்பதன் பொருள் என்ன?",a:["தமிழ் வளர்ச்சிக்காக செய்யப்படும் பணி","வணிகம் செய்வது","விளையாடுவது","பயணம் செய்வது"],c:0,e:"தமிழ்மொழியின் வளர்ச்சிக்காக செய்யப்படும் பணிகள் தமிழ்த்தொண்டு எனப்படும்."},
+{q:"விடுதலை, பெண்கள் முன்னேற்றம், சமத்துவம் ஆகியவற்றை வலியுறுத்தியவர் யார்?",a:["பாரதியார்","மறைமலை அடிகள்","உ.வே.சாமிநாதையர்","சி.வை.தாமோதரம் பிள்ளை"],c:0,e:"இந்த கருத்துகள் மகாகவி பாரதியாரின் பாடல்களில் இடம்பெற்றன."},
+{q:"சமூக சீர்திருத்தம் மற்றும் தமிழ் உணர்வை வலியுறுத்தியவர் யார்?",a:["பாரதிதாசன்","பாரதியார்","உ.வே.சாமிநாதையர்","மு.வரதராசனார்"],c:0,e:"பாரதிதாசன் சமூக சீர்திருத்தம் மற்றும் தமிழ் உணர்வை வலியுறுத்தினார்."},
+{q:"தனித்தமிழ் இயக்கத்தின் தந்தை என்று போற்றப்படுபவர் யார்?",a:["மறைமலை அடிகள்","உ.வே.சாமிநாதையர்","பாரதியார்","பாரதிதாசன்"],c:0,e:"மறைமலை அடிகள் தனித்தமிழ் இயக்கத்தின் தந்தை என்று போற்றப்படுகிறார்."},
+{q:"'மகாகவி பாரதியார்' என்ற சிறப்புப் பெயர் யாரைக் குறிக்கிறது?",a:["சுப்பிரமணிய பாரதியார்","பாரதிதாசன்","உ.வே.சாமிநாதையர்","பெருஞ்சித்திரனார்"],c:0,e:"சுப்பிரமணிய பாரதியார் மகாகவி பாரதியார் என்று அழைக்கப்படுகிறார்."},
+{q:"'புரட்சிக்கவிஞர்' என்ற சிறப்புப் பெயர் யாரைக் குறிக்கிறது?",a:["பாரதிதாசன்","பாரதியார்","மறைமலை அடிகள்","மு.வரதராசனார்"],c:0,e:"பாரதிதாசன் புரட்சிக்கவிஞர் என்று அழைக்கப்படுகிறார்."},
+{q:"'தமிழ்த்தாத்தா' என்ற சிறப்புப் பெயர் யாரைக் குறிக்கிறது?",a:["உ.வே.சாமிநாதையர்","திரு.வி.கல்யாணசுந்தரனார்","தேவநேயப் பாவாணர்","சி.வை.தாமோதரம் பிள்ளை"],c:0,e:"உ.வே.சாமிநாதையர் தமிழ்த்தாத்தா என்று போற்றப்படுகிறார்."}
+],
+thirukkural:[
+{q:"திருக்குறளை இயற்றியவர் யார்?",a:["திருவள்ளுவர்","கம்பர்","இளங்கோ அடிகள்","சேக்கிழார்"],c:0,e:"திருக்குறளை இயற்றியவர் திருவள்ளுவர்."},
+{q:"திருக்குறளின் ஆசிரியர் யார்?",a:["பாரதியார்","திருவள்ளுவர்","அவ்வையார்","மாணிக்கவாசகர்"],c:1,e:"திருக்குறளின் ஆசிரியர் திருவள்ளுவர்."},
+{q:"திருக்குறளில் மொத்தம் எத்தனை குறள்கள் உள்ளன?",a:["1300","1330","133","1000"],c:1,e:"திருக்குறளில் மொத்தம் 1330 குறள்கள் உள்ளன."},
+{q:"திருக்குறளில் மொத்தம் எத்தனை அதிகாரங்கள் உள்ளன?",a:["130","133","380","700"],c:1,e:"திருக்குறளில் மொத்தம் 133 அதிகாரங்கள் உள்ளன."},
+{q:"ஒவ்வொரு அதிகாரத்திலும் எத்தனை குறள்கள் உள்ளன?",a:["5","10","20","15"],c:1,e:"ஒவ்வொரு அதிகாரத்திலும் 10 குறள்கள் உள்ளன."},
+{q:"திருக்குறளில் மொத்தம் எத்தனை பகுதிகள் உள்ளன?",a:["2","3","4","5"],c:1,e:"திருக்குறள் 3 பகுதிகளைக் கொண்டது."},
+{q:"திருக்குறளின் மூன்று பகுதிகள் எவை?",a:["அறத்துப்பால், பொருட்பால், காமத்துப்பால்","அறம், இன்பம், வீடு","கல்வி, பொருள், அரசியல்","அகம், புறம், அறம்"],c:0,e:"திருக்குறளின் மூன்று பகுதிகள் அறத்துப்பால், பொருட்பால், காமத்துப்பால்."},
+{q:"அறத்துப்பாலில் எத்தனை அதிகாரங்கள் உள்ளன?",a:["25","38","70","133"],c:1,e:"அறத்துப்பாலில் 38 அதிகாரங்கள் உள்ளன."},
+{q:"அறத்துப்பாலில் எத்தனை குறள்கள் உள்ளன?",a:["250","380","700","1330"],c:1,e:"அறத்துப்பாலில் 380 குறள்கள் உள்ளன."},
+{q:"பொருட்பாலில் எத்தனை அதிகாரங்கள் உள்ளன?",a:["38","25","70","133"],c:2,e:"பொருட்பாலில் 70 அதிகாரங்கள் உள்ளன."},
+
+{q:"பொருட்பாலில் எத்தனை குறள்கள் உள்ளன?",a:["380","700","250","1330"],c:1,e:"பொருட்பாலில் 700 குறள்கள் உள்ளன."},
+{q:"காமத்துப்பாலில் எத்தனை அதிகாரங்கள் உள்ளன?",a:["25","38","70","133"],c:0,e:"காமத்துப்பாலில் 25 அதிகாரங்கள் உள்ளன."},
+{q:"காமத்துப்பாலில் எத்தனை குறள்கள் உள்ளன?",a:["250","380","700","1330"],c:0,e:"காமத்துப்பாலில் 250 குறள்கள் உள்ளன."},
+{q:"அறத்துப்பால் + பொருட்பால் + காமத்துப்பால் ஆகியவற்றின் மொத்த அதிகாரங்கள் எத்தனை?",a:["100","133","130","1330"],c:1,e:"38 + 70 + 25 = 133 அதிகாரங்கள்."},
+{q:"அறத்துப்பால் + பொருட்பால் + காமத்துப்பால் ஆகியவற்றின் மொத்த குறள்கள் எத்தனை?",a:["133","380","1330","700"],c:2,e:"380 + 700 + 250 = 1330 குறள்கள்."},
+{q:"திருக்குறளின் மற்றொரு பெயர் எது?",a:["முப்பால்","சிலப்பதிகாரம்","நாலடியார்","புறநானூறு"],c:0,e:"திருக்குறளின் மற்றொரு பெயர் முப்பால்."},
+{q:"திருக்குறளின் மற்றொரு பெயர் எது?",a:["பொதுமறை","கம்பராமாயணம்","மணிமேகலை","ஆத்திசூடி"],c:0,e:"திருக்குறள் பொதுமறை என்றும் அழைக்கப்படுகிறது."},
+{q:"திருக்குறளின் மற்றொரு பெயர் எது?",a:["தமிழ்மறை","பெரியபுராணம்","திருவாசகம்","சீவக சிந்தாமணி"],c:0,e:"திருக்குறள் தமிழ்மறை என்றும் அழைக்கப்படுகிறது."},
+{q:"திருக்குறளின் மற்றொரு பெயர் எது?",a:["உலகப்பொதுமறை","ஐங்குறுநூறு","பத்துப்பாட்டு","கலித்தொகை"],c:0,e:"திருக்குறள் உலகப்பொதுமறை என்றும் அழைக்கப்படுகிறது."},
+{q:"திருக்குறளின் மற்றொரு பெயர் எது?",a:["பொய்யாமொழி","பெரியபுராணம்","திருவாசகம்","மணிமேகலை"],c:0,e:"திருக்குறள் பொய்யாமொழி என்றும் அழைக்கப்படுகிறது."},
+
+{q:"கீழ்கண்டவற்றில் திருக்குறளின் மற்றொரு பெயர் எது?",a:["முப்பால்","முத்தமிழ்","முக்கூடல்","முப்பெரும்"],c:0,e:"முப்பால் என்பது திருக்குறளின் மற்றொரு பெயர்."},
+{q:"திருக்குறள் ஏன் 'முப்பால்' எனப்படுகிறது?",a:["மூன்று புலவர்கள் இருப்பதால்","மூன்று பகுதிகளைக் கொண்டதால்","மூன்று அதிகாரங்கள் இருப்பதால்","மூன்று குறள்கள் இருப்பதால்"],c:1,e:"திருக்குறள் அறம், பொருள், காமம் என மூன்று பகுதிகளைக் கொண்டதால் முப்பால் எனப்படுகிறது."},
+{q:"திருக்குறளின் முதல் பகுதி எது?",a:["பொருட்பால்","காமத்துப்பால்","அறத்துப்பால்","உலகப்பொதுமறை"],c:2,e:"திருக்குறளின் முதல் பகுதி அறத்துப்பால்."},
+{q:"திருக்குறளின் இரண்டாம் பகுதி எது?",a:["அறத்துப்பால்","பொருட்பால்","காமத்துப்பால்","முப்பால்"],c:1,e:"திருக்குறளின் இரண்டாம் பகுதி பொருட்பால்."},
+{q:"திருக்குறளின் மூன்றாம் பகுதி எது?",a:["அறத்துப்பால்","பொருட்பால்","காமத்துப்பால்","தமிழ்மறை"],c:2,e:"திருக்குறளின் மூன்றாம் பகுதி காமத்துப்பால்."},
+{q:"திருக்குறளில் அதிகமான அதிகாரங்களைக் கொண்ட பகுதி எது?",a:["அறத்துப்பால்","பொருட்பால்","காமத்துப்பால்","மூன்றும் சமம்"],c:1,e:"பொருட்பாலில் 70 அதிகாரங்கள் உள்ளதால் அதுவே அதிகம்."},
+{q:"திருக்குறளில் குறைந்த அதிகாரங்களைக் கொண்ட பகுதி எது?",a:["அறத்துப்பால்","பொருட்பால்","காமத்துப்பால்","அனைத்தும் சமம்"],c:2,e:"காமத்துப்பாலில் 25 அதிகாரங்கள் உள்ளன."},
+{q:"அறத்துப்பால் மற்றும் காமத்துப்பால் சேர்த்து எத்தனை அதிகாரங்கள்?",a:["63","70","95","133"],c:0,e:"38 + 25 = 63 அதிகாரங்கள்."},
+{q:"அறத்துப்பால் மற்றும் காமத்துப்பால் சேர்த்து எத்தனை குறள்கள்?",a:["630","500","950","1330"],c:0,e:"380 + 250 = 630 குறள்கள்."},
+{q:"பொருட்பால் மற்றும் காமத்துப்பால் சேர்த்து எத்தனை அதிகாரங்கள்?",a:["95","88","63","108"],c:0,e:"70 + 25 = 95 அதிகாரங்கள்."},
+
+{q:"பொருட்பால் மற்றும் காமத்துப்பால் சேர்த்து எத்தனை குறள்கள்?",a:["950","630","700","580"],c:0,e:"700 + 250 = 950 குறள்கள்."},
+{q:"திருக்குறளின் ஒவ்வொரு குறளும் எத்தனை அடிகளைக் கொண்டது?",a:["1","2","3","4"],c:1,e:"ஒவ்வொரு குறளும் 2 அடிகளைக் கொண்டது."},
+{q:"திருக்குறளின் முதல் அடி எத்தனை சீர்களைக் கொண்டது?",a:["3","4","5","7"],c:1,e:"முதல் அடி 4 சீர்களைக் கொண்டது."},
+{q:"திருக்குறளின் இரண்டாம் அடி எத்தனை சீர்களைக் கொண்டது?",a:["2","3","4","5"],c:1,e:"இரண்டாம் அடி 3 சீர்களைக் கொண்டது."},
+{q:"ஒரு திருக்குறளில் மொத்தம் எத்தனை சீர்கள் உள்ளன?",a:["5","6","7","8"],c:2,e:"முதல் அடியில் 4 சீர்களும் இரண்டாம் அடியில் 3 சீர்களும் உள்ளதால் மொத்தம் 7 சீர்கள்."},
+{q:"4 சீர்கள் கொண்டது திருக்குறளின் எந்த அடி?",a:["முதல் அடி","இரண்டாம் அடி","இரண்டு அடிகளும்","எந்த அடியும் இல்லை"],c:0,e:"திருக்குறளின் முதல் அடி 4 சீர்களைக் கொண்டது."},
+{q:"3 சீர்கள் கொண்டது திருக்குறளின் எந்த அடி?",a:["முதல் அடி","இரண்டாம் அடி","இரண்டு அடிகளும்","எந்த அடியும் இல்லை"],c:1,e:"திருக்குறளின் இரண்டாம் அடி 3 சீர்களைக் கொண்டது."},
+{q:"திருக்குறளில் ஒரு அதிகாரத்திற்கு எத்தனை குறள்கள்?",a:["8","10","12","20"],c:1,e:"ஒவ்வொரு அதிகாரத்திலும் 10 குறள்கள் உள்ளன."},
+{q:"133 அதிகாரங்கள் × 10 குறள்கள் = ?",a:["1300","1330","133","1380"],c:1,e:"133 × 10 = 1330 குறள்கள்."},
+{q:"38 அதிகாரங்கள் × 10 குறள்கள் = ?",a:["280","380","3800","308"],c:1,e:"அறத்துப்பாலில் 38 × 10 = 380 குறள்கள்."},
+
+{q:"70 அதிகாரங்கள் × 10 குறள்கள் = ?",a:["700","70","770","600"],c:0,e:"பொருட்பாலில் 70 × 10 = 700 குறள்கள்."},
+{q:"25 அதிகாரங்கள் × 10 குறள்கள் = ?",a:["150","200","250","300"],c:2,e:"காமத்துப்பாலில் 25 × 10 = 250 குறள்கள்."},
+{q:"திருக்குறளின் மொத்த குறள்கள் எத்தனை?",a:["133","380","1330","700"],c:2,e:"திருக்குறளின் மொத்த குறள்கள் 1330."},
+{q:"திருக்குறளின் மொத்த அதிகாரங்கள் எத்தனை?",a:["1330","133","70","38"],c:1,e:"திருக்குறளின் மொத்த அதிகாரங்கள் 133."},
+{q:"திருக்குறளின் மொத்த சீர்கள் ஒரு குறளுக்கு எத்தனை?",a:["4","3","7","10"],c:2,e:"ஒவ்வொரு குறளிலும் மொத்தம் 7 சீர்கள் உள்ளன."},
+{q:"திருக்குறளின் எந்தப் பகுதி 38 அதிகாரங்களைக் கொண்டது?",a:["அறத்துப்பால்","பொருட்பால்","காமத்துப்பால்","முப்பால்"],c:0,e:"அறத்துப்பால் 38 அதிகாரங்களைக் கொண்டது."},
+{q:"திருக்குறளின் எந்தப் பகுதி 70 அதிகாரங்களைக் கொண்டது?",a:["அறத்துப்பால்","பொருட்பால்","காமத்துப்பால்","தமிழ்மறை"],c:1,e:"பொருட்பால் 70 அதிகாரங்களைக் கொண்டது."},
+{q:"திருக்குறளின் எந்தப் பகுதி 25 அதிகாரங்களைக் கொண்டது?",a:["அறத்துப்பால்","பொருட்பால்","காமத்துப்பால்","பொதுமறை"],c:2,e:"காமத்துப்பால் 25 அதிகாரங்களைக் கொண்டது."},
+{q:"கீழ்கண்டவற்றில் திருக்குறளின் சிறப்பு எது?",a:["ஒவ்வொரு அதிகாரத்திலும் 10 குறள்கள்","ஒவ்வொரு அதிகாரத்திலும் 5 குறள்கள்","மொத்தம் 100 குறள்கள்","ஒரே ஒரு பகுதி"],c:0,e:"ஒவ்வொரு அதிகாரத்திலும் 10 குறள்கள் இருப்பது திருக்குறளின் அமைப்புச் சிறப்பாகும்."},
+{q:"கீழ்கண்டவற்றில் திருக்குறளின் சரியான அமைப்பு எது?",a:["133 அதிகாரங்கள், 1330 குறள்கள்","130 அதிகாரங்கள், 1300 குறள்கள்","133 அதிகாரங்கள், 1000 குறள்கள்","100 அதிகாரங்கள், 1330 குறள்கள்"],c:0,e:"திருக்குறளில் 133 அதிகாரங்களும் 1330 குறள்களும் உள்ளன."}
+],
+science:[{q:"நீரின் வேதியியல் வாய்ப்பாடு?",a:["CO2","H2O","O2","NaCl"],c:1,e:"நீரின் வேதியியல் வாய்ப்பாடு H₂O."}],
+geography:[{q:"இந்தியாவின் முக்கிய நீளமான நதி?",a:["கங்கை","வைகை","காவிரி","தாமிரபரணி"],c:0,e:"கங்கை இந்தியாவின் முக்கிய நீளமான நதியாகும்."}],
+polity:[{q:"இந்திய அரசியலமைப்பு நடைமுறைக்கு வந்த நாள்?",a:["15 ஆகஸ்ட் 1947","26 ஜனவரி 1950","26 நவம்பர் 1949","2 அக்டோபர் 1950"],c:1,e:"26 ஜனவரி 1950 முதல் நடைமுறைக்கு வந்தது."}],
+economy:[{q:"இந்தியாவின் மத்திய வங்கி?",a:["SBI","RBI","PNB","NABARD"],c:1,e:"RBI இந்தியாவின் மத்திய வங்கி."}],
+tamilnadu:[{q:"தமிழ்நாட்டின் தலைநகரம்?",a:["மதுரை","சென்னை","திருச்சி","கோவை"],c:1,e:"சென்னை தமிழ்நாட்டின் தலைநகரம்."}],
+simplification:[{q:"25 + 15 × 2 = ?",a:["40","55","80","50"],c:1,e:"15×2=30; 25+30=55."}],
+percentage:[{q:"200-ன் 10%?",a:["10","20","30","40"],c:1,e:"200×10/100=20."}],
+ratio:[{q:"2 : 3 என்ற விகிதத்தில் முதல் எண் 10 என்றால் இரண்டாவது?",a:["12","15","18","20"],c:1,e:"2க்கு 10 என்றால் 3க்கு 15."}],
+hcf:[{q:"12 மற்றும் 18 இன் HCF?",a:["3","6","9","12"],c:1,e:"HCF = 6."}],
+area:[{q:"5 cm பக்கமுள்ள சதுரத்தின் பரப்பளவு?",a:["10 cm²","20 cm²","25 cm²","30 cm²"],c:2,e:"5×5=25 cm²."}],
+timeDistance:[{q:"வேகம் = ?",a:["தூரம் × நேரம்","தூரம் ÷ நேரம்","நேரம் ÷ தூரம்","தூரம் + நேரம்"],c:1,e:"வேகம் = தூரம் ÷ நேரம்."}],
+average:[{q:"10,20,30 சராசரி?",a:["15","20","25","30"],c:1,e:"(10+20+30)/3=20."}],
+profitLoss:[{q:"விற்பனை விலை வாங்கிய விலையை விட அதிகமாக இருந்தால்?",a:["நஷ்டம்","லாபம்","வரி","வட்டி"],c:1,e:"அதிகமாக இருந்தால் லாபம்."}],
+series:[{q:"2,4,6,8,?",a:["9","10","11","12"],c:1,e:"ஒவ்வொரு முறையும் 2 சேர்க்கப்படுகிறது."}],
+analogy:[{q:"கண் : பார்வை :: காது : ?",a:["சுவை","கேள்வி","மணம்","தொடு"],c:1,e:"காது கேள்விக்குரியது."}],
+coding:[{q:"CAT → DBU என்றால் DOG → ?",a:["EPH","EOG","DPG","FQI"],c:0,e:"ஒவ்வொரு எழுத்துக்கும் +1."}],
+classification:[{q:"வேறுபட்டதைத் தேர்ந்தெடுக்கவும்.",a:["மாம்பழம்","ஆப்பிள்","வாழைப்பழம்","கேரட்"],c:3,e:"கேரட் காய்கறி; மற்றவை பழங்கள்."}],
+blood:[{q:"தந்தையின் சகோதரர்?",a:["மாமா","சித்தப்பா / பெரியப்பா","தாத்தா","அண்ணன்"],c:1,e:"தந்தையின் சகோதரர் சித்தப்பா அல்லது பெரியப்பா."}],
+direction:[{q:"வடக்கு நோக்கி நிற்கும்போது வலப்புறம்?",a:["மேற்கு","கிழக்கு","தெற்கு","வடக்கு"],c:1,e:"வடக்கிலிருந்து வலப்புறம் = கிழக்கு."}],
+simpleInterest:[{q:"₹1000க்கு 10% வட்டியில் 1 ஆண்டுக்கான SI?",a:["₹10","₹50","₹100","₹200"],c:2,e:"SI=1000×10×1/100=₹100."}],
+compoundInterest:[{q:"Compound Interest எதன் மீதும் கணக்கிடப்படும்?",a:["அசல் மட்டும்","அசல் + முந்தைய வட்டி","வரி மட்டும்","சம்பளம்"],c:1,e:"முந்தைய வட்டியும் சேர்க்கப்படும்."}],
+volume:[{q:"கனசதுரத்தின் கனஅளவு?",a:["a²","a³","2a","4a"],c:1,e:"கனஅளவு = a³."}],
+timeWork:[{q:"ஒருவர் ஒரு வேலையை 10 நாட்களில் செய்தால் ஒரு நாளின் வேலை?",a:["1/5","1/10","1/20","10"],c:1,e:"ஒரு நாளின் வேலை = 1/10."}],
+reasoning:[{q:"2,4,6,8,?",a:["9","10","11","12"],c:1,e:"ஒவ்வொரு எண்ணுக்கும் 2 சேர்க்கப்படுகிறது."}]
+};
+
+let selectedTopic="",currentQuestions=[],currentQuestion=0,score=0,answered=false;
+
+function openLesson(title,key){
+selectedTopic=key;
+homePage.style.display="none";quizPage.style.display="none";lessonPage.style.display="block";
+lessonTitle.innerHTML="📖 "+title;
+lessonContent.innerHTML=lessons[key]||"<p>இந்த Topic-க்கான Lesson விரைவில் சேர்க்கப்படும்.</p>";
+scrollTo(0,0);
+}
+
+function startQuizFromLesson(){
+currentQuestions=questions[selectedTopic]||[];
+if(!currentQuestions.length){alert("இந்த Lesson-க்கான Practice Questions இன்னும் சேர்க்கப்படவில்லை.");return}
+currentQuestion=0;score=0;answered=false;
+lessonPage.style.display="none";quizPage.style.display="block";
+loadQuestion();scrollTo(0,0);
+}
+
+function loadQuestion(){
+answered=false;
+let q=currentQuestions[currentQuestion];
+questionNumber.innerText=(currentQuestion+1)+" / "+currentQuestions.length;
+questionText.innerText="Q"+(currentQuestion+1)+". "+q.q;
+options.innerHTML=q.a.map((x,i)=>`<button class="option" onclick="checkAnswer(${i},this)">${String.fromCharCode(65+i)}. ${x}</button>`).join("");
+explanation.style.display="none";explanation.innerHTML="";
+progressBar.style.width=((currentQuestion/currentQuestions.length)*100)+"%";
+nextButton.innerText=currentQuestion===currentQuestions.length-1?"முடிவு":"அடுத்த கேள்வி →";
+}
+
+function checkAnswer(selected,button){
+if(answered)return;
+answered=true;
+let q=currentQuestions[currentQuestion],opts=document.querySelectorAll(".option");
+opts[q.c].classList.add("correct");
+if(selected===q.c)score++;else button.classList.add("wrong");
+explanation.innerHTML="💡 <b>விளக்கம்:</b> "+q.e;
+explanation.style.display="block";
+}
+
+function nextQuestion(){
+if(!answered){alert("முதலில் ஒரு பதிலைத் தேர்வு செய்யுங்கள்.");return}
+if(currentQuestion<currentQuestions.length-1){currentQuestion++;loadQuestion();scrollTo(0,0)}
+else showResult();
+}
+
+function showResult(){
+let total=currentQuestions.length,p=Math.round(score/total*100);
+quizPage.innerHTML=`<div class="quiz-box"><div class="result"><h2>🎉 Quiz முடிந்தது!</h2><p>உங்கள் மதிப்பெண்</p><div class="score">${score} / ${total}</div><h3>${p}%</h3><p>சரியான பதில்கள்: ${score}<br>தவறான பதில்கள்: ${total-score}</p><div class="button-row"><button class="home-btn" onclick="goHome()">🏠 Topics</button><button class="start-btn" onclick="location.reload()">🔄 மீண்டும்</button></div></div></div>`;
+}
+
+function goHome(){
+lessonPage.style.display="none";quizPage.style.display="none";homePage.style.display="block";scrollTo(0,0);
+}
+</script>
+</body>
+</html>
