@@ -121,10 +121,86 @@ header h1{margin:0;font-size:27px} header p{margin:8px 0 0}
   background-color: #e5ffe5;
   font-weight: bold;
 }
+    #splash {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(145deg, #061b50, #0755b9);
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  color: white;
+  transition: opacity .35s ease;
+}
+
+.splash-inner {
+  text-align: center;
+  padding: 20px;
+}
+
+.splash-logo {
+  width: 110px;
+  height: 110px;
+  border-radius: 32px;
+  background: linear-gradient(145deg, #ffffff35, #ffffff10);
+  border: 2px solid #ffcf35;
+  display: grid;
+  place-items: center;
+  font-size: 58px;
+  margin: 0 auto 22px;
+  box-shadow: 0 12px 30px #00103366;
+}
+
+.splash-inner h2 {
+  margin: 0;
+  font-size: 29px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.splash-inner p {
+  color: #ffdb50;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.splash-inner small {
+  display: block;
+  margin-top: 22px;
+  color: #d7e8ff;
+}
+
+.splash-loader {
+  width: 45px;
+  height: 5px;
+  background: #ffcf35;
+  border-radius: 10px;
+  margin: 20px auto;
+  animation: loading 1s infinite alternate;
+}
+
+@keyframes loading {
+  from { width: 35px; }
+  to { width: 100px; }
+}
 </style>
 </head>
 <body>
+<div id="splash" aria-label="TNPSC Study App Loading">
+  <div class="splash-inner">
 
+    <div class="splash-logo">📚</div>
+
+    <h2>TNPSC GROUP 4</h2>
+
+    <p>Study & Practice</p>
+
+    <div class="splash-loader"></div>
+
+    <small>தமிழ் • General Studies • Aptitude</small>
+
+  </div>
+</div>
 <header>
 <h1>📚 TNPSC GROUP 4</h1>
 <p>Study • Lesson • Practice • Score</p>
@@ -1595,6 +1671,25 @@ quizPage.innerHTML=`<div class="quiz-box"><div class="result"><h2>🎉 Quiz ம�
 function goHome(){
 lessonPage.style.display="none";quizPage.style.display="none";homePage.style.display="block";scrollTo(0,0);
 }
+    window.addEventListener("load", () => {
+
+  setTimeout(() => {
+
+    const s = document.getElementById("splash");
+
+    if (s) {
+      s.style.opacity = "0";
+
+      setTimeout(() => {
+        s.remove();
+      }, 380);
+    }
+
+  }, 1200);
+
+});
+
+createTable();
 </script>
 </body>
 </html>
